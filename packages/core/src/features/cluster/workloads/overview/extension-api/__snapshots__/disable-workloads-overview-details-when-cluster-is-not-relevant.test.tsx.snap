@@ -46,7 +46,7 @@ exports[`disable workloads overview details when cluster is not relevant given e
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -78,10 +78,21 @@ exports[`disable workloads overview details when cluster is not relevant given e
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -126,20 +137,11 @@ exports[`disable workloads overview details when cluster is not relevant given e
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -148,10 +150,21 @@ exports[`disable workloads overview details when cluster is not relevant given e
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -162,20 +175,11 @@ exports[`disable workloads overview details when cluster is not relevant given e
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -184,10 +188,21 @@ exports[`disable workloads overview details when cluster is not relevant given e
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -232,20 +247,11 @@ exports[`disable workloads overview details when cluster is not relevant given e
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -568,7 +574,7 @@ exports[`disable workloads overview details when cluster is not relevant given e
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -600,10 +606,21 @@ exports[`disable workloads overview details when cluster is not relevant given e
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -648,20 +665,11 @@ exports[`disable workloads overview details when cluster is not relevant given e
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -670,10 +678,21 @@ exports[`disable workloads overview details when cluster is not relevant given e
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -684,20 +703,11 @@ exports[`disable workloads overview details when cluster is not relevant given e
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -706,10 +716,21 @@ exports[`disable workloads overview details when cluster is not relevant given e
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -754,20 +775,11 @@ exports[`disable workloads overview details when cluster is not relevant given e
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -1085,7 +1097,7 @@ exports[`disable workloads overview details when cluster is not relevant given n
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -1117,10 +1129,21 @@ exports[`disable workloads overview details when cluster is not relevant given n
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -1165,20 +1188,11 @@ exports[`disable workloads overview details when cluster is not relevant given n
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -1187,10 +1201,21 @@ exports[`disable workloads overview details when cluster is not relevant given n
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -1201,20 +1226,11 @@ exports[`disable workloads overview details when cluster is not relevant given n
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -1223,10 +1239,21 @@ exports[`disable workloads overview details when cluster is not relevant given n
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -1271,20 +1298,11 @@ exports[`disable workloads overview details when cluster is not relevant given n
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>

@@ -35,6 +35,10 @@ import type { ToggleTableColumnVisibility } from "../../../features/user-prefere
 import toggleTableColumnVisibilityInjectable from "../../../features/user-preferences/common/toggle-table-column-visibility.injectable";
 import type { IsTableColumnHidden } from "../../../features/user-preferences/common/is-table-column-hidden.injectable";
 import isTableColumnHiddenInjectable from "../../../features/user-preferences/common/is-table-column-hidden.injectable";
+import type { StorageLayer } from "../../utils/storage-helper";
+import type { TableColumnWidths } from "./table-column-widths.injectable";
+import tableColumnWidthsInjectable from "./table-column-widths.injectable";
+import { ColumnResizeAnchor } from "./column-resize-anchor";
 
 export interface ItemListLayoutContentProps<Item extends ItemObject, PreLoadStores extends boolean> {
   getFilters: () => Filter[];
@@ -79,6 +83,7 @@ interface Dependencies {
   openConfirmDialog: OpenConfirmDialog;
   toggleTableColumnVisibility: ToggleTableColumnVisibility;
   isTableColumnHidden: IsTableColumnHidden;
+  tableColumnWidths: StorageLayer<TableColumnWidths>;
 }
 
 @observer
@@ -138,7 +143,13 @@ class NonInjectedItemListLayoutContent<
           }
 
           if (!headCell || this.showColumn(headCell)) {
-            return <TableCell key={index} {...cellProps} />;
+            return (
+              <TableCell
+                key={index}
+                {...cellProps}
+                style={this.getColumnStyle(headCell?.id) ?? cellProps.style}
+              />
+            );
           }
 
           return null;
@@ -281,7 +292,12 @@ class NonInjectedItemListLayoutContent<
             .filter(isDefined)
             .map((cellProps, index) => (
               this.showColumn(cellProps) && (
-                <TableCell key={cellProps.id ?? index} {...cellProps} />
+                <TableCell
+                  key={cellProps.id ?? index}
+                  {...cellProps}
+                  style={this.getColumnStyle(cellProps.id) ?? cellProps.style}
+                  title={this.renderResizableTitle(cellProps)}
+                />
               )
             ))
         }
@@ -341,6 +357,59 @@ class NonInjectedItemListLayoutContent<
     );
   }
 
+  getColumnWidth(columnId: string | undefined) {
+    const { tableId, tableColumnWidths } = this.props;
+
+    if (!tableId || !columnId) {
+      return undefined;
+    }
+
+    return tableColumnWidths.get()[tableId]?.[columnId];
+  }
+
+  getColumnStyle(columnId: string | undefined): React.CSSProperties | undefined {
+    const width = this.getColumnWidth(columnId);
+
+    return width
+      ? { flex: `0 0 ${width}px`, maxWidth: "none" }
+      : undefined;
+  }
+
+  setColumnWidth(tableId: string, columnId: string, width: number | undefined) {
+    this.props.tableColumnWidths.merge(draft => {
+      const widths = draft[tableId] ??= {};
+
+      if (width === undefined) {
+        delete widths[columnId];
+      } else {
+        widths[columnId] = width;
+      }
+    });
+  }
+
+  /**
+   * Columns of persisted tables can be resized by dragging the right edge of their header, double click resets
+   */
+  renderResizableTitle({ id: columnId, title }: TableCellProps) {
+    const { tableId } = this.props;
+
+    if (!tableId || !columnId) {
+      return title;
+    }
+
+    return (
+      <>
+        {title}
+        <ColumnResizeAnchor
+          columnId={columnId}
+          getWidth={() => this.getColumnWidth(columnId)}
+          onResize={width => this.setColumnWidth(tableId, columnId, width)}
+          onReset={() => this.setColumnWidth(tableId, columnId, undefined)}
+        />
+      </>
+    );
+  }
+
   showColumn({ id: columnId, showWithColumn }: TableCellProps): boolean {
     const { tableId, isConfigurable } = this.props;
 
@@ -385,5 +454,6 @@ export const ItemListLayoutContent = withInjectables<Dependencies, ItemListLayou
     openConfirmDialog: di.inject(openConfirmDialogInjectable),
     toggleTableColumnVisibility: di.inject(toggleTableColumnVisibilityInjectable),
     isTableColumnHidden: di.inject(isTableColumnHiddenInjectable),
+    tableColumnWidths: di.inject(tableColumnWidthsInjectable),
   }),
 }) as <Item extends ItemObject, PreLoadStores extends boolean>(props: ItemListLayoutContentProps<Item, PreLoadStores>) => React.ReactElement;

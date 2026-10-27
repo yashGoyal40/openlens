@@ -155,7 +155,7 @@ describe("cluster - custom resources in sidebar", () => {
           });
 
           it("formats the some.group.com sidebar item title correctly", () => {
-            expect(result.getByTestId("link-for-sidebar-item-custom-resource-group-some.group.com").firstChild).toHaveTextContent("some\u200b.group\u200b.com", {
+            expect(result.getByTestId("link-for-sidebar-item-custom-resource-group-some.group.com")).toHaveTextContent("some\u200b.group\u200b.com", {
               normalizeWhitespace: false,
             });
           });

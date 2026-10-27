@@ -54,6 +54,37 @@ export interface LogTabData {
    * Whether to show the logs of the previous container instance
    */
   showPrevious: boolean;
+
+  /**
+   * Whether to show the logs of all containers (except init containers) of the selected pod
+   * merged together, instead of only the selected container
+   */
+  showAllContainers?: boolean;
+
+  /**
+   * Only show logs which are newer than this many seconds, all logs are shown when not set
+   */
+  sinceSeconds?: number;
+
+  /**
+   * Whether to wrap long log lines instead of scrolling horizontally
+   */
+  wrapLines?: boolean;
+
+  /**
+   * Whether to show only the log lines matching the search
+   */
+  showOnlyMatching?: boolean;
+
+  /**
+   * Whether the search query is a regular expression
+   */
+  searchIsRegex?: boolean;
+
+  /**
+   * Whether the search is case sensitive
+   */
+  searchIsCaseSensitive?: boolean;
 }
 
 export class LogTabStore extends DockTabStore<LogTabData> {

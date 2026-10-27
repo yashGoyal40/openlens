@@ -20,6 +20,7 @@
   display: flex;
   position: relative;
   background: var(--sidebarBackground);
+  border-right: 1px solid var(--borderFaintColor);
 }
 
 .contents {

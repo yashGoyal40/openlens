@@ -284,7 +284,7 @@ describe("cluster - sidebar and tab navigation for core", () => {
             expect(actual).toEqual({
               sidebar: {
                 expanded: { "sidebar-item-some-parent": true },
-                width: 200,
+                width: 240,
               },
             });
           });

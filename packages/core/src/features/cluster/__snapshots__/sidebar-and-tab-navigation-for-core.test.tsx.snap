@@ -45,7 +45,7 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -77,10 +77,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -125,20 +136,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -147,27 +149,29 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-some-parent"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-some-parent"
               href="/"
             >
-              <div
-                data-testid="some-icon-for-parent"
-              />
-              <span>
-                Some parent
-              </span>
               <i
                 class="Icon expandIcon material focusable"
                 data-testid="expand-icon-for-sidebar-item-some-parent"
               >
                 <span
                   class="icon"
-                  data-icon-name="keyboard_arrow_down"
+                  data-icon-name="keyboard_arrow_right"
                 >
-                  keyboard_arrow_down
+                  keyboard_arrow_right
                 </span>
               </i>
+              <div
+                data-testid="some-icon-for-parent"
+              />
+              <span
+                class="title"
+              >
+                Some parent
+              </span>
             </a>
           </div>
           <div
@@ -176,10 +180,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -190,20 +205,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -212,10 +218,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -260,20 +277,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -589,7 +597,7 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -621,10 +629,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -669,20 +688,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -691,27 +701,29 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-some-parent"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-some-parent"
               href="/"
             >
-              <div
-                data-testid="some-icon-for-parent"
-              />
-              <span>
-                Some parent
-              </span>
               <i
                 class="Icon expandIcon material focusable"
                 data-testid="expand-icon-for-sidebar-item-some-parent"
               >
                 <span
                   class="icon"
-                  data-icon-name="keyboard_arrow_down"
+                  data-icon-name="keyboard_arrow_right"
                 >
-                  keyboard_arrow_down
+                  keyboard_arrow_right
                 </span>
               </i>
+              <div
+                data-testid="some-icon-for-parent"
+              />
+              <span
+                class="title"
+              >
+                Some parent
+              </span>
             </a>
           </div>
           <div
@@ -720,10 +732,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -734,20 +757,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -756,10 +770,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -804,20 +829,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -1133,7 +1149,7 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -1165,10 +1181,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -1213,20 +1240,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -1235,27 +1253,29 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-some-parent"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-some-parent"
               href="/"
             >
-              <div
-                data-testid="some-icon-for-parent"
-              />
-              <span>
-                Some parent
-              </span>
               <i
                 class="Icon expandIcon material focusable"
                 data-testid="expand-icon-for-sidebar-item-some-parent"
               >
                 <span
                   class="icon"
-                  data-icon-name="keyboard_arrow_up"
+                  data-icon-name="keyboard_arrow_down"
                 >
-                  keyboard_arrow_up
+                  keyboard_arrow_down
                 </span>
               </i>
+              <div
+                data-testid="some-icon-for-parent"
+              />
+              <span
+                class="title"
+              >
+                Some parent
+              </span>
             </a>
             <div
               class="subMenu"
@@ -1271,7 +1291,12 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   data-testid="link-for-sidebar-item-some-child"
                   href="/"
                 >
-                  <span>
+                  <span
+                    class="expandIconPlaceholder"
+                  />
+                  <span
+                    class="title"
+                  >
                     Some child
                   </span>
                 </a>
@@ -1284,10 +1309,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -1298,20 +1334,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -1320,10 +1347,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -1368,20 +1406,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -1697,7 +1726,7 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -1728,10 +1757,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-workloads"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -1776,20 +1816,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -1799,27 +1830,29 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-some-parent"
               href="/"
             >
-              <div
-                data-testid="some-icon-for-parent"
-              />
-              <span>
-                Some parent
-              </span>
               <i
                 class="Icon expandIcon material focusable"
                 data-testid="expand-icon-for-sidebar-item-some-parent"
               >
                 <span
                   class="icon"
-                  data-icon-name="keyboard_arrow_up"
+                  data-icon-name="keyboard_arrow_down"
                 >
-                  keyboard_arrow_up
+                  keyboard_arrow_down
                 </span>
               </i>
+              <div
+                data-testid="some-icon-for-parent"
+              />
+              <span
+                class="title"
+              >
+                Some parent
+              </span>
             </a>
             <div
               class="subMenu"
@@ -1836,7 +1869,12 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   data-testid="link-for-sidebar-item-some-child"
                   href="/"
                 >
-                  <span>
+                  <span
+                    class="expandIconPlaceholder"
+                  />
+                  <span
+                    class="title"
+                  >
                     Some child
                   </span>
                 </a>
@@ -1849,10 +1887,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -1863,20 +1912,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -1885,10 +1925,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -1933,20 +1984,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -2139,7 +2181,7 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -2170,10 +2212,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-workloads"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -2218,20 +2271,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -2241,27 +2285,29 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-some-parent"
               href="/"
             >
-              <div
-                data-testid="some-icon-for-parent"
-              />
-              <span>
-                Some parent
-              </span>
               <i
                 class="Icon expandIcon material focusable"
                 data-testid="expand-icon-for-sidebar-item-some-parent"
               >
                 <span
                   class="icon"
-                  data-icon-name="keyboard_arrow_down"
+                  data-icon-name="keyboard_arrow_right"
                 >
-                  keyboard_arrow_down
+                  keyboard_arrow_right
                 </span>
               </i>
+              <div
+                data-testid="some-icon-for-parent"
+              />
+              <span
+                class="title"
+              >
+                Some parent
+              </span>
             </a>
           </div>
           <div
@@ -2270,10 +2316,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -2284,20 +2341,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -2306,10 +2354,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -2354,20 +2413,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -2592,10 +2642,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -2640,20 +2701,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -2662,27 +2714,29 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-some-parent"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-some-parent"
               href="/"
             >
-              <div
-                data-testid="some-icon-for-parent"
-              />
-              <span>
-                Some parent
-              </span>
               <i
                 class="Icon expandIcon material focusable"
                 data-testid="expand-icon-for-sidebar-item-some-parent"
               >
                 <span
                   class="icon"
-                  data-icon-name="keyboard_arrow_up"
+                  data-icon-name="keyboard_arrow_down"
                 >
-                  keyboard_arrow_up
+                  keyboard_arrow_down
                 </span>
               </i>
+              <div
+                data-testid="some-icon-for-parent"
+              />
+              <span
+                class="title"
+              >
+                Some parent
+              </span>
             </a>
             <div
               class="subMenu"
@@ -2698,7 +2752,12 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   data-testid="link-for-sidebar-item-some-child"
                   href="/"
                 >
-                  <span>
+                  <span
+                    class="expandIconPlaceholder"
+                  />
+                  <span
+                    class="title"
+                  >
                     Some child
                   </span>
                 </a>
@@ -2711,10 +2770,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -2725,20 +2795,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -2747,10 +2808,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -2795,20 +2867,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -3124,7 +3187,7 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -3156,10 +3219,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -3204,20 +3278,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -3226,27 +3291,29 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-some-parent"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-some-parent"
               href="/"
             >
-              <div
-                data-testid="some-icon-for-parent"
-              />
-              <span>
-                Some parent
-              </span>
               <i
                 class="Icon expandIcon material focusable"
                 data-testid="expand-icon-for-sidebar-item-some-parent"
               >
                 <span
                   class="icon"
-                  data-icon-name="keyboard_arrow_down"
+                  data-icon-name="keyboard_arrow_right"
                 >
-                  keyboard_arrow_down
+                  keyboard_arrow_right
                 </span>
               </i>
+              <div
+                data-testid="some-icon-for-parent"
+              />
+              <span
+                class="title"
+              >
+                Some parent
+              </span>
             </a>
           </div>
           <div
@@ -3255,10 +3322,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -3269,20 +3347,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -3291,10 +3360,21 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -3339,20 +3419,11 @@ exports[`cluster - sidebar and tab navigation for core given core registrations 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>

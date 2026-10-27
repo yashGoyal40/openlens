@@ -49,7 +49,7 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -85,6 +85,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
               data-testid="link-for-sidebar-item-cluster-overview"
               href="/"
             >
+              <span
+                class="expandIconPlaceholder"
+              />
               <i
                 class="Icon svg focusable"
               >
@@ -102,7 +105,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Cluster
               </span>
             </a>
@@ -117,6 +122,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
               data-testid="link-for-sidebar-item-nodes"
               href="/"
             >
+              <span
+                class="expandIconPlaceholder"
+              />
               <i
                 class="Icon svg focusable"
               >
@@ -140,7 +148,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Nodes
               </span>
             </a>
@@ -151,10 +161,21 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
             data-testid="sidebar-item-workloads"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -199,20 +220,11 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -221,10 +233,21 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -235,20 +258,11 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -261,6 +275,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
               data-testid="link-for-sidebar-item-namespaces"
               href="/"
             >
+              <span
+                class="expandIconPlaceholder"
+              />
               <i
                 class="Icon material focusable"
               >
@@ -271,7 +288,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   layers
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Namespaces
               </span>
             </a>
@@ -282,10 +301,21 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -330,20 +360,11 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -546,7 +567,7 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -582,6 +603,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
               data-testid="link-for-sidebar-item-cluster-overview"
               href="/"
             >
+              <span
+                class="expandIconPlaceholder"
+              />
               <i
                 class="Icon svg focusable"
               >
@@ -599,7 +623,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Cluster
               </span>
             </a>
@@ -614,6 +640,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
               data-testid="link-for-sidebar-item-nodes"
               href="/"
             >
+              <span
+                class="expandIconPlaceholder"
+              />
               <i
                 class="Icon svg focusable"
               >
@@ -637,7 +666,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Nodes
               </span>
             </a>
@@ -648,10 +679,21 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
             data-testid="sidebar-item-workloads"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -696,20 +738,11 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -718,10 +751,21 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -732,20 +776,11 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -758,6 +793,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
               data-testid="link-for-sidebar-item-namespaces"
               href="/"
             >
+              <span
+                class="expandIconPlaceholder"
+              />
               <i
                 class="Icon material focusable"
               >
@@ -768,7 +806,9 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   layers
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Namespaces
               </span>
             </a>
@@ -779,10 +819,21 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -827,20 +878,11 @@ exports[`<ClusterFrame /> given cluster with list nodes and namespaces permissio
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -1050,7 +1092,7 @@ exports[`<ClusterFrame /> given cluster without list nodes, but with namespaces 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -1082,10 +1124,21 @@ exports[`<ClusterFrame /> given cluster without list nodes, but with namespaces 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -1130,20 +1183,11 @@ exports[`<ClusterFrame /> given cluster without list nodes, but with namespaces 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -1152,10 +1196,21 @@ exports[`<ClusterFrame /> given cluster without list nodes, but with namespaces 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -1166,20 +1221,11 @@ exports[`<ClusterFrame /> given cluster without list nodes, but with namespaces 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -1192,6 +1238,9 @@ exports[`<ClusterFrame /> given cluster without list nodes, but with namespaces 
               data-testid="link-for-sidebar-item-namespaces"
               href="/"
             >
+              <span
+                class="expandIconPlaceholder"
+              />
               <i
                 class="Icon material focusable"
               >
@@ -1202,7 +1251,9 @@ exports[`<ClusterFrame /> given cluster without list nodes, but with namespaces 
                   layers
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Namespaces
               </span>
             </a>
@@ -1213,10 +1264,21 @@ exports[`<ClusterFrame /> given cluster without list nodes, but with namespaces 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -1261,20 +1323,11 @@ exports[`<ClusterFrame /> given cluster without list nodes, but with namespaces 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>

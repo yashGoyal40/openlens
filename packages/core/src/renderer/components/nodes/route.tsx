@@ -26,9 +26,11 @@ import nodeStoreInjectable from "./store.injectable";
 import requestAllNodeMetricsInjectable from "../../../common/k8s-api/endpoints/metrics.api/request-metrics-for-all-nodes.injectable";
 import eventStoreInjectable from "../events/store.injectable";
 import type { EventStore } from "../events/store";
+import { getNodePool } from "./node-pool";
 
 enum columnId {
   name = "name",
+  nodePool = "node-pool",
   cpu = "cpu",
   memory = "memory",
   disk = "disk",
@@ -203,6 +205,7 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
           isSelectable={false}
           sortingCallbacks={{
             [columnId.name]: node => node.getName(),
+            [columnId.nodePool]: node => getNodePool(node),
             [columnId.cpu]: node => this.getLastMetricValues(node, ["cpuUsage"]),
             [columnId.memory]: node => this.getLastMetricValues(node, ["memoryUsage"]),
             [columnId.disk]: node => this.getLastMetricValues(node, ["fsUsage"]),
@@ -214,6 +217,7 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
           }}
           searchFilters={[
             node => node.getSearchFields(),
+            node => getNodePool(node),
             node => node.getRoleLabels(),
             node => node.getKubeletVersion(),
             node => node.getNodeConditionText(),
@@ -222,6 +226,7 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
           renderTableHeader={[
             { title: "Name", className: "name", sortBy: columnId.name, id: columnId.name },
             { className: "warning", showWithColumn: columnId.name },
+            { title: "Node Pool", className: "node-pool", sortBy: columnId.nodePool, id: columnId.nodePool },
             { title: "CPU", className: "cpu", sortBy: columnId.cpu, id: columnId.cpu },
             { title: "Memory", className: "memory", sortBy: columnId.memory, id: columnId.memory },
             { title: "Disk", className: "disk", sortBy: columnId.disk, id: columnId.disk },
@@ -243,6 +248,7 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
                 tooltip={node.getName()}
               />,
               <KubeObjectStatusIcon key="icon" object={node} />,
+              <span key="node-pool" title={getNodePool(node)}>{getNodePool(node)}</span>,
               this.renderCpuUsage(node),
               this.renderMemoryUsage(node),
               this.renderDiskUsage(node),

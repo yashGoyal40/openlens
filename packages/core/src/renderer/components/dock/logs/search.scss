@@ -14,5 +14,48 @@
     label {
       padding-bottom: 7px;
     }
+
+    &.invalid label {
+      box-shadow: 0 0 0 1px var(--colorError);
+    }
+
+    .search-error {
+      margin-left: 2px;
+      color: var(--colorError);
+    }
+  }
+
+  .search-options {
+    gap: 2px;
+
+    .search-option {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      height: 22px;
+      padding: 0 4px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      background: none;
+      color: var(--textColorSecondary);
+      font-family: var(--font-monospace);
+      font-size: var(--font-size-small);
+      cursor: pointer;
+
+      &:hover {
+        color: var(--textColorAccent);
+      }
+
+      &:focus-visible {
+        outline: 1px solid var(--colorInfo);
+      }
+
+      &.active {
+        color: var(--textColorAccent);
+        border-color: var(--borderFaintColor);
+        background: var(--inputControlBackground);
+      }
+    }
   }
 }

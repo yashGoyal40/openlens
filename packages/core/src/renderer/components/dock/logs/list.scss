@@ -6,6 +6,9 @@
 .LogList {
   --overlay-bg: #8cc474b8;
   --overlay-active-bg: orange;
+  --log-level-error-color: var(--colorSoftError);
+  --log-level-warn-color: #e5c07b;
+  --log-level-debug-opacity: 0.55;
 
   position: relative;
   color: var(--logsForeground);
@@ -28,6 +31,18 @@
 
         &:hover {
           background: var(--logRowHoverBackground);
+        }
+
+        &.level-error {
+          color: var(--log-level-error-color);
+        }
+
+        &.level-warn {
+          color: var(--log-level-warn-color);
+        }
+
+        &.level-debug {
+          opacity: var(--log-level-debug-opacity);
         }
 
         span {
@@ -54,6 +69,33 @@
         }
       }
     }
+  }
+
+  // Should correlate with wrappedRowLayout in list.tsx
+  &.wrapLines {
+    .VirtualList .list {
+      overflow-x: hidden!important;
+
+      .LogRow {
+        white-space: normal;
+        line-height: 14px;
+        overflow: hidden;
+
+        span {
+          white-space: pre-wrap;
+          word-break: break-all;
+        }
+      }
+    }
+  }
+
+  .char-width-measure {
+    position: absolute;
+    visibility: hidden;
+    pointer-events: none;
+    white-space: pre;
+    font-family: var(--font-monospace);
+    font-size: smaller;
   }
 
   &.isLoading {

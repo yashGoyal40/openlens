@@ -7,7 +7,17 @@ import type { PodLogsQuery } from "@k8slens/kube-object";
 import { podApiInjectable } from "@k8slens/kube-api-specifics";
 import type { ResourceDescriptor } from "@k8slens/kube-api";
 
-export type CallForLogs = (params: ResourceDescriptor, query?: PodLogsQuery) => Promise<string>;
+/**
+ * The query parameters of the pod logs request
+ */
+export interface PodLogsRequestQuery extends PodLogsQuery {
+  /**
+   * Only return logs newer than this many seconds, mutually exclusive with `sinceTime`
+   */
+  sinceSeconds?: number;
+}
+
+export type CallForLogs = (params: ResourceDescriptor, query?: PodLogsRequestQuery) => Promise<string>;
 
 const callForLogsInjectable = getInjectable({
   id: "call-for-logs",

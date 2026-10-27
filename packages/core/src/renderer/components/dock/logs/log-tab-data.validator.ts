@@ -35,4 +35,24 @@ export const logTabDataValidator = Joi.object<LogTabData>({
   showPrevious: Joi
     .boolean()
     .required(),
+  showAllContainers: Joi
+    .boolean()
+    .optional(),
+  sinceSeconds: Joi
+    .number()
+    .integer()
+    .min(0)
+    .optional(),
+  wrapLines: Joi
+    .boolean()
+    .optional(),
+  showOnlyMatching: Joi
+    .boolean()
+    .optional(),
+  searchIsRegex: Joi
+    .boolean()
+    .optional(),
+  searchIsCaseSensitive: Joi
+    .boolean()
+    .optional(),
 });

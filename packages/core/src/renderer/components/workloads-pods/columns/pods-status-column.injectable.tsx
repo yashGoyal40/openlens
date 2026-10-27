@@ -14,7 +14,7 @@ export const podsStatusColumnInjectable = getInjectable({
     id: columnId,
     kind: "Pod",
     apiVersion: "v1",
-    priority: 0,
+    priority: 35,
     content: (pod) => ({
       title: pod.getStatusMessage(),
       className: kebabCase(pod.getStatusMessage()),

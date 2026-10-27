@@ -425,7 +425,7 @@ exports[`opening catalog entity details panel when navigated to the catalog rend
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -643,6 +643,23 @@ exports[`opening catalog entity details panel when navigated to the catalog rend
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                    tabindex="0"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -661,6 +678,14 @@ exports[`opening catalog entity details panel when navigated to the catalog rend
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -682,6 +707,14 @@ exports[`opening catalog entity details panel when navigated to the catalog rend
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -703,6 +736,14 @@ exports[`opening catalog entity details panel when navigated to the catalog rend
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -724,6 +765,14 @@ exports[`opening catalog entity details panel when navigated to the catalog rend
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -735,6 +784,14 @@ exports[`opening catalog entity details panel when navigated to the catalog rend
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -1266,7 +1323,7 @@ exports[`opening catalog entity details panel when navigated to the catalog when
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -1484,6 +1541,23 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                    tabindex="0"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -1502,6 +1576,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -1523,6 +1605,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -1544,6 +1634,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -1565,6 +1663,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -1576,6 +1682,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -2139,7 +2253,7 @@ exports[`opening catalog entity details panel when navigated to the catalog when
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -2357,6 +2471,23 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                    tabindex="0"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -2375,6 +2506,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -2396,6 +2535,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -2417,6 +2564,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -2438,6 +2593,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -2449,6 +2612,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -3012,7 +3183,7 @@ exports[`opening catalog entity details panel when navigated to the catalog when
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -3230,6 +3401,23 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                    tabindex="0"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -3248,6 +3436,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -3269,6 +3465,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -3290,6 +3494,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -3311,6 +3523,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -3322,6 +3542,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -4136,7 +4364,7 @@ exports[`opening catalog entity details panel when navigated to the catalog when
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -4354,6 +4582,23 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                    tabindex="0"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -4372,6 +4617,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -4393,6 +4646,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -4414,6 +4675,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -4435,6 +4704,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -4446,6 +4723,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -4997,7 +5282,7 @@ exports[`opening catalog entity details panel when navigated to the catalog when
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -5215,6 +5500,23 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                    tabindex="0"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -5233,6 +5535,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -5254,6 +5564,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -5275,6 +5593,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -5296,6 +5622,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -5307,6 +5641,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -5858,7 +6200,7 @@ exports[`opening catalog entity details panel when navigated to the catalog when
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -6076,6 +6418,23 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                    tabindex="0"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -6094,6 +6453,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -6115,6 +6482,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -6136,6 +6511,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -6157,6 +6540,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -6168,6 +6559,14 @@ exports[`opening catalog entity details panel when navigated to the catalog when
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"

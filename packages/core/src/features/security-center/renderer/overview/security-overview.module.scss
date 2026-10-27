@@ -1,0 +1,143 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--padding) * 2);
+  min-height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--padding) * 2);
+  background: var(--contentColor);
+  padding: calc(var(--padding) * 2);
+
+  h5 {
+    flex-grow: 1;
+    color: var(--textColorPrimary);
+  }
+}
+
+.section {
+  background: var(--contentColor);
+  padding: calc(var(--padding) * 2);
+  min-width: 0;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--padding);
+
+  h6 {
+    color: var(--textColorPrimary);
+  }
+}
+
+.action {
+  cursor: pointer;
+  color: var(--primary);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: calc(var(--padding) * 2);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--padding) * 2);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: calc(var(--padding) * 2);
+}
+
+.card {
+  border-left: 4px solid var(--colorVague);
+  background: var(--layoutBackground);
+  border-radius: var(--border-radius);
+  padding: var(--padding) calc(var(--padding) * 2);
+
+  &.error {
+    border-left-color: var(--colorError);
+  }
+
+  &.warning {
+    border-left-color: var(--colorWarning);
+  }
+
+  &.info {
+    border-left-color: var(--colorInfo);
+  }
+
+  .count {
+    font-size: 2em;
+    color: var(--textColorAccent);
+  }
+
+  .label {
+    color: var(--textColorSecondary);
+  }
+}
+
+.caption {
+  margin-top: var(--padding);
+  color: var(--textColorSecondary);
+}
+
+.secretsCount {
+  font-size: 2em;
+  color: var(--textColorAccent);
+  margin-bottom: var(--padding);
+}
+
+:global(.TableCell) {
+  &.image {
+    flex: 2.5;
+    word-break: break-all;
+  }
+
+  &.narrow {
+    flex: .6;
+  }
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--padding);
+  text-align: center;
+  background: var(--contentColor);
+  padding: calc(var(--padding) * 4);
+  color: var(--textColorSecondary);
+
+  h6 {
+    color: var(--textColorPrimary);
+  }
+
+  p {
+    max-width: 640px;
+  }
+}
+
+.command {
+  font-family: var(--font-monospace);
+  text-align: left;
+  white-space: pre-wrap;
+  background: var(--layoutBackground);
+  border-radius: var(--border-radius);
+  padding: var(--padding) calc(var(--padding) * 2);
+  user-select: text;
+}

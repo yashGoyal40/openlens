@@ -1,0 +1,21 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.ApplicationDetailsDrawer {
+  .ApplicationDetails {
+    .DrawerItem {
+      align-items: center;
+    }
+
+    .status-description {
+      margin-left: $margin;
+    }
+  }
+
+  .not-found {
+    text-align: center;
+    color: var(--textColorSecondary);
+  }
+}

@@ -16,8 +16,9 @@ import callForLogsInjectable from "../call-for-logs.injectable";
 import type { LogTabViewModelDependencies } from "../logs-view-model";
 import { LogTabViewModel } from "../logs-view-model";
 import type { TabId } from "../../dock/store";
+import type { LogTabData } from "../tab-store";
 import userEvent from "@testing-library/user-event";
-import { SearchStore } from "../../../../search-store/search-store";
+import { LogSearchStore } from "../log-search-store";
 import assert from "assert";
 import fsInjectable from "../../../../../common/fs/fs.injectable";
 
@@ -34,10 +35,11 @@ function mockLogTabViewModel(tabId: TabId, deps: Partial<LogTabViewModelDependen
     stopLoadingLogs: jest.fn(),
     getPodById: jest.fn(),
     getPodsByOwnerId: jest.fn(),
-    searchStore: new SearchStore(),
+    searchStore: new LogSearchStore(),
     areLogsPresent: jest.fn(),
     downloadLogs: jest.fn(),
     downloadAllLogs: jest.fn(),
+    getLocaleTimezone: () => "UTC",
     ...deps,
   });
 }
@@ -144,6 +146,82 @@ describe("<LogResourceSelector />", () => {
 
       expect(await findByText("dockerExporter")).toBeInTheDocument();
       expect(await findByText("docker-exporter")).toBeInTheDocument();
+    });
+
+    it("doesn't offer all containers for a pod with a single container", async () => {
+      const { container, findAllByText, queryByText } = render(<LogResourceSelector model={model} />);
+      const selector = container.querySelector<HTMLElement>(".container-selector");
+
+      assert(selector);
+
+      selectEvent.openMenu(selector);
+
+      expect(await findAllByText("docker-exporter")).not.toHaveLength(0);
+      expect(queryByText("All containers")).not.toBeInTheDocument();
+    });
+  });
+
+  describe("with a pod with several containers", () => {
+    let updatedData: Partial<LogTabData>[];
+    let reloadLogs: jest.MockedFunction<LogTabViewModelDependencies["reloadLogs"]>;
+
+    beforeEach(() => {
+      updatedData = [];
+      reloadLogs = jest.fn();
+    });
+
+    it("when selecting all containers, shows all containers and reloads the logs", async () => {
+      const model = getFewPodsTabData("foobar", {
+        setLogTabData: (tabId, data) => updatedData.push(data),
+        reloadLogs,
+      });
+      const { container, findByText } = render(<LogResourceSelector model={model} />);
+      const selector = container.querySelector<HTMLElement>(".container-selector");
+
+      assert(selector);
+
+      selectEvent.openMenu(selector);
+      userEvent.click(await findByText("All containers"));
+
+      expect(updatedData).toEqual([expect.objectContaining({ showAllContainers: true, selectedContainer: "node-exporter" })]);
+      expect(reloadLogs).toHaveBeenCalled();
+    });
+
+    it("given showing all containers, renders it as selected", async () => {
+      const model = getFewPodsTabData("foobar");
+      const tabData = model.logTabData.get();
+
+      assert(tabData);
+
+      const allContainersModel = getFewPodsTabData("foobar", {
+        getLogTabData: () => ({ ...tabData, showAllContainers: true }),
+      });
+      const { container } = render(<LogResourceSelector model={allContainersModel} />);
+
+      expect(container.querySelector(".container-selector")).toHaveTextContent("All containers");
+    });
+
+    it("given showing all containers, when selecting a single container, shows only that container", async () => {
+      const model = getFewPodsTabData("foobar");
+      const tabData = model.logTabData.get();
+
+      assert(tabData);
+
+      const allContainersModel = getFewPodsTabData("foobar", {
+        getLogTabData: () => ({ ...tabData, showAllContainers: true }),
+        setLogTabData: (tabId, data) => updatedData.push(data),
+        reloadLogs,
+      });
+      const { container, findByText } = render(<LogResourceSelector model={allContainersModel} />);
+      const selector = container.querySelector<HTMLElement>(".container-selector");
+
+      assert(selector);
+
+      selectEvent.openMenu(selector);
+      userEvent.click(await findByText("node-exporter-1"));
+
+      expect(updatedData).toEqual([expect.objectContaining({ showAllContainers: false, selectedContainer: "node-exporter-1" })]);
+      expect(reloadLogs).toHaveBeenCalled();
     });
   });
 

@@ -46,7 +46,7 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -77,10 +77,21 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
               data-testid="sidebar-item-workloads"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -125,20 +136,11 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -147,10 +149,21 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -161,20 +174,11 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -183,10 +187,21 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -231,20 +246,11 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -475,7 +481,7 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -506,10 +512,21 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
               data-testid="sidebar-item-workloads"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -554,20 +571,11 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -576,10 +584,21 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -590,20 +609,11 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -612,10 +622,21 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -660,20 +681,11 @@ exports[`disable kube object statuses when cluster is not relevant given extensi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -864,7 +876,7 @@ exports[`disable kube object statuses when cluster is not relevant given not yet
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -895,10 +907,21 @@ exports[`disable kube object statuses when cluster is not relevant given not yet
               data-testid="sidebar-item-workloads"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -943,20 +966,11 @@ exports[`disable kube object statuses when cluster is not relevant given not yet
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -965,10 +979,21 @@ exports[`disable kube object statuses when cluster is not relevant given not yet
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -979,20 +1004,11 @@ exports[`disable kube object statuses when cluster is not relevant given not yet
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -1001,10 +1017,21 @@ exports[`disable kube object statuses when cluster is not relevant given not yet
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -1049,20 +1076,11 @@ exports[`disable kube object statuses when cluster is not relevant given not yet
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>

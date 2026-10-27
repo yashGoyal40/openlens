@@ -13,10 +13,15 @@ import { Dropdown } from "../../dropdown/dropdown";
 interface DownloadLogsDropdownProps {
   downloadVisibleLogs: () => void;
   downloadAllLogs: () => Promise<void> | undefined;
+
+  /**
+   * When provided, an option for downloading only the lines matching the search is shown
+   */
+  downloadFilteredLogs?: () => void;
   disabled?: boolean;
 }
 
-export function DownloadLogsDropdown({ downloadAllLogs, downloadVisibleLogs, disabled }: DownloadLogsDropdownProps) {
+export function DownloadLogsDropdown({ downloadAllLogs, downloadVisibleLogs, downloadFilteredLogs, disabled }: DownloadLogsDropdownProps) {
   const [waiting, setWaiting] = useState(false);
 
   const downloadAll = async () => {
@@ -49,6 +54,11 @@ export function DownloadLogsDropdown({ downloadAllLogs, downloadVisibleLogs, dis
       <MenuItem onClick={downloadAll} data-testid="download-all-logs">
         All logs
       </MenuItem>
+      {downloadFilteredLogs && (
+        <MenuItem onClick={downloadFilteredLogs} data-testid="download-filtered-logs">
+          Filtered logs
+        </MenuItem>
+      )}
     </Dropdown>
   );
 }

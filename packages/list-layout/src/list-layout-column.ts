@@ -34,6 +34,11 @@ export interface TableCellProps extends React.DOMAttributes<HTMLDivElement> {
   className?: string;
 
   /**
+   * Inline styles for the cell, e.g. a user chosen column width
+   */
+  style?: React.CSSProperties;
+
+  /**
    * The actual value of the cell
    */
   title?: StrictReactNode;

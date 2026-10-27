@@ -12,12 +12,17 @@ import { Badge } from "../../badge";
 import type { SelectOption } from "../../select";
 import { Select } from "../../select";
 import type { LogTabViewModel } from "./logs-view-model";
-import type { Container, Pod } from "@k8slens/kube-object";
+import type { Pod } from "@k8slens/kube-object";
 import type { SingleValue } from "react-select";
 
 export interface LogResourceSelectorProps {
   model: LogTabViewModel;
 }
+
+/**
+ * Value of the "All containers" option, container names are DNS labels so this can't collide with one
+ */
+const allContainersValue = "<all-containers>";
 
 export const LogResourceSelector = observer(({ model }: LogResourceSelectorProps) => {
   const tabData = model.logTabData.get();
@@ -26,7 +31,7 @@ export const LogResourceSelector = observer(({ model }: LogResourceSelectorProps
     return null;
   }
 
-  const { selectedContainer, owner } = tabData;
+  const { selectedContainer, owner, showAllContainers = false } = tabData;
   const pods = model.pods.get();
   const pod = model.pod.get();
 
@@ -39,15 +44,28 @@ export const LogResourceSelector = observer(({ model }: LogResourceSelectorProps
     label: pod.getName(),
   }));
   const allContainers = pod.getAllContainers();
+  const containers = pod.getContainers();
+  const canShowAllContainers = containers.length > 1;
   const container = allContainers.find(container => container.name === selectedContainer) ?? null;
-  const onContainerChange = (option: SingleValue<SelectOption<Container>>) => {
+  const selectedContainerValue = showAllContainers && canShowAllContainers
+    ? allContainersValue
+    : container?.name ?? null;
+  const onContainerChange = (option: SingleValue<SelectOption<string>>) => {
     if (!option) {
       return;
     }
 
-    model.updateLogTabData({
-      selectedContainer: option.value.name,
-    });
+    if (option.value === allContainersValue) {
+      model.updateLogTabData({
+        showAllContainers: true,
+      });
+    } else {
+      model.updateLogTabData({
+        selectedContainer: option.value,
+        showAllContainers: false,
+      });
+    }
+
     model.reloadLogs();
   };
 
@@ -59,6 +77,7 @@ export const LogResourceSelector = observer(({ model }: LogResourceSelectorProps
     model.updateLogTabData({
       selectedPodId: option.value.getId(),
       selectedContainer: option.value.getAllContainers()[0]?.name,
+      showAllContainers: showAllContainers && option.value.getContainers().length > 1,
     });
     model.renameTab(`Pod ${option.value.getName()}`);
     model.reloadLogs();
@@ -67,15 +86,21 @@ export const LogResourceSelector = observer(({ model }: LogResourceSelectorProps
   const containerSelectOptions = [
     {
       label: "Containers",
-      options: pod.getContainers().map(container => ({
-        value: container,
-        label: container.name,
-      })),
+      options: [
+        ...(canShowAllContainers
+          ? [{ value: allContainersValue, label: "All containers" }]
+          : []
+        ),
+        ...containers.map(container => ({
+          value: container.name,
+          label: container.name,
+        })),
+      ],
     },
     {
       label: "Init Containers",
       options: pod.getInitContainers().map(container => ({
-        value: container,
+        value: container.name,
         label: container.name,
       })),
     },
@@ -105,10 +130,10 @@ export const LogResourceSelector = observer(({ model }: LogResourceSelectorProps
         menuClass="pod-selector-menu"
       />
       <span>Container</span>
-      <Select<Container, SelectOption<Container>, false>
+      <Select<string, SelectOption<string>, false>
         id="container-selector-input"
         options={containerSelectOptions}
-        value={container}
+        value={selectedContainerValue}
         onChange={onContainerChange}
         className="container-selector"
         menuClass="container-selector-menu"

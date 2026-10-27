@@ -5,12 +5,13 @@
 
 import type { IComputedValue } from "mobx";
 import { observable } from "mobx";
-import type { PodLogsQuery, Pod } from "@k8slens/kube-object";
+import type { Pod } from "@k8slens/kube-object";
 import { waitUntilDefined, getOrInsertWith, interval } from "@k8slens/utilities";
 import type { IntervalFn } from "@k8slens/utilities";
 import type { TabId } from "../dock/store";
-import type { CallForLogs } from "./call-for-logs.injectable";
+import type { CallForLogs, PodLogsRequestQuery } from "./call-for-logs.injectable";
 import type { LogTabData } from "./tab-store";
+import { callForMergedContainerLogs, splitLogLines } from "./container-logs";
 
 type PodLogLine = string;
 
@@ -109,12 +110,14 @@ export class LogStore {
    * @param params request parameters described in IPodLogsQuery interface
    * @returns A fetch request promise
    */
-  private async loadLogs(computedPod: IComputedValue<Pod | undefined>, logTabData: IComputedValue<LogTabData | undefined>, params: Partial<PodLogsQuery>): Promise<string[]> {
+  private async loadLogs(computedPod: IComputedValue<Pod | undefined>, logTabData: IComputedValue<LogTabData | undefined>, params: Partial<PodLogsRequestQuery>): Promise<string[]> {
     const {
       pod,
       tabData: {
         selectedContainer,
         showPrevious,
+        showAllContainers,
+        sinceSeconds,
       },
     } = await waitUntilDefined(() => {
       const pod = computedPod.get();
@@ -128,15 +131,29 @@ export class LogStore {
     });
     const namespace = pod.getNs();
     const name = pod.getName();
+    const query: Partial<PodLogsRequestQuery> = {
+      ...params,
+      previous: showPrevious,
+    };
+
+    // "sinceTime" (used when streaming) and "sinceSeconds" are mutually exclusive
+    if (sinceSeconds && !query.sinceTime) {
+      query.sinceSeconds = sinceSeconds;
+    }
+
+    if (showAllContainers) {
+      const containers = pod.getContainers().map(container => container.name);
+
+      return callForMergedContainerLogs(this.dependencies.callForLogs, { namespace, name }, containers, query);
+    }
 
     const result = await this.dependencies.callForLogs({ namespace, name }, {
-      ...params,
+      ...query,
       timestamps: true,  // Always setting timestamp to separate old logs from new ones
       container: selectedContainer,
-      previous: showPrevious,
     });
 
-    return result.trimEnd().replace(/\r/g, "\n").split("\n");
+    return splitLogLines(result);
   }
 
   /**

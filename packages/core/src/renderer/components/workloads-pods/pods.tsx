@@ -5,7 +5,7 @@
 
 import "./pods.scss";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { observer } from "mobx-react";
 import { KubeObjectListLayout } from "../kube-object-list-layout";
 import { SiblingsInTabLayout } from "../layout/siblings-in-tab-layout";
@@ -17,6 +17,7 @@ import podStoreInjectable from "./store.injectable";
 import type { SpecificKubeListLayoutColumn } from "@k8slens/list-layout";
 import { podListLayoutColumnInjectionToken } from "@k8slens/list-layout";
 import type { Pod } from "@k8slens/kube-object";
+import { interval } from "@k8slens/utilities";
 
 interface Dependencies {
   eventStore: EventStore;
@@ -30,6 +31,15 @@ const NonInjectedPods = observer((props: Dependencies) => {
     eventStore,
     podStore,
   } = props;
+
+  // CPU and memory columns show metrics server usage, refreshed while the list is open
+  useEffect(() => {
+    const metricsWatcher = interval(60, () => void podStore.loadKubeMetrics());
+
+    metricsWatcher.start(true);
+
+    return () => metricsWatcher.stop();
+  }, [podStore]);
 
   return (
     <SiblingsInTabLayout>

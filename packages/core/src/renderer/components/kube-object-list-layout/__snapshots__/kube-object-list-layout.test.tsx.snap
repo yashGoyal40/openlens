@@ -99,6 +99,22 @@ exports[`kube-object-list-layout given pod store renders 1`] = `
               </div>
             </div>
           </div>
+          <i
+            class="Icon export-to-csv material interactive disabled focusable"
+            data-testid="item-list-layout-export-to-csv"
+          >
+            <span
+              class="icon"
+              data-icon-name="file_download"
+            >
+              file_download
+            </span>
+          </i>
+          <div
+            data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+          >
+            Export to CSV
+          </div>
         </div>
         <div
           class="items box grow flex column"
@@ -131,6 +147,14 @@ exports[`kube-object-list-layout given pod store renders 1`] = `
                   class="content"
                 >
                   Name
+                  <span
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-name"
+                  >
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
+                  </span>
                 </div>
                 <i
                   class="Icon sortIcon material focusable"
@@ -158,6 +182,70 @@ exports[`kube-object-list-layout given pod store renders 1`] = `
                   class="content"
                 >
                   Namespace
+                  <span
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-namespace"
+                  >
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
+                  </span>
+                </div>
+                <i
+                  class="Icon sortIcon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="arrow_drop_down"
+                  >
+                    arrow_drop_down
+                  </span>
+                </i>
+              </div>
+              <div
+                class="TableCell cpu nowrap sorting"
+                id="cpu"
+              >
+                <div
+                  class="content"
+                >
+                  CPU
+                  <span
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-cpu"
+                  >
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
+                  </span>
+                </div>
+                <i
+                  class="Icon sortIcon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="arrow_drop_down"
+                  >
+                    arrow_drop_down
+                  </span>
+                </i>
+              </div>
+              <div
+                class="TableCell memory nowrap sorting"
+                id="memory"
+              >
+                <div
+                  class="content"
+                >
+                  Memory
+                  <span
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-memory"
+                  >
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
+                  </span>
                 </div>
                 <i
                   class="Icon sortIcon material focusable"
@@ -178,6 +266,14 @@ exports[`kube-object-list-layout given pod store renders 1`] = `
                   class="content"
                 >
                   Containers
+                  <span
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-containers"
+                  >
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
+                  </span>
                 </div>
                 <i
                   class="Icon sortIcon material focusable"
@@ -198,6 +294,14 @@ exports[`kube-object-list-layout given pod store renders 1`] = `
                   class="content"
                 >
                   Restarts
+                  <span
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-restarts"
+                  >
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
+                  </span>
                 </div>
                 <i
                   class="Icon sortIcon material focusable"
@@ -218,6 +322,14 @@ exports[`kube-object-list-layout given pod store renders 1`] = `
                   class="content"
                 >
                   Controlled By
+                  <span
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-owners"
+                  >
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
+                  </span>
                 </div>
                 <i
                   class="Icon sortIcon material focusable"
@@ -238,6 +350,14 @@ exports[`kube-object-list-layout given pod store renders 1`] = `
                   class="content"
                 >
                   Node
+                  <span
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-node"
+                  >
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
+                  </span>
                 </div>
                 <i
                   class="Icon sortIcon material focusable"
@@ -258,26 +378,14 @@ exports[`kube-object-list-layout given pod store renders 1`] = `
                   class="content"
                 >
                   QoS
-                </div>
-                <i
-                  class="Icon sortIcon material focusable"
-                >
                   <span
-                    class="icon"
-                    data-icon-name="arrow_drop_down"
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-qos"
                   >
-                    arrow_drop_down
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
                   </span>
-                </i>
-              </div>
-              <div
-                class="TableCell age nowrap sorting"
-                id="age"
-              >
-                <div
-                  class="content"
-                >
-                  Age
                 </div>
                 <i
                   class="Icon sortIcon material focusable"
@@ -298,6 +406,42 @@ exports[`kube-object-list-layout given pod store renders 1`] = `
                   class="content"
                 >
                   Status
+                  <span
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-status"
+                  >
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
+                  </span>
+                </div>
+                <i
+                  class="Icon sortIcon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="arrow_drop_down"
+                  >
+                    arrow_drop_down
+                  </span>
+                </i>
+              </div>
+              <div
+                class="TableCell age nowrap sorting"
+                id="age"
+              >
+                <div
+                  class="content"
+                >
+                  Age
+                  <span
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-age"
+                  >
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
+                  </span>
                 </div>
                 <i
                   class="Icon sortIcon material focusable"

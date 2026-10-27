@@ -1,0 +1,29 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.Applications {
+  .TableCell {
+    &.name {
+      flex: 2;
+    }
+
+    &.version,
+    &.managed-by {
+      flex: 1;
+    }
+
+    &.workloads {
+      flex: .6;
+    }
+
+    &.status {
+      flex: .8;
+    }
+
+    &.age {
+      flex: .5;
+    }
+  }
+}

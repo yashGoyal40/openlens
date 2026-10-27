@@ -19,6 +19,15 @@
       flex-grow: 0.8;
     }
 
+    &.cpu {
+      flex-grow: 0.6;
+    }
+
+    &.memory {
+      flex-grow: 0.8;
+      min-width: 80px;
+    }
+
     &.warning {
       @include table-cell-warning;
     }

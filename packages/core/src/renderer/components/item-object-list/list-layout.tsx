@@ -31,6 +31,8 @@ import selectedFilterNamespacesInjectable from "../../../common/k8s-api/selected
 import pageFiltersStoreInjectable from "./page-filters/store.injectable";
 import type { StorageLayer } from "../../utils/storage-helper";
 import autoBindReact from "auto-bind/react";
+import type { ExportTableToCsv } from "../../../features/table-export/renderer/export-table-to-csv.injectable";
+import exportTableToCsvInjectable from "../../../features/table-export/renderer/export-table-to-csv.injectable";
 
 export type SearchFilter<I extends ItemObject> = (item: I) => SingleOrMany<string | number | undefined | null>;
 export type SearchFilters<I extends ItemObject> = Record<string, SearchFilter<I>>;
@@ -168,6 +170,7 @@ interface Dependencies {
   selectedFilterNamespaces: IComputedValue<string[]>;
   itemListLayoutStorage: StorageLayer<ItemListLayoutStorage>;
   pageFiltersStore: PageFiltersStore;
+  exportTableToCsv: ExportTableToCsv;
 }
 
 @observer
@@ -272,6 +275,28 @@ class NonInjectedItemListLayout<I extends ItemObject, PreLoadStores extends bool
     return applyFilters(filterItems.concat(this.props.filterItems ?? []), items);
   }
 
+  @computed get canExportToCsv() {
+    return (this.props.renderTableHeader ?? []).some(cell => Boolean(cell?.title));
+  }
+
+  exportToCsv() {
+    const {
+      tableId, isConfigurable, renderTableHeader = [], renderTableContents,
+      sortingCallbacks, tableProps = {}, renderHeaderTitle,
+    } = this.props;
+
+    this.props.exportTableToCsv({
+      tableId,
+      title: typeof renderHeaderTitle === "string" ? renderHeaderTitle : undefined,
+      isConfigurable,
+      items: this.items,
+      header: renderTableHeader,
+      renderContents: renderTableContents,
+      sortingCallbacks: tableProps.sortable ?? sortingCallbacks,
+      sortByDefault: tableProps.sortByDefault,
+    });
+  }
+
   render() {
     const { renderHeaderTitle, "data-testid": dataTestId } = this.props;
 
@@ -294,6 +319,7 @@ class NonInjectedItemListLayout<I extends ItemObject, PreLoadStores extends bool
               : renderHeaderTitle
           )}
           customizeHeader={this.props.customizeHeader}
+          onExportToCsv={this.canExportToCsv ? this.exportToCsv : undefined}
         />
 
         <ItemListLayoutFilters
@@ -341,6 +367,7 @@ export const ItemListLayout = withInjectables<Dependencies, ItemListLayoutProps<
     selectedFilterNamespaces: di.inject(selectedFilterNamespacesInjectable),
     itemListLayoutStorage: di.inject(itemListLayoutStorageInjectable),
     pageFiltersStore: di.inject(pageFiltersStoreInjectable),
+    exportTableToCsv: di.inject(exportTableToCsvInjectable),
   }),
 }) as <I extends ItemObject, PreLoadStores extends boolean = true>(props: ItemListLayoutProps<I, PreLoadStores>) => React.ReactElement;
 

@@ -15,11 +15,12 @@ import setLogTabDataInjectable from "./set-log-tab-data.injectable";
 import stopLoadingLogsInjectable from "./stop-loading-logs.injectable";
 import renameTabInjectable from "../dock/rename-tab.injectable";
 import areLogsPresentInjectable from "./are-logs-present.injectable";
-import searchStoreInjectable from "../../../search-store/search-store.injectable";
+import logSearchStoreInjectable from "./log-search-store.injectable";
 import getPodsByOwnerIdInjectable from "../../workloads-pods/get-pods-by-owner-id.injectable";
 import getPodByIdInjectable from "../../workloads-pods/get-pod-by-id.injectable";
 import downloadLogsInjectable from "./download-logs.injectable";
 import downloadAllLogsInjectable from "./download-all-logs.injectable";
+import userPreferencesStateInjectable from "../../../../features/user-preferences/common/state.injectable";
 
 export interface InstantiateArgs {
   tabId: TabId;
@@ -28,23 +29,28 @@ export interface InstantiateArgs {
 const logsViewModelInjectable = getInjectable({
   id: "logs-view-model",
 
-  instantiate: (di, tabId) => new LogTabViewModel(tabId, {
-    getLogs: di.inject(getLogsInjectable),
-    getLogsWithoutTimestamps: di.inject(getLogsWithoutTimestampsInjectable),
-    getTimestampSplitLogs: di.inject(getTimestampSplitLogsInjectable),
-    reloadLogs: di.inject(reloadLogsInjectable),
-    getLogTabData: di.inject(getLogTabDataInjectable),
-    setLogTabData: di.inject(setLogTabDataInjectable),
-    loadLogs: di.inject(loadLogsInjectable),
-    renameTab: di.inject(renameTabInjectable),
-    stopLoadingLogs: di.inject(stopLoadingLogsInjectable),
-    areLogsPresent: di.inject(areLogsPresentInjectable),
-    getPodById: di.inject(getPodByIdInjectable),
-    getPodsByOwnerId: di.inject(getPodsByOwnerIdInjectable),
-    downloadLogs: di.inject(downloadLogsInjectable),
-    downloadAllLogs: di.inject(downloadAllLogsInjectable),
-    searchStore: di.inject(searchStoreInjectable),
-  }),
+  instantiate: (di, tabId) => {
+    const userPreferencesState = di.inject(userPreferencesStateInjectable);
+
+    return new LogTabViewModel(tabId, {
+      getLogs: di.inject(getLogsInjectable),
+      getLogsWithoutTimestamps: di.inject(getLogsWithoutTimestampsInjectable),
+      getTimestampSplitLogs: di.inject(getTimestampSplitLogsInjectable),
+      reloadLogs: di.inject(reloadLogsInjectable),
+      getLogTabData: di.inject(getLogTabDataInjectable),
+      setLogTabData: di.inject(setLogTabDataInjectable),
+      loadLogs: di.inject(loadLogsInjectable),
+      renameTab: di.inject(renameTabInjectable),
+      stopLoadingLogs: di.inject(stopLoadingLogsInjectable),
+      areLogsPresent: di.inject(areLogsPresentInjectable),
+      getPodById: di.inject(getPodByIdInjectable),
+      getPodsByOwnerId: di.inject(getPodsByOwnerIdInjectable),
+      downloadLogs: di.inject(downloadLogsInjectable),
+      downloadAllLogs: di.inject(downloadAllLogsInjectable),
+      getLocaleTimezone: () => userPreferencesState.localeTimezone,
+      searchStore: di.inject(logSearchStoreInjectable),
+    });
+  },
 
   lifecycle: lifecycleEnum.keyedSingleton({
     getInstanceKey: (di, tabId: TabId) => `log-tab-view-model-${tabId}}`,

@@ -16,6 +16,11 @@
       @include table-cell-warning;
     }
 
+    &.node-pool {
+      flex: 1.5;
+      text-overflow: ellipsis;
+    }
+
     .LineProgress {
       width: 100%;
     }

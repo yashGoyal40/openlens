@@ -46,7 +46,7 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -77,10 +77,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-workloads"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -125,20 +136,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -147,10 +149,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -161,20 +174,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -184,10 +188,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -232,20 +247,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -417,6 +423,22 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     class="input-info flex gaps"
                   />
                 </div>
+                <i
+                  class="Icon export-to-csv material interactive disabled focusable"
+                  data-testid="item-list-layout-export-to-csv"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="file_download"
+                  >
+                    file_download
+                  </span>
+                </i>
+                <div
+                  data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                >
+                  Export to CSV
+                </div>
               </div>
               <div
                 class="items box grow flex column"
@@ -449,6 +471,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Name
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-name"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -469,6 +499,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Namespace
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-namespace"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -489,6 +527,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Chart
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-chart"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -509,6 +555,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Revision
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-revision"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -529,6 +583,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -539,6 +601,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         App Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-app-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -549,6 +619,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Status
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-status"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -569,6 +647,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Updated
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-update"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -713,7 +799,7 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -744,10 +830,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-workloads"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -792,20 +889,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -814,10 +902,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -828,20 +927,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -851,10 +941,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -899,20 +1000,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -1084,6 +1176,23 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     class="input-info flex gaps"
                   />
                 </div>
+                <i
+                  class="Icon export-to-csv material interactive focusable"
+                  data-testid="item-list-layout-export-to-csv"
+                  tabindex="0"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="file_download"
+                  >
+                    file_download
+                  </span>
+                </i>
+                <div
+                  data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                >
+                  Export to CSV
+                </div>
               </div>
               <div
                 class="items box grow flex column"
@@ -1116,6 +1225,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Name
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-name"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1136,6 +1253,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Namespace
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-namespace"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1156,6 +1281,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Chart
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-chart"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1176,6 +1309,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Revision
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-revision"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1196,6 +1337,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -1206,6 +1355,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         App Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-app-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -1216,6 +1373,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Status
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-status"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1236,6 +1401,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Updated
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-update"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1483,7 +1656,7 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -1514,10 +1687,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-workloads"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -1562,20 +1746,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -1584,10 +1759,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -1598,20 +1784,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -1621,10 +1798,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -1669,20 +1857,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -1854,6 +2033,23 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     class="input-info flex gaps"
                   />
                 </div>
+                <i
+                  class="Icon export-to-csv material interactive focusable"
+                  data-testid="item-list-layout-export-to-csv"
+                  tabindex="0"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="file_download"
+                  >
+                    file_download
+                  </span>
+                </i>
+                <div
+                  data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                >
+                  Export to CSV
+                </div>
               </div>
               <div
                 class="items box grow flex column"
@@ -1886,6 +2082,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Name
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-name"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1906,6 +2110,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Namespace
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-namespace"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1926,6 +2138,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Chart
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-chart"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1946,6 +2166,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Revision
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-revision"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1966,6 +2194,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -1976,6 +2212,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         App Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-app-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -1986,6 +2230,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Status
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-status"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2006,6 +2258,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Updated
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-update"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2269,7 +2529,7 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
     />
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -2300,10 +2560,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-workloads"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -2348,20 +2619,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -2370,10 +2632,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -2384,20 +2657,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -2407,10 +2671,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -2455,20 +2730,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -2640,6 +2906,23 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     class="input-info flex gaps"
                   />
                 </div>
+                <i
+                  class="Icon export-to-csv material interactive focusable"
+                  data-testid="item-list-layout-export-to-csv"
+                  tabindex="0"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="file_download"
+                  >
+                    file_download
+                  </span>
+                </i>
+                <div
+                  data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                >
+                  Export to CSV
+                </div>
               </div>
               <div
                 class="items box grow flex column"
@@ -2672,6 +2955,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Name
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-name"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2692,6 +2983,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Namespace
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-namespace"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2712,6 +3011,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Chart
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-chart"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2732,6 +3039,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Revision
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-revision"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2752,6 +3067,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -2762,6 +3085,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         App Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-app-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -2772,6 +3103,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Status
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-status"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2792,6 +3131,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Updated
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-update"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -3091,7 +3438,7 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
     />
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -3122,10 +3469,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-workloads"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -3170,20 +3528,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -3192,10 +3541,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -3206,20 +3566,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -3229,10 +3580,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -3277,20 +3639,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -3462,6 +3815,23 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     class="input-info flex gaps"
                   />
                 </div>
+                <i
+                  class="Icon export-to-csv material interactive focusable"
+                  data-testid="item-list-layout-export-to-csv"
+                  tabindex="0"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="file_download"
+                  >
+                    file_download
+                  </span>
+                </i>
+                <div
+                  data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                >
+                  Export to CSV
+                </div>
               </div>
               <div
                 class="items box grow flex column"
@@ -3494,6 +3864,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Name
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-name"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -3514,6 +3892,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Namespace
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-namespace"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -3534,6 +3920,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Chart
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-chart"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -3554,6 +3948,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Revision
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-revision"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -3574,6 +3976,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -3584,6 +3994,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         App Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-app-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -3594,6 +4012,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Status
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-status"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -3614,6 +4040,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Updated
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-update"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -4053,7 +4487,7 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
     />
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -4084,10 +4518,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-workloads"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -4132,20 +4577,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -4154,10 +4590,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -4168,20 +4615,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -4191,10 +4629,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -4239,20 +4688,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -4424,6 +4864,23 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     class="input-info flex gaps"
                   />
                 </div>
+                <i
+                  class="Icon export-to-csv material interactive focusable"
+                  data-testid="item-list-layout-export-to-csv"
+                  tabindex="0"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="file_download"
+                  >
+                    file_download
+                  </span>
+                </i>
+                <div
+                  data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                >
+                  Export to CSV
+                </div>
               </div>
               <div
                 class="items box grow flex column"
@@ -4456,6 +4913,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Name
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-name"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -4476,6 +4941,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Namespace
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-namespace"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -4496,6 +4969,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Chart
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-chart"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -4516,6 +4997,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Revision
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-revision"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -4536,6 +5025,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -4546,6 +5043,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         App Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-app-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -4556,6 +5061,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Status
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-status"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -4576,6 +5089,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Updated
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-update"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -5017,7 +5538,7 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
     />
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -5048,10 +5569,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-workloads"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -5096,20 +5628,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -5118,10 +5641,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -5132,20 +5666,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -5155,10 +5680,21 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -5203,20 +5739,11 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -5388,6 +5915,23 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                     class="input-info flex gaps"
                   />
                 </div>
+                <i
+                  class="Icon export-to-csv material interactive focusable"
+                  data-testid="item-list-layout-export-to-csv"
+                  tabindex="0"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="file_download"
+                  >
+                    file_download
+                  </span>
+                </i>
+                <div
+                  data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                >
+                  Export to CSV
+                </div>
               </div>
               <div
                 class="items box grow flex column"
@@ -5420,6 +5964,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Name
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-name"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -5440,6 +5992,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Namespace
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-namespace"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -5460,6 +6020,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Chart
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-chart"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -5480,6 +6048,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Revision
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-revision"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -5500,6 +6076,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -5510,6 +6094,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         App Version
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-app-version"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                     </div>
                     <div
@@ -5520,6 +6112,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Status
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-status"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -5540,6 +6140,14 @@ exports[`New Upgrade Helm Chart Dock Tab given a namespace is selected when navi
                         class="content"
                       >
                         Updated
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-update"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"

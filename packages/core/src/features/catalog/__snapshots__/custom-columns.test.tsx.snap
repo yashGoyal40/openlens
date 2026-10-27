@@ -78,7 +78,7 @@ exports[`custom category columns for catalog renders 1`] = `
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -296,6 +296,22 @@ exports[`custom category columns for catalog renders 1`] = `
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive disabled focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -314,6 +330,14 @@ exports[`custom category columns for catalog renders 1`] = `
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -335,6 +359,14 @@ exports[`custom category columns for catalog renders 1`] = `
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -356,6 +388,14 @@ exports[`custom category columns for catalog renders 1`] = `
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -377,6 +417,14 @@ exports[`custom category columns for catalog renders 1`] = `
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -388,6 +436,14 @@ exports[`custom category columns for catalog renders 1`] = `
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -664,7 +720,7 @@ exports[`custom category columns for catalog when category is added using defaul
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -913,6 +969,22 @@ exports[`custom category columns for catalog when category is added using defaul
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive disabled focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -931,6 +1003,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -952,6 +1032,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -973,6 +1061,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -994,6 +1090,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -1005,6 +1109,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -1281,7 +1393,7 @@ exports[`custom category columns for catalog when category is added using defaul
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -1530,6 +1642,22 @@ exports[`custom category columns for catalog when category is added using defaul
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive disabled focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -1548,6 +1676,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -1569,6 +1705,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -1590,6 +1734,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -1601,6 +1753,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -1622,6 +1782,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           High
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-high"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -1888,7 +2056,7 @@ exports[`custom category columns for catalog when category is added using defaul
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -2137,6 +2305,22 @@ exports[`custom category columns for catalog when category is added using defaul
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive disabled focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -2155,6 +2339,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -2176,6 +2368,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -2197,6 +2397,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -2208,6 +2416,14 @@ exports[`custom category columns for catalog when category is added using defaul
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -2484,7 +2700,7 @@ exports[`custom category columns for catalog when category is added with custom 
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -2733,6 +2949,22 @@ exports[`custom category columns for catalog when category is added with custom 
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive disabled focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -2751,6 +2983,14 @@ exports[`custom category columns for catalog when category is added with custom 
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -2772,6 +3012,14 @@ exports[`custom category columns for catalog when category is added with custom 
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -2793,6 +3041,14 @@ exports[`custom category columns for catalog when category is added with custom 
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -2814,6 +3070,14 @@ exports[`custom category columns for catalog when category is added with custom 
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -2825,6 +3089,14 @@ exports[`custom category columns for catalog when category is added with custom 
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -3101,7 +3373,7 @@ exports[`custom category columns for catalog when category is added with custom 
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -3350,6 +3622,22 @@ exports[`custom category columns for catalog when category is added with custom 
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive disabled focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -3368,6 +3656,14 @@ exports[`custom category columns for catalog when category is added with custom 
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -3389,6 +3685,14 @@ exports[`custom category columns for catalog when category is added with custom 
                           class="content"
                         >
                           Foo
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-foo"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -3655,7 +3959,7 @@ exports[`custom category columns for catalog when category is added without defa
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -3904,6 +4208,22 @@ exports[`custom category columns for catalog when category is added without defa
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive disabled focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -3922,6 +4242,14 @@ exports[`custom category columns for catalog when category is added without defa
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -3943,6 +4271,14 @@ exports[`custom category columns for catalog when category is added without defa
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -3964,6 +4300,14 @@ exports[`custom category columns for catalog when category is added without defa
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -3985,6 +4329,14 @@ exports[`custom category columns for catalog when category is added without defa
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -3996,6 +4348,14 @@ exports[`custom category columns for catalog when category is added without defa
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -4272,7 +4632,7 @@ exports[`custom category columns for catalog when category is added without defa
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -4521,6 +4881,22 @@ exports[`custom category columns for catalog when category is added without defa
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive disabled focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -4539,6 +4915,14 @@ exports[`custom category columns for catalog when category is added without defa
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"

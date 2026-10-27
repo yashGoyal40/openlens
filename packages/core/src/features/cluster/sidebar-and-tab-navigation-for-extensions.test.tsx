@@ -407,7 +407,7 @@ describe("cluster - sidebar and tab navigation for extensions", () => {
             expect(actual).toEqual({
               sidebar: {
                 expanded: { "sidebar-item-some-extension-name-some-parent-id": true },
-                width: 200,
+                width: 240,
               },
             });
           });

@@ -63,7 +63,7 @@ const NonInjectedSidebarItem = observer((props: SidebarItemProps & Dependencies)
       <NavLink
         to={""}
         isActive={() => isActive}
-        className={styles.navItem}
+        className={isExpandable ? `${styles.navItem} ${styles.expandable}` : styles.navItem}
         onClick={(event) => {
           event.preventDefault();
           event.stopPropagation();
@@ -76,15 +76,17 @@ const NonInjectedSidebarItem = observer((props: SidebarItemProps & Dependencies)
         }}
         data-testid={`link-for-${id}`}
       >
+        {isExpandable
+          ? (
+            <Icon
+              className={styles.expandIcon}
+              material={expanded ? "keyboard_arrow_down" : "keyboard_arrow_right"}
+              data-testid={`expand-icon-for-${id}`}
+            />
+          )
+          : <span className={styles.expandIconPlaceholder} />}
         {item.getIcon?.()}
-        <span>{item.title}</span>
-        {isExpandable && (
-          <Icon
-            className={styles.expandIcon}
-            material={expanded ? "keyboard_arrow_up" : "keyboard_arrow_down"}
-            data-testid={`expand-icon-for-${id}`}
-          />
-        )}
+        <span className={styles.title}>{item.title}</span>
       </NavLink>
       {renderSubMenu()}
     </div>

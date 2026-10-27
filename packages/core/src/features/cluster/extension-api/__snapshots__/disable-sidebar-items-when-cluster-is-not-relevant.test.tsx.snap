@@ -46,7 +46,7 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -78,10 +78,21 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -126,20 +137,11 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -148,10 +150,21 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -162,20 +175,11 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -184,10 +188,21 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -232,20 +247,11 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -258,10 +264,15 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
                 data-testid="link-for-sidebar-item-test-extension-sidebar-item-some"
                 href="/"
               >
+                <span
+                  class="expandIconPlaceholder"
+                />
                 <div>
                   Some icon
                 </div>
-                <span>
+                <span
+                  class="title"
+                >
                   Some sidebar item
                 </span>
               </a>
@@ -581,7 +592,7 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -613,10 +624,21 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -661,20 +683,11 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -683,10 +696,21 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -697,20 +721,11 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -719,10 +734,21 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -767,20 +793,11 @@ exports[`disable sidebar items when cluster is not relevant given extension shou
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -1098,7 +1115,7 @@ exports[`disable sidebar items when cluster is not relevant given not yet known 
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -1130,10 +1147,21 @@ exports[`disable sidebar items when cluster is not relevant given not yet known 
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -1178,20 +1206,11 @@ exports[`disable sidebar items when cluster is not relevant given not yet known 
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -1200,10 +1219,21 @@ exports[`disable sidebar items when cluster is not relevant given not yet known 
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -1214,20 +1244,11 @@ exports[`disable sidebar items when cluster is not relevant given not yet known 
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -1236,10 +1257,21 @@ exports[`disable sidebar items when cluster is not relevant given not yet known 
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -1284,20 +1316,11 @@ exports[`disable sidebar items when cluster is not relevant given not yet known 
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>

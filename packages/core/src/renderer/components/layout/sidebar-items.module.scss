@@ -7,57 +7,72 @@
 
   > .navItem {
     display: flex;
-    gap: 8px;
+    align-items: center;
+    gap: 4px;
     text-decoration: none;
-    padding: 6px 8px 6px 10px;
+    padding: 3px 8px 3px 6px;
+    margin: 0 4px;
+    border-radius: var(--border-radius);
     cursor: pointer;
 
-    &:global(.active), &:hover {
-      background: var(--blue);
-      color: var(--sidebarActiveColor);
+    :global(.Icon) {
+      --size: 16px;
     }
 
-    span {
-      word-break: break-word;
+    &:hover {
+      background: var(--sidebarItemHoverBackground);
+      color: var(--textColorAccent);
     }
+
+    &:global(.active) {
+      color: var(--textColorAccent);
+    }
+
+    &:global(.active):not(.expandable) {
+      background: var(--sidebarItemHoverBackground);
+      box-shadow: inset 0 0 0 1px var(--blue);
+    }
+  }
+
+  .title {
+    margin-left: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .expandIcon {
-    margin-left: auto;
+    flex-shrink: 0;
+    color: var(--textColorSecondary);
   }
 
-  .subMenu {
-    border-left: 4px solid transparent;
+  .expandIconPlaceholder {
+    flex-shrink: 0;
+    width: 16px;
+  }
 
-    &.active {
-      border-color: var(--blue);
-    }
-  
+  // guide line below the parent's icon
+  .subMenu {
+    margin: 1px 0 1px 33px;
+    border-left: 1px solid var(--borderColor);
+
     .SidebarItem {
       color: var(--textColorPrimary);
-      padding-left: 25px;
-  
-      .navItem {
-        padding-top: 4px;
-        padding-bottom: 4px;
 
-        &:global(.active), &:hover {
-          color: var(--sidebarSubmenuActiveColor);
-          background: none;
-        }
+      > .navItem {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 4px;
+      }
+
+      .expandIconPlaceholder {
+        width: 4px;
       }
     }
-  }
 
-   // 3rd menu level
-  .subMenu .subMenu {
-    &.active {
-      border-color: transparent;
-    }
-
-    .SidebarItem {
-      padding-left: calc(var(--padding) / 2);
+    // 3rd menu level
+    .subMenu {
+      margin-left: 14px;
     }
   }
 }
-

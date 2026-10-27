@@ -1,0 +1,36 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.statusBadge {
+  &.success {
+    color: var(--colorSuccess);
+  }
+
+  &.warning {
+    color: var(--colorWarning);
+  }
+
+  &.error {
+    color: var(--colorError);
+  }
+
+  &.info {
+    color: var(--colorInfo);
+  }
+
+  &.vague {
+    color: var(--colorVague);
+  }
+}
+
+.conditions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--padding);
+}
+
+.subTable {
+  margin-top: var(--padding);
+}

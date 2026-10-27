@@ -97,18 +97,18 @@ describe("ApiManager", () => {
 
   describe("technical tests for autorun", () => {
     it("given two extensions register apis with the same apibase, settle into using the second", () => {
-      const apiBase = "/apis/aquasecurity.github.io/v1alpha1/vulnerabilityreports";
+      const apiBase = "/apis/example.com/v1/widgets";
       const firstApi = Object.assign(new ExternalKubeApi({
         objectConstructor: KubeObject,
         apiBase,
-        kind: "VulnerabilityReport",
+        kind: "Widget",
       }), {
         myField: 1,
       });
       const secondApi = Object.assign(new ExternalKubeApi({
         objectConstructor: KubeObject,
         apiBase,
-        kind: "VulnerabilityReport",
+        kind: "Widget",
       }), {
         myField: 2,
       });
@@ -123,7 +123,7 @@ describe("ApiManager", () => {
   });
 
   describe("given than a CRD has a default KubeApi registered for it", () => {
-    const apiBase = "/apis/aquasecurity.github.io/v1alpha1/vulnerabilityreports";
+    const apiBase = "/apis/example.com/v1/widgets";
 
     beforeEach(() => {
       runInAction(() => {
@@ -131,7 +131,7 @@ describe("ApiManager", () => {
           id: `default-kube-api-for-custom-resource-definition-${apiBase}`,
           instantiate: (di) => {
             const objectConstructor = class extends KubeObject {
-              static readonly kind = "VulnerabilityReport";
+              static readonly kind = "Widget";
               static readonly namespaced = true;
               static readonly apiBase = apiBase;
             };
@@ -168,7 +168,7 @@ describe("ApiManager", () => {
         void Object.assign(new ExternalKubeApi({
           objectConstructor: KubeObject,
           apiBase,
-          kind: "VulnerabilityReport",
+          kind: "Widget",
         }), {
           myField: 2,
         });

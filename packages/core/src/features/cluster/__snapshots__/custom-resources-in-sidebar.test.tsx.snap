@@ -45,7 +45,7 @@ exports[`cluster - custom resources in sidebar renders 1`] = `
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -77,10 +77,21 @@ exports[`cluster - custom resources in sidebar renders 1`] = `
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -125,20 +136,11 @@ exports[`cluster - custom resources in sidebar renders 1`] = `
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -147,10 +149,21 @@ exports[`cluster - custom resources in sidebar renders 1`] = `
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -161,20 +174,11 @@ exports[`cluster - custom resources in sidebar renders 1`] = `
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -183,10 +187,21 @@ exports[`cluster - custom resources in sidebar renders 1`] = `
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -231,20 +246,11 @@ exports[`cluster - custom resources in sidebar renders 1`] = `
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -560,7 +566,7 @@ exports[`cluster - custom resources in sidebar when custom resource definitions 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -592,10 +598,21 @@ exports[`cluster - custom resources in sidebar when custom resource definitions 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -640,20 +657,11 @@ exports[`cluster - custom resources in sidebar when custom resource definitions 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -662,10 +670,21 @@ exports[`cluster - custom resources in sidebar when custom resource definitions 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -676,20 +695,11 @@ exports[`cluster - custom resources in sidebar when custom resource definitions 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -698,10 +708,21 @@ exports[`cluster - custom resources in sidebar when custom resource definitions 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -746,20 +767,11 @@ exports[`cluster - custom resources in sidebar when custom resource definitions 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -768,10 +780,21 @@ exports[`cluster - custom resources in sidebar when custom resource definitions 
             data-testid="sidebar-item-custom-resources"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-custom-resources"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-custom-resources"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -782,20 +805,11 @@ exports[`cluster - custom resources in sidebar when custom resource definitions 
                   extension
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Custom Resources
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-custom-resources"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -1111,7 +1125,7 @@ exports[`cluster - custom resources in sidebar when custom resource exists rende
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -1143,10 +1157,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists rende
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -1191,20 +1216,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists rende
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -1213,10 +1229,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists rende
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -1227,20 +1254,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists rende
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -1249,10 +1267,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists rende
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -1297,20 +1326,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists rende
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -1626,7 +1646,7 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -1658,10 +1678,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -1706,20 +1737,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -1728,10 +1750,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -1742,20 +1775,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -1764,10 +1788,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -1812,20 +1847,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -1834,10 +1860,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-custom-resources"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-custom-resources"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-custom-resources"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -1848,20 +1885,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   extension
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Custom Resources
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-custom-resources"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -2177,7 +2205,7 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -2209,10 +2237,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -2257,20 +2296,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -2279,10 +2309,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -2293,20 +2334,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -2315,10 +2347,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -2363,20 +2406,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -2385,10 +2419,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-custom-resources"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-custom-resources"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-custom-resources"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_down"
+                >
+                  keyboard_arrow_down
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -2399,20 +2444,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   extension
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Custom Resources
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-custom-resources"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_up"
-                >
-                  keyboard_arrow_up
-                </span>
-              </i>
             </a>
             <div
               class="subMenu"
@@ -2428,7 +2464,12 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   data-testid="link-for-sidebar-item-custom-resource-definitions"
                   href="/"
                 >
-                  <span>
+                  <span
+                    class="expandIconPlaceholder"
+                  />
+                  <span
+                    class="title"
+                  >
                     Definitions
                   </span>
                 </a>
@@ -2748,7 +2789,7 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -2780,10 +2821,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -2828,20 +2880,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -2850,10 +2893,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -2864,20 +2918,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -2886,10 +2931,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -2934,20 +2990,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -2956,10 +3003,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-custom-resources"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-custom-resources"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-custom-resources"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -2970,20 +3028,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   extension
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Custom Resources
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-custom-resources"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
         </div>
@@ -3299,7 +3348,7 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -3331,10 +3380,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -3379,20 +3439,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -3401,10 +3452,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -3415,20 +3477,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -3437,10 +3490,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -3485,20 +3549,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -3507,10 +3562,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-custom-resources"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-custom-resources"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-custom-resources"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_down"
+                >
+                  keyboard_arrow_down
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -3521,20 +3587,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   extension
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Custom Resources
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-custom-resources"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_up"
-                >
-                  keyboard_arrow_up
-                </span>
-              </i>
             </a>
             <div
               class="subMenu"
@@ -3546,24 +3603,26 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                 data-testid="sidebar-item-custom-resource-group-some.group.com"
               >
                 <a
-                  class="navItem"
+                  class="navItem expandable"
                   data-testid="link-for-sidebar-item-custom-resource-group-some.group.com"
                   href="/"
                 >
-                  <span>
-                    some​.group​.com
-                  </span>
                   <i
                     class="Icon expandIcon material focusable"
                     data-testid="expand-icon-for-sidebar-item-custom-resource-group-some.group.com"
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_right"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_right
                     </span>
                   </i>
+                  <span
+                    class="title"
+                  >
+                    some​.group​.com
+                  </span>
                 </a>
               </div>
             </div>
@@ -3881,7 +3940,7 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
   </div>
   <div
     class="mainLayout"
-    style="--sidebar-width: 200px;"
+    style="--sidebar-width: 240px;"
   >
     <div
       class="sidebar"
@@ -3913,10 +3972,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
           >
             <a
               aria-current="page"
-              class="navItem active"
+              class="navItem expandable active"
               data-testid="link-for-sidebar-item-workloads"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-workloads"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -3961,20 +4031,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Workloads
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-workloads"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -3983,10 +4044,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-network"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-network"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-network"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -3997,20 +4069,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   device_hub
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Network
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-network"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -4019,10 +4082,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-helm"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-helm"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-helm"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_right"
+                >
+                  keyboard_arrow_right
+                </span>
+              </i>
               <i
                 class="Icon svg focusable"
               >
@@ -4067,20 +4141,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   </svg>
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Helm
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-helm"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_down"
-                >
-                  keyboard_arrow_down
-                </span>
-              </i>
             </a>
           </div>
           <div
@@ -4089,10 +4154,21 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
             data-testid="sidebar-item-custom-resources"
           >
             <a
-              class="navItem"
+              class="navItem expandable"
               data-testid="link-for-sidebar-item-custom-resources"
               href="/"
             >
+              <i
+                class="Icon expandIcon material focusable"
+                data-testid="expand-icon-for-sidebar-item-custom-resources"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="keyboard_arrow_down"
+                >
+                  keyboard_arrow_down
+                </span>
+              </i>
               <i
                 class="Icon material focusable"
               >
@@ -4103,20 +4179,11 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                   extension
                 </span>
               </i>
-              <span>
+              <span
+                class="title"
+              >
                 Custom Resources
               </span>
-              <i
-                class="Icon expandIcon material focusable"
-                data-testid="expand-icon-for-sidebar-item-custom-resources"
-              >
-                <span
-                  class="icon"
-                  data-icon-name="keyboard_arrow_up"
-                >
-                  keyboard_arrow_up
-                </span>
-              </i>
             </a>
             <div
               class="subMenu"
@@ -4128,24 +4195,26 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                 data-testid="sidebar-item-custom-resource-group-some.group.com"
               >
                 <a
-                  class="navItem"
+                  class="navItem expandable"
                   data-testid="link-for-sidebar-item-custom-resource-group-some.group.com"
                   href="/"
                 >
-                  <span>
-                    some​.group​.com
-                  </span>
                   <i
                     class="Icon expandIcon material focusable"
                     data-testid="expand-icon-for-sidebar-item-custom-resource-group-some.group.com"
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_up"
+                      data-icon-name="keyboard_arrow_down"
                     >
-                      keyboard_arrow_up
+                      keyboard_arrow_down
                     </span>
                   </i>
+                  <span
+                    class="title"
+                  >
+                    some​.group​.com
+                  </span>
                 </a>
                 <div
                   class="subMenu"
@@ -4161,7 +4230,12 @@ exports[`cluster - custom resources in sidebar when custom resource exists when 
                       data-testid="link-for-sidebar-item-custom-resource-group-some.group.com/some-resources"
                       href="/"
                     >
-                      <span>
+                      <span
+                        class="expandIconPlaceholder"
+                      />
+                      <span
+                        class="title"
+                      >
                         Some Resource
                       </span>
                     </a>

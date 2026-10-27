@@ -7,17 +7,36 @@
   background: var(--contentColor);
   height: 100%;
 
+  // filters, search and export first, then the item count, all aligned to the left
   > .header {
-    --flex-gap: #{$padding * 2};
-    padding: var(--flex-gap);
+    --flex-gap: #{$padding};
+    padding: $padding $padding * 1.5;
+    border-bottom: 1px solid var(--borderFaintColor);
 
     .title {
-      color: var(--textColorTertiary);
+      display: none;
     }
 
     .info-panel {
-      text-align: center;
+      order: 1;
+      flex-grow: 0;
       white-space: nowrap;
+      color: var(--textColorSecondary);
+    }
+
+    .NamespaceSelectFilterParent {
+      width: 240px;
+      max-width: 35%;
+    }
+
+    .SearchInput {
+      --spacing: 4px 6px 4px 8px;
+      width: 260px;
+      max-width: 35%;
+    }
+
+    .Select__control {
+      min-height: 28px;
     }
 
     .NamespaceSelect {
@@ -32,6 +51,26 @@
   > .items {
     position: relative;
     min-height: 130px;
+  }
+
+  // drag handle on the right edge of resizable column headers, kept inside the (overflow hidden) cell
+  .TableHead .column-resize-anchor .ResizingAnchor.horizontal.trailing {
+    right: 0;
+    width: 8px;
+
+    &::after {
+      width: 1px;
+      margin-left: 7px;
+      background: var(--borderColor);
+    }
+
+    &:hover::after,
+    &.resizing::after {
+      width: 2px;
+      margin-left: 6px;
+      background: var(--blue);
+      transition-delay: 0s;
+    }
   }
 }
 

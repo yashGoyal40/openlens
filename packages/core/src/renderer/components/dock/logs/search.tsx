@@ -9,7 +9,10 @@ import React, { useEffect } from "react";
 import { observer } from "mobx-react";
 import { SearchInput } from "../../input";
 import { Icon } from "@k8slens/icon";
+import type { StrictReactNode } from "@k8slens/utilities";
+import { cssNames } from "@k8slens/utilities";
 import type { LogTabViewModel } from "./logs-view-model";
+import type { LogTabData } from "./tab-store";
 
 export interface PodLogSearchProps {
   onSearch?: (query: string) => void;
@@ -17,21 +20,48 @@ export interface PodLogSearchProps {
   model: LogTabViewModel;
 }
 
-export const LogSearch = observer(({ onSearch, scrollToOverlay, model: { logTabData, searchStore, ...model }}: PodLogSearchProps) => {
-  const tabData = logTabData.get();
+interface SearchOptionToggleProps {
+  active: boolean;
+  title: string;
+  onToggle: () => void;
+  children: StrictReactNode;
+  "data-testid": string;
+}
+
+const SearchOptionToggle = ({ active, title, onToggle, children, "data-testid": testId }: SearchOptionToggleProps) => (
+  <button
+    type="button"
+    className={cssNames("search-option", { active })}
+    title={title}
+    aria-label={title}
+    aria-pressed={active}
+    onClick={onToggle}
+    data-testid={testId}
+  >
+    {children}
+  </button>
+);
+
+export const LogSearch = observer(({ onSearch, scrollToOverlay, model }: PodLogSearchProps) => {
+  const tabData = model.logTabData.get();
+  const logs = model.visibleLogs.get();
+
+  useEffect(() => {
+    // Refresh search when logs changed
+    model.search();
+  }, [logs]);
 
   if (!tabData) {
     return null;
   }
 
-  const logs = tabData.showTimestamps
-    ? model.logs.get()
-    : model.logsWithoutTimestamps.get();
+  const { searchStore } = model;
   const { setNextOverlayActive, setPrevOverlayActive, searchQuery, occurrences, activeFind, totalFinds } = searchStore;
   const jumpDisabled = !searchQuery || !occurrences.length;
+  const searchError = model.searchMatcher.get()?.error;
 
   const setSearch = (query: string) => {
-    searchStore.onSearch(logs, query);
+    model.search(query);
     onSearch?.(query);
     scrollToOverlay(searchStore.activeOverlayLine);
   };
@@ -60,10 +90,11 @@ export const LogSearch = observer(({ onSearch, scrollToOverlay, model: { logTabD
     }
   };
 
-  useEffect(() => {
-    // Refresh search when logs changed
-    searchStore.onSearch(logs);
-  }, [logs]);
+  const toggleOption = (option: keyof Pick<LogTabData, "searchIsCaseSensitive" | "searchIsRegex" | "showOnlyMatching">) => () => {
+    model.updateLogTabData({ [option]: !tabData[option] });
+    model.search();
+    scrollToOverlay(searchStore.activeOverlayLine);
+  };
 
   return (
     <div className="LogSearch flex box grow justify-flex-end gaps align-center">
@@ -71,14 +102,54 @@ export const LogSearch = observer(({ onSearch, scrollToOverlay, model: { logTabD
         value={searchQuery}
         onChange={setSearch}
         showClearIcon={true}
-        contentRight={totalFinds > 0 && (
-          <div className="find-count">
-            {`${activeFind} / ${totalFinds}`}
-          </div>
+        className={cssNames({ invalid: Boolean(searchError) })}
+        contentRight={(
+          <>
+            {totalFinds > 0 && (
+              <div className="find-count">
+                {`${activeFind} / ${totalFinds}`}
+              </div>
+            )}
+            {searchError && (
+              <Icon
+                material="error_outline"
+                className="search-error"
+                tooltip={`Invalid regular expression: ${searchError}`}
+                small
+                data-testid="log-search-error"
+              />
+            )}
+          </>
         )}
         onClear={onClear}
         onKeyDown={onKeyDown}
       />
+      <div className="search-options flex align-center">
+        <SearchOptionToggle
+          active={tabData.searchIsCaseSensitive ?? false}
+          title="Match case"
+          onToggle={toggleOption("searchIsCaseSensitive")}
+          data-testid="log-search-case-sensitive"
+        >
+          Aa
+        </SearchOptionToggle>
+        <SearchOptionToggle
+          active={tabData.searchIsRegex ?? false}
+          title="Use regular expression"
+          onToggle={toggleOption("searchIsRegex")}
+          data-testid="log-search-regex"
+        >
+          .*
+        </SearchOptionToggle>
+        <SearchOptionToggle
+          active={tabData.showOnlyMatching ?? false}
+          title="Show only matching lines"
+          onToggle={toggleOption("showOnlyMatching")}
+          data-testid="log-search-show-only-matching"
+        >
+          <Icon material="filter_list" small />
+        </SearchOptionToggle>
+      </div>
       <Icon
         material="keyboard_arrow_up"
         tooltip="Previous"

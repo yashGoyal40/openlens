@@ -1,0 +1,195 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.costMonitoring {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--padding) * 2);
+  min-height: 100%;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--padding) * 2);
+  background: var(--contentColor);
+  padding: calc(var(--padding) * 2);
+
+  h5 {
+    color: var(--textColorPrimary);
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: calc(var(--padding) / 2);
+}
+
+.source {
+  color: var(--textColorDimmed);
+  font-size: var(--font-size-small);
+}
+
+.namespaceFilter {
+  min-width: 250px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--padding) * 2);
+  background: var(--contentColor);
+  padding: var(--padding) calc(var(--padding) * 2);
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: var(--padding);
+}
+
+.controlLabel {
+  color: var(--textColorSecondary);
+}
+
+.labelKey {
+  width: 220px;
+}
+
+.panel {
+  background: var(--contentColor);
+  padding: calc(var(--padding) * 2);
+
+  h6 {
+    color: var(--textColorPrimary);
+    margin-bottom: var(--padding);
+  }
+
+  p {
+    margin-bottom: var(--padding);
+  }
+}
+
+.settingsFields {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: calc(var(--padding) * 2);
+  margin-bottom: calc(var(--padding) * 2);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--padding) / 2);
+
+  > span {
+    color: var(--textColorSecondary);
+  }
+}
+
+.actions {
+  display: flex;
+  gap: var(--padding);
+}
+
+.error {
+  color: var(--colorError);
+  word-break: break-word;
+}
+
+.hint {
+  color: var(--textColorDimmed);
+}
+
+.commands {
+  font-family: var(--font-monospace);
+  background: var(--mainBackground);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--padding);
+  white-space: pre-wrap;
+  user-select: text;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--padding);
+  padding: calc(var(--padding) * 4);
+}
+
+.summaryLine {
+  color: var(--textColorDimmed);
+}
+
+.table {
+  background: var(--contentColor);
+
+  :global(.TableCell) {
+    flex: 1 0 0;
+    min-width: 0;
+
+    &.nameCell {
+      flex-grow: 3;
+    }
+
+    &.numberCell {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    &.shareCell {
+      flex-grow: 1.5;
+    }
+
+    &.sortableCell {
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}
+
+.special {
+  font-style: italic;
+  color: var(--textColorSecondary);
+}
+
+.totals {
+  font-weight: bold;
+  border-top: 1px solid var(--borderFaintColor);
+}
+
+.shareBar {
+  display: flex;
+  align-items: center;
+  gap: var(--padding);
+  width: 100%;
+
+  :global(.LineProgress) {
+    flex-grow: 1;
+    color: var(--colorInfo);
+    min-width: 40px;
+  }
+
+  > span {
+    min-width: 48px;
+    text-align: right;
+  }
+}
+
+.sortIcon {
+  margin-left: calc(var(--padding) / 2);
+}
+
+.namespaceCost {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--padding) / 2);
+}

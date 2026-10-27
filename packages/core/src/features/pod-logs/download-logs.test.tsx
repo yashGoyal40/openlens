@@ -4,7 +4,7 @@
  */
 
 import type { RenderResult } from "@testing-library/react";
-import { act, waitFor } from "@testing-library/react";
+import { act, fireEvent, waitFor } from "@testing-library/react";
 import getPodByIdInjectable from "../../renderer/components/workloads-pods/get-pod-by-id.injectable";
 import getPodsByOwnerIdInjectable from "../../renderer/components/workloads-pods/get-pods-by-owner-id.injectable";
 import openSaveFileDialogInjectable from "../../renderer/utils/save-file.injectable";
@@ -27,7 +27,9 @@ import stopLoadingLogsInjectable from "../../renderer/components/dock/logs/stop-
 import { dockerPod } from "../../renderer/components/dock/logs/__test__/pod.mock";
 import { showErrorNotificationInjectable } from "@k8slens/notifications";
 import type { DiContainer } from "@ogre-tools/injectable";
+import assert from "assert";
 import type { Container } from "@k8slens/kube-object";
+import type { LogTabData } from "../../renderer/components/dock/logs/tab-store";
 
 describe("download logs options in logs dock tab", () => {
   let windowDi: DiContainer;
@@ -38,6 +40,7 @@ describe("download logs options in logs dock tab", () => {
   let getLogsMock: jest.Mock;
   let getSplitLogsMock: jest.Mock;
   let showErrorNotificationMock: jest.Mock;
+  let logTabData: LogTabData;
   const logs = new Map([["timestamp", "some-logs"]]);
   const pod = dockerPod;
 
@@ -50,6 +53,13 @@ describe("download logs options in logs dock tab", () => {
     const selectedPod = dockerPod;
 
     builder = getApplicationBuilder();
+    logTabData = {
+      selectedPodId: selectedPod.getId(),
+      selectedContainer: selectedPod.getContainers()[0].name,
+      namespace: "default",
+      showPrevious: true,
+      showTimestamps: false,
+    };
 
     builder.setEnvironmentToClusterFrame();
 
@@ -65,13 +75,7 @@ describe("download logs options in logs dock tab", () => {
       windowDi.override(getLogsWithoutTimestampsInjectable, () => getLogsMock);
       windowDi.override(getTimestampSplitLogsInjectable, () => getSplitLogsMock);
       windowDi.override(reloadLogsInjectable, () => jest.fn());
-      windowDi.override(getLogTabDataInjectable, () => () => ({
-        selectedPodId: selectedPod.getId(),
-        selectedContainer: selectedPod.getContainers()[0].name,
-        namespace: "default",
-        showPrevious: true,
-        showTimestamps: false,
-      }));
+      windowDi.override(getLogTabDataInjectable, () => () => logTabData);
       windowDi.override(setLogTabDataInjectable, () => jest.fn());
       windowDi.override(loadLogsInjectable, () => jest.fn());
       windowDi.override(stopLoadingLogsInjectable, () => jest.fn());
@@ -126,6 +130,73 @@ describe("download logs options in logs dock tab", () => {
         const downloadButton = rendered.getByTestId("download-logs-dropdown");
 
         expect(downloadButton).toBeDisabled();
+      });
+    });
+
+    describe("when logs available, showing only lines matching the search and a 'since' is selected", () => {
+      beforeEach(() => {
+        const createLogsTab = windowDi.inject(createPodLogsTabInjectable);
+
+        logTabData = {
+          ...logTabData,
+          showOnlyMatching: true,
+          sinceSeconds: 3600,
+        };
+        getLogsMock.mockReturnValue(["some-logs", "other-line", "more-logs"]);
+        getSplitLogsMock.mockReturnValue([["timestamp", "some-logs"], ["timestamp", "other-line"], ["timestamp", "more-logs"]]);
+
+        createLogsTab({
+          selectedPod: pod,
+          selectedContainer: container,
+        });
+      });
+
+      describe("when searching", () => {
+        beforeEach(() => {
+          const searchInput = rendered.baseElement.querySelector(".LogSearch input");
+
+          assert(searchInput);
+          fireEvent.change(searchInput, { target: { value: "logs" }});
+        });
+
+        it("shows only the matching lines", () => {
+          const rows = [...rendered.baseElement.querySelectorAll(".LogList .LogRow")].map(row => row.textContent);
+
+          expect(rows).toEqual(["some-logs", "more-logs"]);
+        });
+
+        describe("when clicking on dropdown", () => {
+          beforeEach(() => {
+            act(() => rendered.getByTestId("download-logs-dropdown").click());
+          });
+
+          it("shows option to download filtered logs", () => {
+            expect(rendered.getByTestId("download-filtered-logs")).toBeInTheDocument();
+          });
+
+          it("when selected 'download filtered logs', shows save dialog with only the matching lines", () => {
+            rendered.getByTestId("download-filtered-logs").click();
+
+            expect(openSaveFileDialogMock).toHaveBeenCalledWith("dockerExporter-filtered.log", "some-logs\nmore-logs", "text/plain");
+          });
+
+          it("when selected 'download visible logs', shows save dialog with all loaded lines", () => {
+            rendered.getByTestId("download-visible-logs").click();
+
+            expect(openSaveFileDialogMock).toHaveBeenCalledWith("dockerExporter.log", "some-logs\nother-line\nmore-logs", "text/plain");
+          });
+
+          it("when selected 'download all logs', requests logs of the selected time range", async () => {
+            callForLogsMock.mockResolvedValue("all-logs");
+
+            await act(async () => rendered.getByTestId("download-all-logs").click());
+
+            expect(callForLogsMock).toHaveBeenCalledWith(
+              { name: "dockerExporter", namespace: "default" },
+              { previous: true, timestamps: false, container: "docker-exporter", sinceSeconds: 3600 },
+            );
+          });
+        });
       });
     });
 
@@ -222,6 +293,10 @@ describe("download logs options in logs dock tab", () => {
               expect(rendered.getByTestId("download-logs-dropdown")).not.toHaveAttribute("disabled");
             });
           });
+        });
+
+        it("doesn't show option to download filtered logs", () => {
+          expect(rendered.queryByTestId("download-filtered-logs")).not.toBeInTheDocument();
         });
 
         describe("when call for logs resolves with no logs", () => {

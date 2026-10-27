@@ -9,3 +9,13 @@
   background: var(--dockInfoBackground);
   padding: var(--padding) calc(var(--padding) * 2);
 }
+.since {
+  display: flex;
+  gap: var(--padding);
+  align-items: center;
+  white-space: nowrap;
+
+  :global(.Select) {
+    min-width: 80px;
+  }
+}

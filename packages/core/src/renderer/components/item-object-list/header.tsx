@@ -13,6 +13,7 @@ import type { ItemObject } from "@k8slens/list-layout";
 import type { Filter } from "./page-filters/store";
 import type { HeaderCustomizer, HeaderPlaceholders, ItemListStore, SearchFilter } from "./list-layout";
 import { SearchInputUrl } from "../input";
+import { Icon } from "@k8slens/icon";
 
 export interface ItemListLayoutHeaderProps<I extends ItemObject, PreLoadStores extends boolean> {
   getItems: () => I[];
@@ -29,6 +30,11 @@ export interface ItemListLayoutHeaderProps<I extends ItemObject, PreLoadStores e
     | StrictReactNode
     | (() => StrictReactNode);
   customizeHeader?: HeaderCustomizer | HeaderCustomizer[];
+
+  /**
+   * When provided an "Export to CSV" button is shown
+   */
+  onExportToCsv?: () => void;
 }
 
 @observer
@@ -44,6 +50,7 @@ export class ItemListLayoutHeader<I extends ItemObject, PreLoadStores extends bo
       store,
       getFilters,
       toggleFilters,
+      onExportToCsv,
     } = this.props;
 
     if (!showHeader) {
@@ -99,6 +106,16 @@ export class ItemListLayoutHeader<I extends ItemObject, PreLoadStores extends bo
         }
         {filters}
         {searchFilters.length > 0 && searchProps && <SearchInputUrl {...searchProps} />}
+        {onExportToCsv && (
+          <Icon
+            material="file_download"
+            className="export-to-csv"
+            tooltip="Export to CSV"
+            onClick={onExportToCsv}
+            disabled={getItems().length === 0}
+            data-testid="item-list-layout-export-to-csv"
+          />
+        )}
       </div>
     );
   }

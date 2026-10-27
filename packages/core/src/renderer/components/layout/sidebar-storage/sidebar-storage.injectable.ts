@@ -12,7 +12,7 @@ export interface SidebarStorageState {
   };
 }
 
-export const defaultSidebarWidth = 200;
+export const defaultSidebarWidth = 240;
 
 const sidebarStorageInjectable = getInjectable({
   id: "sidebar-storage",

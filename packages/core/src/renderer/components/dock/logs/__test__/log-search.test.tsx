@@ -14,7 +14,7 @@ import { LogTabViewModel } from "../logs-view-model";
 import type { TabId } from "../../dock/store";
 import { LogSearch } from "../search";
 import userEvent from "@testing-library/user-event";
-import { SearchStore } from "../../../../search-store/search-store";
+import { LogSearchStore } from "../log-search-store";
 
 function mockLogTabViewModel(tabId: TabId, deps: Partial<LogTabViewModelDependencies>): LogTabViewModel {
   return new LogTabViewModel(tabId, {
@@ -30,9 +30,10 @@ function mockLogTabViewModel(tabId: TabId, deps: Partial<LogTabViewModelDependen
     getPodById: jest.fn(),
     getPodsByOwnerId: jest.fn(),
     areLogsPresent: jest.fn(),
-    searchStore: new SearchStore(),
+    searchStore: new LogSearchStore(),
     downloadLogs: jest.fn(),
     downloadAllLogs: jest.fn(),
+    getLocaleTimezone: () => "UTC",
     ...deps,
   });
 }

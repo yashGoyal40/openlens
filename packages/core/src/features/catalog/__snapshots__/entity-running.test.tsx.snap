@@ -78,7 +78,7 @@ exports[`entity running technical tests when navigated to catalog renders 1`] = 
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -327,6 +327,23 @@ exports[`entity running technical tests when navigated to catalog renders 1`] = 
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                    tabindex="0"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -345,6 +362,14 @@ exports[`entity running technical tests when navigated to catalog renders 1`] = 
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -366,6 +391,14 @@ exports[`entity running technical tests when navigated to catalog renders 1`] = 
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -387,6 +420,14 @@ exports[`entity running technical tests when navigated to catalog renders 1`] = 
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -408,6 +449,14 @@ exports[`entity running technical tests when navigated to catalog renders 1`] = 
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -419,6 +468,14 @@ exports[`entity running technical tests when navigated to catalog renders 1`] = 
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -789,7 +846,7 @@ exports[`entity running technical tests when navigated to catalog when details p
         />
         <div
           class="mainLayout"
-          style="--sidebar-width: 200px;"
+          style="--sidebar-width: 240px;"
         >
           <div
             class="sidebar"
@@ -1038,6 +1095,23 @@ exports[`entity running technical tests when navigated to catalog when details p
                       class="input-info flex gaps"
                     />
                   </div>
+                  <i
+                    class="Icon export-to-csv material interactive focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                    tabindex="0"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
                 </div>
                 <div
                   class="items box grow flex column"
@@ -1056,6 +1130,14 @@ exports[`entity running technical tests when navigated to catalog when details p
                           class="content"
                         >
                           Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -1077,6 +1159,14 @@ exports[`entity running technical tests when navigated to catalog when details p
                           class="content"
                         >
                           Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -1098,6 +1188,14 @@ exports[`entity running technical tests when navigated to catalog when details p
                           class="content"
                         >
                           Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"
@@ -1119,6 +1217,14 @@ exports[`entity running technical tests when navigated to catalog when details p
                           class="content"
                         >
                           Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                       </div>
                       <div
@@ -1130,6 +1236,14 @@ exports[`entity running technical tests when navigated to catalog when details p
                           class="content"
                         >
                           Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
                         </div>
                         <i
                           class="Icon sortIcon material focusable"

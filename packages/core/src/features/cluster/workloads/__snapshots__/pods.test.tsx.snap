@@ -46,7 +46,7 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -78,10 +78,21 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -126,20 +137,11 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -148,10 +150,21 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -162,20 +175,11 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -184,10 +188,21 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -232,20 +247,11 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -417,6 +423,23 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                     class="input-info flex gaps"
                   />
                 </div>
+                <i
+                  class="Icon export-to-csv material interactive focusable"
+                  data-testid="item-list-layout-export-to-csv"
+                  tabindex="0"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="file_download"
+                  >
+                    file_download
+                  </span>
+                </i>
+                <div
+                  data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                >
+                  Export to CSV
+                </div>
               </div>
               <div
                 class="items box grow flex column"
@@ -449,6 +472,14 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                         class="content"
                       >
                         Name
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-name"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -476,6 +507,70 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                         class="content"
                       >
                         Namespace
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-namespace"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
+                      </div>
+                      <i
+                        class="Icon sortIcon material focusable"
+                      >
+                        <span
+                          class="icon"
+                          data-icon-name="arrow_drop_down"
+                        >
+                          arrow_drop_down
+                        </span>
+                      </i>
+                    </div>
+                    <div
+                      class="TableCell cpu nowrap sorting"
+                      id="cpu"
+                    >
+                      <div
+                        class="content"
+                      >
+                        CPU
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-cpu"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
+                      </div>
+                      <i
+                        class="Icon sortIcon material focusable"
+                      >
+                        <span
+                          class="icon"
+                          data-icon-name="arrow_drop_down"
+                        >
+                          arrow_drop_down
+                        </span>
+                      </i>
+                    </div>
+                    <div
+                      class="TableCell memory nowrap sorting"
+                      id="memory"
+                    >
+                      <div
+                        class="content"
+                      >
+                        Memory
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-memory"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -496,6 +591,14 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                         class="content"
                       >
                         Containers
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-containers"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -516,6 +619,14 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                         class="content"
                       >
                         Restarts
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-restarts"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -536,6 +647,14 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                         class="content"
                       >
                         Controlled By
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-owners"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -556,6 +675,14 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                         class="content"
                       >
                         Node
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-node"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -576,26 +703,14 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                         class="content"
                       >
                         QoS
-                      </div>
-                      <i
-                        class="Icon sortIcon material focusable"
-                      >
                         <span
-                          class="icon"
-                          data-icon-name="arrow_drop_down"
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-qos"
                         >
-                          arrow_drop_down
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
                         </span>
-                      </i>
-                    </div>
-                    <div
-                      class="TableCell age nowrap sorting"
-                      id="age"
-                    >
-                      <div
-                        class="content"
-                      >
-                        Age
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -616,6 +731,42 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                         class="content"
                       >
                         Status
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-status"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
+                      </div>
+                      <i
+                        class="Icon sortIcon material focusable"
+                      >
+                        <span
+                          class="icon"
+                          data-icon-name="arrow_drop_down"
+                        >
+                          arrow_drop_down
+                        </span>
+                      </i>
+                    </div>
+                    <div
+                      class="TableCell age nowrap sorting"
+                      id="age"
+                    >
+                      <div
+                        class="content"
+                      >
+                        Age
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-age"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -709,6 +860,12 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                                 </div>
                               </div>
                               <div
+                                class="TableCell cpu"
+                              />
+                              <div
+                                class="TableCell memory"
+                              />
+                              <div
                                 class="TableCell containers"
                               />
                               <div
@@ -730,14 +887,14 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                                 
                               </div>
                               <div
-                                class="TableCell age"
-                              >
-                                &lt;unknown&gt;
-                              </div>
-                              <div
                                 class="TableCell waiting status"
                               >
                                 Waiting
+                              </div>
+                              <div
+                                class="TableCell age"
+                              >
+                                &lt;unknown&gt;
                               </div>
                               <div
                                 class="TableCell menu"
@@ -952,7 +1109,7 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -984,10 +1141,21 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -1032,20 +1200,11 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -1054,10 +1213,21 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -1068,20 +1238,11 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -1090,10 +1251,21 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -1138,20 +1310,11 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -1323,6 +1486,22 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                     class="input-info flex gaps"
                   />
                 </div>
+                <i
+                  class="Icon export-to-csv material interactive disabled focusable"
+                  data-testid="item-list-layout-export-to-csv"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="file_download"
+                  >
+                    file_download
+                  </span>
+                </i>
+                <div
+                  data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                >
+                  Export to CSV
+                </div>
               </div>
               <div
                 class="items box grow flex column"
@@ -1355,6 +1534,14 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                         class="content"
                       >
                         Name
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-name"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1382,6 +1569,70 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                         class="content"
                       >
                         Namespace
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-namespace"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
+                      </div>
+                      <i
+                        class="Icon sortIcon material focusable"
+                      >
+                        <span
+                          class="icon"
+                          data-icon-name="arrow_drop_down"
+                        >
+                          arrow_drop_down
+                        </span>
+                      </i>
+                    </div>
+                    <div
+                      class="TableCell cpu nowrap sorting"
+                      id="cpu"
+                    >
+                      <div
+                        class="content"
+                      >
+                        CPU
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-cpu"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
+                      </div>
+                      <i
+                        class="Icon sortIcon material focusable"
+                      >
+                        <span
+                          class="icon"
+                          data-icon-name="arrow_drop_down"
+                        >
+                          arrow_drop_down
+                        </span>
+                      </i>
+                    </div>
+                    <div
+                      class="TableCell memory nowrap sorting"
+                      id="memory"
+                    >
+                      <div
+                        class="content"
+                      >
+                        Memory
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-memory"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1402,6 +1653,14 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                         class="content"
                       >
                         Containers
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-containers"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1422,6 +1681,14 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                         class="content"
                       >
                         Restarts
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-restarts"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1442,6 +1709,14 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                         class="content"
                       >
                         Controlled By
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-owners"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1462,6 +1737,14 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                         class="content"
                       >
                         Node
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-node"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1482,26 +1765,14 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                         class="content"
                       >
                         QoS
-                      </div>
-                      <i
-                        class="Icon sortIcon material focusable"
-                      >
                         <span
-                          class="icon"
-                          data-icon-name="arrow_drop_down"
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-qos"
                         >
-                          arrow_drop_down
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
                         </span>
-                      </i>
-                    </div>
-                    <div
-                      class="TableCell age nowrap sorting"
-                      id="age"
-                    >
-                      <div
-                        class="content"
-                      >
-                        Age
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1522,6 +1793,42 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                         class="content"
                       >
                         Status
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-status"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
+                      </div>
+                      <i
+                        class="Icon sortIcon material focusable"
+                      >
+                        <span
+                          class="icon"
+                          data-icon-name="arrow_drop_down"
+                        >
+                          arrow_drop_down
+                        </span>
+                      </i>
+                    </div>
+                    <div
+                      class="TableCell age nowrap sorting"
+                      id="age"
+                    >
+                      <div
+                        class="content"
+                      >
+                        Age
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-age"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -1752,7 +2059,7 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
     </div>
     <div
       class="mainLayout"
-      style="--sidebar-width: 200px;"
+      style="--sidebar-width: 240px;"
     >
       <div
         class="sidebar"
@@ -1784,10 +2091,21 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
             >
               <a
                 aria-current="page"
-                class="navItem active"
+                class="navItem expandable active"
                 data-testid="link-for-sidebar-item-workloads"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-workloads"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -1832,20 +2150,11 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Workloads
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-workloads"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -1854,10 +2163,21 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
               data-testid="sidebar-item-network"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-network"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-network"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon material focusable"
                 >
@@ -1868,20 +2188,11 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                     device_hub
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Network
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-network"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
             <div
@@ -1890,10 +2201,21 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
               data-testid="sidebar-item-helm"
             >
               <a
-                class="navItem"
+                class="navItem expandable"
                 data-testid="link-for-sidebar-item-helm"
                 href="/"
               >
+                <i
+                  class="Icon expandIcon material focusable"
+                  data-testid="expand-icon-for-sidebar-item-helm"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="keyboard_arrow_right"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                </i>
                 <i
                   class="Icon svg focusable"
                 >
@@ -1938,20 +2260,11 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                     </svg>
                   </span>
                 </i>
-                <span>
+                <span
+                  class="title"
+                >
                   Helm
                 </span>
-                <i
-                  class="Icon expandIcon material focusable"
-                  data-testid="expand-icon-for-sidebar-item-helm"
-                >
-                  <span
-                    class="icon"
-                    data-icon-name="keyboard_arrow_down"
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </i>
               </a>
             </div>
           </div>
@@ -2123,6 +2436,22 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                     class="input-info flex gaps"
                   />
                 </div>
+                <i
+                  class="Icon export-to-csv material interactive disabled focusable"
+                  data-testid="item-list-layout-export-to-csv"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="file_download"
+                  >
+                    file_download
+                  </span>
+                </i>
+                <div
+                  data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                >
+                  Export to CSV
+                </div>
               </div>
               <div
                 class="items box grow flex column"
@@ -2155,6 +2484,14 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                         class="content"
                       >
                         Name
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-name"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2182,6 +2519,70 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                         class="content"
                       >
                         Namespace
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-namespace"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
+                      </div>
+                      <i
+                        class="Icon sortIcon material focusable"
+                      >
+                        <span
+                          class="icon"
+                          data-icon-name="arrow_drop_down"
+                        >
+                          arrow_drop_down
+                        </span>
+                      </i>
+                    </div>
+                    <div
+                      class="TableCell cpu nowrap sorting"
+                      id="cpu"
+                    >
+                      <div
+                        class="content"
+                      >
+                        CPU
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-cpu"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
+                      </div>
+                      <i
+                        class="Icon sortIcon material focusable"
+                      >
+                        <span
+                          class="icon"
+                          data-icon-name="arrow_drop_down"
+                        >
+                          arrow_drop_down
+                        </span>
+                      </i>
+                    </div>
+                    <div
+                      class="TableCell memory nowrap sorting"
+                      id="memory"
+                    >
+                      <div
+                        class="content"
+                      >
+                        Memory
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-memory"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2202,6 +2603,14 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                         class="content"
                       >
                         Containers
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-containers"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2222,6 +2631,14 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                         class="content"
                       >
                         Restarts
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-restarts"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2242,6 +2659,14 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                         class="content"
                       >
                         Controlled By
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-owners"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2262,6 +2687,14 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                         class="content"
                       >
                         Node
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-node"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2282,26 +2715,14 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                         class="content"
                       >
                         QoS
-                      </div>
-                      <i
-                        class="Icon sortIcon material focusable"
-                      >
                         <span
-                          class="icon"
-                          data-icon-name="arrow_drop_down"
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-qos"
                         >
-                          arrow_drop_down
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
                         </span>
-                      </i>
-                    </div>
-                    <div
-                      class="TableCell age nowrap sorting"
-                      id="age"
-                    >
-                      <div
-                        class="content"
-                      >
-                        Age
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
@@ -2322,6 +2743,42 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                         class="content"
                       >
                         Status
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-status"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
+                      </div>
+                      <i
+                        class="Icon sortIcon material focusable"
+                      >
+                        <span
+                          class="icon"
+                          data-icon-name="arrow_drop_down"
+                        >
+                          arrow_drop_down
+                        </span>
+                      </i>
+                    </div>
+                    <div
+                      class="TableCell age nowrap sorting"
+                      id="age"
+                    >
+                      <div
+                        class="content"
+                      >
+                        Age
+                        <span
+                          class="column-resize-anchor"
+                          data-testid="column-resize-anchor-age"
+                        >
+                          <div
+                            class="ResizingAnchor horizontal trailing"
+                          />
+                        </span>
                       </div>
                       <i
                         class="Icon sortIcon material focusable"
