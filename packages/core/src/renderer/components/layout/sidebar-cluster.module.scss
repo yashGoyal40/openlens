@@ -3,71 +3,85 @@
  * Licensed under MIT License. See LICENSE in root directory for more information.
  */
 
+// root row of the navigator tree
 .SidebarCluster {
   display: flex;
   align-items: center;
-  padding: 8px 10px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid var(--borderFaintColor);
+  flex-shrink: 0;
+  gap: 6px;
+  height: 28px;
+  padding: 0 6px 0 4px;
+  border: 1px solid transparent;
+  font-size: 15px;
   cursor: pointer;
+  outline: none;
 
   &:hover {
-    background: var(--sidebarLogoBackground);
+    background: var(--sidebarItemHoverBackground);
   }
 
   &:focus-visible {
-    .dropdown {
-      box-shadow: 0 0 0 2px var(--focus-color);
-    }
-  }
-
-  .dropdown {
-    border-radius: 3px;
-    margin-left: var(--margin);
+    background: var(--sidebarSelectedBackground);
+    border-color: var(--blue);
   }
 }
 
+.expand {
+  --size: 16px;
+
+  flex-shrink: 0;
+  color: var(--textColorSecondary);
+}
+
+.avatar {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+
 .clusterName {
-  font-weight: bold;
+  flex: 1;
+  min-width: 0;
   overflow: hidden;
-  word-break: break-word;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: var(--textColorAccent);
-  display: -webkit-box;
-  /* Simulate text-overflow:ellipsis styles but for multiple text lines */
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+}
+
+.connected {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--colorSuccess);
+}
+
+.dropdown {
+  --size: 16px;
+
+  flex-shrink: 0;
+  border-radius: 3px;
+  color: var(--textColorSecondary);
 }
 
 .menu {
   width: 200px;
-  margin-top: -10px;
-}
-
-.avatar {
-  font-weight: 500;
-  margin-right: calc(var(--margin) * 1.5);
 }
 
 .loadingAvatar {
-  position: relative;
-  pointer-events: none;
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 100%;
-    background: transparentize(white, .85);
-    animation: waiting 1.5s infinite linear;
-  }
+  opacity: 0.5;
 }
 
 .loadingClusterName {
   position: relative;
   pointer-events: none;
-  width: 80%;
-  height: 16px;
+  overflow: hidden;
+  width: 60%;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--sidebarItemHoverBackground);
+
   &:after {
     content: "";
     position: absolute;
@@ -75,7 +89,7 @@
     top: 0;
     width: 0;
     height: 100%;
-    background: transparentize(white, .85);
+    background: transparentize(white, .9);
     animation: waiting 1.5s infinite linear;
   }
 }

@@ -15,6 +15,7 @@ import { hasTypedProperty, isObject, isString, cssNames } from "@k8slens/utiliti
 import { Button } from "@k8slens/button";
 import { Icon } from "@k8slens/icon";
 import { Spinner } from "@k8slens/spinner";
+import { ClusterGlyph, getEntityColor } from "../cluster-glyph";
 import type { KubeAuthUpdate } from "../../../common/cluster-types";
 import type { CatalogEntityRegistry } from "../../api/catalog/entity/registry";
 import type { NavigateToEntitySettings } from "../../../common/front-end-routing/routes/entity-settings/navigate-to-entity-settings.injectable";
@@ -103,75 +104,186 @@ class NonInjectedClusterStatus extends React.Component<ClusterStatusProps & Depe
     this.props.navigateToEntitySettings(this.cluster.id, "proxy");
   };
 
-  renderAuthenticationOutput() {
+  @computed get hasFailed(): boolean {
+    return !this.isReconnecting && this.authOutput.some(({ level }) => level === "error");
+  }
+
+  copyDetails = () => {
+    const details = this.authOutput
+      .map(({ message, level }) => `[${level}] ${message.trim()}`)
+      .join("\n");
+
+    void navigator.clipboard?.writeText(details);
+  };
+
+  @computed get problems(): Problem[] {
+    return mergeProblems(this.authOutput);
+  }
+
+  renderSteps() {
+    const infoSteps = this.authOutput.filter(({ level }) => level === "info");
+    const steps = infoSteps.length > 0
+      ? infoSteps
+      : [{ message: "Starting connection", level: "info" as const }];
+
     return (
-      <pre>
-        {
-          this.authOutput.map(({ message, level }, index) => (
-            <p key={index} className={cssNames({ error: level === "error", warning: level === "warning" })}>
-              {message.trim()}
-            </p>
-          ))
-        }
-      </pre>
+      <ol className={styles.steps} data-testid="cluster-status-steps">
+        {steps.map(({ message }, index) => {
+          const isLast = index === steps.length - 1;
+          const state = !isLast
+            ? "done"
+            : this.hasFailed
+              ? "error"
+              : "running";
+
+          return (
+            <li
+              key={index}
+              className={styles[state]}
+              data-testid={`cluster-status-step-${state}`}>
+              {state === "running"
+                ? <Spinner singleColor className={styles.stepSpinner} />
+                : (
+                  <Icon
+                    small
+                    material={stepIcons[state]}
+                    className={styles.stepIcon} />
+                )}
+              <span>{toStepTitle(message)}</span>
+            </li>
+          );
+        })}
+      </ol>
     );
   }
 
-  renderStatusIcon() {
-    if (this.hasErrorsOrWarnings) {
-      return <Icon material="cloud_off" className={styles.icon} />;
+  renderProblems() {
+    if (this.problems.length === 0) {
+      return null;
     }
 
     return (
-      <>
-        <Spinner singleColor={false} className={styles.spinner} />
-        <pre className="kube-auth-out">
-          <p>
-            {this.isReconnecting ? "Reconnecting" : "Connecting"}
-            &hellip;
-          </p>
-        </pre>
-      </>
+      <div className={styles.details} data-testid="cluster-status-details">
+        {this.problems.map(({ level, message, count }, index) => (
+          <div key={index} className={cssNames(styles.problem, styles[level])}>
+            <Icon
+              small
+              material={stepIcons[level]}
+              className={styles.stepIcon} />
+            <pre className={styles.message}>{message}</pre>
+            {count > 1 && <span className={styles.count} title={`Reported ${count} times`}>{`×${count}`}</span>}
+          </div>
+        ))}
+      </div>
     );
   }
 
-  renderReconnectionHelp() {
-    if (this.hasErrorsOrWarnings && !this.isReconnecting) {
+  renderState() {
+    if (this.hasFailed) {
       return (
-        <>
-          <Button
-            primary
-            label="Reconnect"
-            className="box center"
-            onClick={this.reconnect}
-            waiting={this.isReconnecting}
-          />
-          <a
-            className="box center interactive"
-            onClick={this.manageProxySettings}
-          >
-            Manage Proxy Settings
-          </a>
-        </>
+        <div className={styles.state}>
+          <Icon material="error_outline" className={styles.errorIcon} />
+          <div>
+            <div className={styles.stateTitle}>Unable to connect to the cluster</div>
+            <div className={styles.stateHint}>
+              Check the kubeconfig credentials, the network and any proxy, then reconnect.
+            </div>
+          </div>
+        </div>
       );
     }
 
-    return undefined;
+    return (
+      <div className={styles.state}>
+        <Spinner singleColor className={styles.spinner} />
+        <div>
+          <div className={styles.stateTitle}>
+            {this.isReconnecting ? "Reconnecting" : "Connecting"}
+            &hellip;
+          </div>
+          <div className={styles.stateHint}>
+            Authenticating and checking access to the Kubernetes API
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  renderActions() {
+    // warnings may be retried by the connection, so they only offer reconnecting
+    if (!this.hasErrorsOrWarnings || this.isReconnecting) {
+      return null;
+    }
+
+    return (
+      <div className={styles.actions}>
+        <Button
+          primary
+          label="Reconnect"
+          onClick={this.reconnect}
+          waiting={this.isReconnecting}
+        />
+        <Button
+          label="Cluster Settings"
+          className={styles.secondary}
+          onClick={() => this.props.navigateToEntitySettings(this.cluster.id)}
+        />
+        <a className={styles.link} onClick={this.manageProxySettings}>
+          Manage Proxy Settings
+        </a>
+        <a className={styles.link} onClick={this.copyDetails}>
+          Copy Details
+        </a>
+      </div>
+    );
   }
 
   render() {
+    const { entity } = this;
+    const name = entity?.getName() ?? this.cluster.name.get();
+    const context = this.cluster.contextName.get();
+
     return (
-      <div className={cssNames(styles.status, "flex column box center align-center justify-center", this.props.className)}>
-        <div className="flex items-center column gaps">
-          <h2>{this.entity?.getName() ?? this.cluster.name.get()}</h2>
-          {this.renderStatusIcon()}
-          {this.renderAuthenticationOutput()}
-          {this.renderReconnectionHelp()}
+      <div className={cssNames(styles.status, this.props.className)} data-testid="cluster-status">
+        <div className={cssNames(styles.card, { [styles.failed]: this.hasFailed })}>
+          <div className={styles.header}>
+            {entity && <ClusterGlyph color={getEntityColor(entity)} size={40} />}
+            <div className={styles.heading}>
+              <h2>{name}</h2>
+              {context && context !== name && <div className={styles.context}>{context}</div>}
+            </div>
+          </div>
+          {this.renderState()}
+          {this.renderSteps()}
+          {this.renderProblems()}
+          {this.renderActions()}
         </div>
       </div>
     );
   }
 }
+
+export interface Problem {
+  level: "warning" | "error";
+  message: string;
+  count: number;
+}
+
+const stepIcons = {
+  done: "check_circle",
+  warning: "warning",
+  error: "cancel",
+};
+
+/**
+ * "E1028 13:19:48.727846   85154 proxy_server.go:147] Error while ..." -> "Error while ..."
+ */
+export const withoutLogPrefix = (message: string) => message.trim().replace(/^[IWEF]\d{4} [\d:.]+\s+\d+ [^\]]+\]\s*/, "");
+
+/**
+ * "Refreshing connection status ..." -> "Refreshing connection status"
+ */
+export const toStepTitle = (message: string) => message.trim().replace(/\s*(\.\.\.|…)$/, "");
 
 export const ClusterStatus = withInjectables<Dependencies, ClusterStatusProps>(NonInjectedClusterStatus, {
   getProps: (di, props) => ({
@@ -181,3 +293,27 @@ export const ClusterStatus = withInjectables<Dependencies, ClusterStatusProps>(N
     requestClusterActivation: di.inject(requestClusterActivationInjectable),
   }),
 });
+
+/**
+ * Errors and warnings of a connection, with repeats of the same message (eg. from retries) merged
+ */
+export const mergeProblems = (updates: KubeAuthUpdate[]): Problem[] => {
+  const problems = new Map<string, Problem>();
+
+  for (const { message, level } of updates) {
+    if (level === "info") {
+      continue;
+    }
+
+    const text = withoutLogPrefix(message);
+    const known = problems.get(`${level}:${text}`);
+
+    if (known) {
+      known.count += 1;
+    } else {
+      problems.set(`${level}:${text}`, { level, message: text, count: 1 });
+    }
+  }
+
+  return [...problems.values()];
+};

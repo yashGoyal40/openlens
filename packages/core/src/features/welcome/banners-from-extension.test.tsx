@@ -9,25 +9,33 @@ import { screen } from "@testing-library/react";
 import { defaultWidth } from "../../renderer/components/welcome/welcome";
 import type { ApplicationBuilder } from "../../renderer/components/test-utils/get-application-builder";
 import { getApplicationBuilder } from "../../renderer/components/test-utils/get-application-builder";
+import navigateToWelcomeInjectable from "../../common/front-end-routing/routes/welcome/navigate-to-welcome.injectable";
 
 describe("Banners from extensions", () => {
   let builder: ApplicationBuilder;
   let renderResult: RenderResult;
+
+  // the catalog is the front page, the welcome page is opened from the help menu
+  const openWelcomePage = () => builder.navigateWith(navigateToWelcomeInjectable);
 
   beforeEach(async () => {
     builder = getApplicationBuilder();
     renderResult = await builder.render();
   });
 
-  it("initially renderes welcome page", () => {
-    expect(renderResult.queryByTestId("welcome-page")).toBeInTheDocument();
+  describe("when the welcome page is opened", () => {
+    beforeEach(openWelcomePage);
+
+    it("renders the welcome page", () => {
+      expect(renderResult.queryByTestId("welcome-page")).toBeInTheDocument();
+    });
+
+    it("shows the empty welcome banner icon", () => {
+      expect(renderResult.queryByTestId("no-welcome-banners-icon")).toBeInTheDocument();
+    });
   });
 
-  it("shows the empty welcome banner icon", () => {
-    expect(renderResult.queryByTestId("no-welcome-banners-icon")).toBeInTheDocument();
-  });
-
-  describe("when an extension is enabled with a single welcome banner", () => {
+  describe("when an extension with a single welcome banner is enabled and the welcome page is opened", () => {
     beforeEach(() => {
       builder.extensions.enable({
         id: "some-id",
@@ -40,6 +48,8 @@ describe("Banners from extensions", () => {
           ],
         },
       });
+
+      openWelcomePage();
     });
 
     it("renders the banner from the extension", () => {
@@ -51,7 +61,7 @@ describe("Banners from extensions", () => {
     });
   });
 
-  describe("when an extension is enabled with multiple banners with custom widths", () => {
+  describe("when an extension with multiple banners with custom widths is enabled and the welcome page is opened", () => {
     beforeEach(() => {
       builder.extensions.enable({
         id: "some-id",
@@ -69,6 +79,8 @@ describe("Banners from extensions", () => {
           ],
         },
       });
+
+      openWelcomePage();
     });
 
     it("no longer shows the empty welcome banner icon", () => {

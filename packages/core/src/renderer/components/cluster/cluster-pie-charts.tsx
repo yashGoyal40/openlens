@@ -11,7 +11,8 @@ import { Spinner } from "@k8slens/spinner";
 import { Icon } from "@k8slens/icon";
 import type { PieChartData } from "../chart";
 import { PieChart } from "../chart";
-import { ClusterNoMetrics } from "./cluster-no-metrics";
+import type { ClusterResourceSummary } from "./cluster-resource-summary";
+import clusterResourceSummaryInjectable from "./cluster-resource-summary.injectable";
 import { bytesToUnits, cssNames } from "@k8slens/utilities";
 import type { LensTheme } from "../../themes/lens-theme";
 import { getMetricLastPoints } from "../../../common/k8s-api/endpoints/metrics.api";
@@ -40,6 +41,7 @@ interface Dependencies {
   selectedNodeRoleForMetrics: SelectedNodeRoleForMetrics;
   clusterOverviewMetrics: IAsyncComputed<ClusterMetricData | undefined>;
   activeTheme: IComputedValue<LensTheme>;
+  clusterResourceSummary: IComputedValue<ClusterResourceSummary>;
 }
 
 const renderLimitWarning = () => (
@@ -63,7 +65,6 @@ const renderCharts = (defaultColor: string, lastPoints: Partial<Record<keyof Clu
     !isNumber(podAllocatableCapacity) ||
     !isNumber(memoryAllocatableCapacity) ||
     !isNumber(memoryCapacity) ||
-    !isNumber(memoryUsage) ||
     !isNumber(memoryRequests)
   ) {
     return null;
@@ -120,7 +121,7 @@ const renderCharts = (defaultColor: string, lastPoints: Partial<Record<keyof Clu
     datasets: [
       {
         data: [
-          memoryUsage,
+          memoryUsage ?? 0,
           memoryUsage ? memoryAllocatableCapacity - memoryUsage : 1,
         ],
         backgroundColor: [
@@ -156,7 +157,7 @@ const renderCharts = (defaultColor: string, lastPoints: Partial<Record<keyof Clu
       },
     ],
     labels: [
-      `Usage: ${bytesToUnits(memoryUsage)}`,
+      `Usage: ${checkedBytesToUnits(memoryUsage)}`,
       `Requests: ${bytesToUnits(memoryRequests)}`,
       `Limits: ${checkedBytesToUnits(memoryLimits)}`,
       `Allocatable Capacity: ${bytesToUnits(memoryAllocatableCapacity)}`,
@@ -229,7 +230,7 @@ const renderCharts = (defaultColor: string, lastPoints: Partial<Record<keyof Clu
   );
 };
 
-const renderContent = (defaultColor: string, nodes: Node[], metrics: ClusterMetricData | undefined) => {
+const renderContent = (defaultColor: string, nodes: Node[], metrics: ClusterMetricData | undefined, summary: ClusterResourceSummary) => {
   if (!nodes.length) {
     return (
       <div className={cssNames(styles.empty, "flex column box grow align-center justify-center")}>
@@ -250,10 +251,11 @@ const renderContent = (defaultColor: string, nodes: Node[], metrics: ClusterMetr
   const lastPoints = getMetricLastPoints(metrics);
   const { memoryCapacity, cpuCapacity, podCapacity } = lastPoints;
 
+  // without Prometheus: current usage from metrics-server, requests and limits from the pods
   if (!memoryCapacity || !cpuCapacity || !podCapacity) {
     return (
-      <div className={styles.noMetrics}>
-        <ClusterNoMetrics className={styles.empty}/>
+      <div className="flex column box grow" data-testid="cluster-pie-charts-from-metrics-server">
+        {renderCharts(defaultColor, summary.points)}
       </div>
     );
   }
@@ -265,12 +267,14 @@ const NonInjectedClusterPieCharts = observer(({
   selectedNodeRoleForMetrics,
   clusterOverviewMetrics,
   activeTheme,
+  clusterResourceSummary,
 }: Dependencies) => (
   <div className="flex">
     {renderContent(
       activeTheme.get().colors.pieChartDefaultColor,
       selectedNodeRoleForMetrics.nodes.get(),
       clusterOverviewMetrics.value.get(),
+      clusterResourceSummary.get(),
     )}
   </div>
 ));
@@ -280,5 +284,6 @@ export const ClusterPieCharts = withInjectables<Dependencies>(NonInjectedCluster
     activeTheme: di.inject(activeThemeInjectable),
     clusterOverviewMetrics: di.inject(clusterOverviewMetricsInjectable),
     selectedNodeRoleForMetrics: di.inject(selectedNodeRoleForMetricsInjectable),
+    clusterResourceSummary: di.inject(clusterResourceSummaryInjectable).value,
   }),
 });

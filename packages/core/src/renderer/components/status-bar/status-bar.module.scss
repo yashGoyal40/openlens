@@ -4,8 +4,8 @@
  */
 
 .StatusBar {
-  --status-bar-height: 21px;
-  color: white;
+  --status-bar-height: 22px;
+  color: var(--statusBarColor);
 
   grid-area: status-bar;
   height: var(--status-bar-height);
@@ -13,20 +13,28 @@
 
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
-  background-color: var(--primary);
+  background-color: var(--statusBarBackground);
+  border-top: 1px solid var(--borderFaintColor);
 
   &.status-warning {
+    color: white;
     background-color: var(--colorWarning);
   }
 
   &.status-error {
+    color: white;
     background-color: var(--colorError);
+  }
+
+  &.empty {
+    display: none;
   }
 }
 
 .leftSide {
   display: flex;
   align-items: center;
+  min-width: 0;
   padding-inline-start: calc(var(--padding) / 2);
 }
 
@@ -34,6 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  min-width: 0;
   padding-inline-end: calc(var(--padding) / 2);
 }
 
@@ -42,6 +51,7 @@
   padding-inline: var(--padding);
   display: flex;
   align-items: center;
+  white-space: nowrap;
 
   &:empty {
     padding-inline: 0;
@@ -49,6 +59,7 @@
 
   &:hover {
     cursor: pointer;
-    background-color: #ffffff33;
+    color: var(--textColorAccent);
+    background-color: #ffffff14;
   }
 }

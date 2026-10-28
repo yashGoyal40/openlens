@@ -21,6 +21,7 @@
       margin-right: -8px;
       padding-right: 8px;
       line-height: 1.1;
+      color: var(--textColorAccent);
 
       &::-webkit-scrollbar {
         display: none;
@@ -52,27 +53,73 @@
   }
 }
 
+// compact checkbox list, like the namespace picker of Lens
 .NamespaceSelectFilterMenu {
   right: 0;
+  margin-top: 2px !important;
+  border: 1px solid var(--borderColor);
+  border-radius: 4px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
 
   .Select {
     &__menu-list {
       max-width: 400px;
+      max-height: 360px;
+      padding: 4px;
     }
 
     &__option {
-      white-space: normal;
-      word-break: break-all;
-      padding: 4px 8px;
+      white-space: nowrap;
+      padding: 3px 8px;
       border-radius: 3px;
+      color: var(--textColorPrimary);
+
+      &--is-focused {
+        background: var(--sidebarItemHoverBackground);
+        color: var(--textColorAccent);
+      }
 
       &--is-selected:not(&--is-focused) {
         background: transparent;
       }
     }
   }
+}
 
-  .Icon {
-    margin-right: $margin * 0.5;
+.NamespaceSelectFilterOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.NamespaceSelectFilterLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.NamespaceSelectFilterCheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--textColorTertiary);
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--textColorAccent);
+  }
+
+  &.checked {
+    border-color: var(--blue);
+
+    .Icon {
+      --size: 13px;
+      color: var(--blue);
+      font-weight: bold;
+    }
   }
 }

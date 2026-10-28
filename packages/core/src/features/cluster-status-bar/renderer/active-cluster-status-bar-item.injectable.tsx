@@ -8,7 +8,7 @@ import type { IComputedValue } from "mobx";
 import { computed } from "mobx";
 import { observer } from "mobx-react";
 import React from "react";
-import { Icon } from "@k8slens/icon";
+import { ClusterGlyph, getEntityColor } from "../../../renderer/components/cluster-glyph";
 import type { KubernetesCluster } from "../../../common/catalog-entities";
 import activeKubernetesClusterInjectable from "../../../renderer/cluster-frame-context/active-kubernetes-cluster.injectable";
 import { statusBarItemInjectionToken } from "../../../renderer/components/status-bar/status-bar-item-injection-token";
@@ -34,7 +34,7 @@ const NonInjectedActiveClusterStatus = observer(({ activeKubernetesCluster }: De
 
   return (
     <div className="flex gaps align-center" data-testid="active-cluster-status">
-      <Icon svg="kube" small />
+      <ClusterGlyph color={getEntityColor(cluster)} size={13} />
       <span>{formatActiveCluster(cluster)}</span>
     </div>
   );

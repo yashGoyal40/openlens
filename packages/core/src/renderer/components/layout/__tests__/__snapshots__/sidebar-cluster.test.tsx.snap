@@ -9,26 +9,106 @@ exports[`<SidebarCluster/> renders w/o errors 1`] = `
     role="menubar"
     tabindex="0"
   >
-    <div
-      class="Avatar rounded avatar"
-      style="width: 40px; height: 40px; background: rgb(96, 130, 10);"
+    <i
+      class="Icon expand material focusable"
     >
-      tc
-    </div>
+      <span
+        class="icon"
+        data-icon-name="expand_more"
+      >
+        expand_more
+      </span>
+    </i>
+    <svg
+      aria-hidden="true"
+      class="ClusterGlyph avatar"
+      data-testid="cluster-glyph"
+      height="16"
+      viewBox="0 0 32 32"
+      width="16"
+    >
+      <polygon
+        fill="#60820a"
+        points="16,1 27.73,6.65 30.62,19.34 22.51,29.51 9.49,29.51 1.38,19.34 4.27,6.65"
+      />
+      <g
+        class="wheel"
+      >
+        <circle
+          cx="16"
+          cy="16"
+          fill="none"
+          r="6.6"
+        />
+        <line
+          x1="16"
+          x2="16"
+          y1="13.4"
+          y2="6.4"
+        />
+        <line
+          x1="18.03"
+          x2="23.51"
+          y1="14.38"
+          y2="10.01"
+        />
+        <line
+          x1="18.53"
+          x2="25.36"
+          y1="16.58"
+          y2="18.14"
+        />
+        <line
+          x1="17.13"
+          x2="20.17"
+          y1="18.34"
+          y2="24.65"
+        />
+        <line
+          x1="14.87"
+          x2="11.83"
+          y1="18.34"
+          y2="24.65"
+        />
+        <line
+          x1="13.47"
+          x2="6.64"
+          y1="16.58"
+          y2="18.14"
+        />
+        <line
+          x1="13.97"
+          x2="8.49"
+          y1="14.38"
+          y2="10.01"
+        />
+        <circle
+          class="hub"
+          cx="16"
+          cy="16"
+          r="2.2"
+        />
+      </g>
+    </svg>
     <div
       class="clusterName"
       id="tooltip-cluster-test-uid"
     >
       test-cluster
     </div>
+    <span
+      class="connected"
+      data-testid="sidebar-cluster-connected"
+      title="Connected"
+    />
     <i
       class="Icon dropdown material focusable"
     >
       <span
         class="icon"
-        data-icon-name="arrow_drop_down"
+        data-icon-name="more_vert"
       >
-        arrow_drop_down
+        more_vert
       </span>
     </i>
   </div>

@@ -371,6 +371,34 @@ exports[`kube-object-list-layout given pod store renders 1`] = `
                 </i>
               </div>
               <div
+                class="TableCell node-pool nowrap sorting"
+                id="node-pool"
+              >
+                <div
+                  class="content"
+                >
+                  Node Pool
+                  <span
+                    class="column-resize-anchor"
+                    data-testid="column-resize-anchor-node-pool"
+                  >
+                    <div
+                      class="ResizingAnchor horizontal trailing"
+                    />
+                  </span>
+                </div>
+                <i
+                  class="Icon sortIcon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="arrow_drop_down"
+                  >
+                    arrow_drop_down
+                  </span>
+                </i>
+              </div>
+              <div
                 class="TableCell qos nowrap sorting"
                 id="qos"
               >

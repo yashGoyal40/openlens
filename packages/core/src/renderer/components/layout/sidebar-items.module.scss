@@ -8,12 +8,14 @@
   > .navItem {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+    height: 26px;
     text-decoration: none;
-    padding: 3px 8px 3px 6px;
-    margin: 0 4px;
-    border-radius: var(--border-radius);
+    padding: 0 8px 0 4px;
+    color: var(--textColorPrimary);
+    border: 1px solid transparent;
     cursor: pointer;
+    outline: none;
 
     :global(.Icon) {
       --size: 16px;
@@ -29,13 +31,20 @@
     }
 
     &:global(.active):not(.expandable) {
-      background: var(--sidebarItemHoverBackground);
-      box-shadow: inset 0 0 0 1px var(--blue);
+      background: var(--sidebarActiveBackground);
+    }
+
+    // the row that was just clicked, like a focused tree row
+    &:focus-visible,
+    &:global(.active):not(.expandable):focus {
+      background: var(--sidebarSelectedBackground);
+      border-color: var(--blue);
     }
   }
 
   .title {
-    margin-left: 2px;
+    flex: 1;
+    min-width: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -51,23 +60,29 @@
     width: 16px;
   }
 
-  // guide line below the parent's icon
+  .newBadge {
+    flex-shrink: 0;
+    padding: 0 5px;
+    border-radius: 3px;
+    background: var(--sidebarBadgeBackground);
+    color: var(--textColorAccent);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.3px;
+  }
+
+  // children are indented below the parent's icon, with a guide line
   .subMenu {
-    margin: 1px 0 1px 33px;
+    margin: 0 0 0 30px;
     border-left: 1px solid var(--borderColor);
 
-    .SidebarItem {
-      color: var(--textColorPrimary);
+    .SidebarItem > .navItem {
+      padding-left: 8px;
+    }
 
-      > .navItem {
-        padding-top: 2px;
-        padding-bottom: 2px;
-        padding-left: 4px;
-      }
-
-      .expandIconPlaceholder {
-        width: 4px;
-      }
+    .expandIconPlaceholder {
+      display: none;
     }
 
     // 3rd menu level

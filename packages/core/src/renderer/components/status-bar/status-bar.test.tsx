@@ -153,8 +153,29 @@ describe("<StatusBar />", () => {
     });
   });
 
-  it("has the default status by default", () => {
-    expect([...result.getByTestId("status-bar").classList]).toEqual(["StatusBar"]);
+  it("has the default status by default, hidden while it has no items", () => {
+    expect([...result.getByTestId("status-bar").classList]).toEqual(["StatusBar", "empty"]);
+  });
+
+  describe("when an extension adds an item", () => {
+    beforeEach(() => {
+      builder.extensions.enable({
+        id: "some-id",
+        name: "some-name",
+
+        rendererOptions: {
+          statusBarItems: [{
+            components: {
+              Item: () => <div>some-item</div>,
+            },
+          }],
+        },
+      });
+    });
+
+    it("shows the status bar", () => {
+      expect([...result.getByTestId("status-bar").classList]).toEqual(["StatusBar"]);
+    });
   });
 
   describe.each([

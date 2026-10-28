@@ -182,6 +182,12 @@ class NonInjectedDock extends React.Component<DockProps & Dependencies> {
             {hasTabs() && (
               <>
                 <Icon
+                  material="clear_all"
+                  tooltip="Close all tabs"
+                  onClick={() => dockStore.closeAllTabs()}
+                  data-testid="dock-close-all-tabs"
+                />
+                <Icon
                   material={fullSize ? "fullscreen_exit" : "fullscreen"}
                   tooltip={fullSize ? "Exit full size mode" : "Fit to window"}
                   onClick={toggleFillSize}

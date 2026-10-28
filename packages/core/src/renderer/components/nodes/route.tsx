@@ -24,9 +24,11 @@ import type { NodeStore } from "./store";
 import { withInjectables } from "@ogre-tools/injectable-react";
 import nodeStoreInjectable from "./store.injectable";
 import requestAllNodeMetricsInjectable from "../../../common/k8s-api/endpoints/metrics.api/request-metrics-for-all-nodes.injectable";
+import type { NodeUsage, RequestNodeUsage } from "./request-node-usage.injectable";
+import requestNodeUsageInjectable from "./request-node-usage.injectable";
 import eventStoreInjectable from "../events/store.injectable";
 import type { EventStore } from "../events/store";
-import { getNodePool } from "./node-pool";
+import { getNodePool, getNodePoolDisplayName } from "./node-pool";
 
 enum columnId {
   name = "name",
@@ -53,6 +55,7 @@ interface UsageArgs {
 
 interface Dependencies {
   requestAllNodeMetrics: RequestAllNodeMetrics;
+  requestNodeUsage: RequestNodeUsage;
   nodeStore: NodeStore;
   eventStore: EventStore;
 }
@@ -61,9 +64,22 @@ interface Dependencies {
 class NonInjectedNodesRoute extends React.Component<Dependencies> {
   @observable metrics: NodeMetricData | null = null;
 
+  /**
+   * From metrics-server, used for CPU and memory when there is no Prometheus
+   */
+  @observable.ref nodeUsage = new Map<string, NodeUsage>();
+
   private metricsWatcher = interval(30, () => {
     void (async () => {
       this.metrics = await this.props.requestAllNodeMetrics();
+    })();
+
+    void (async () => {
+      try {
+        this.nodeUsage = await this.props.requestNodeUsage();
+      } catch {
+        // metrics-server is not installed
+      }
     })();
   });
 
@@ -103,10 +119,33 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
     });
   }
 
-  private renderUsage({ node, title, metricNames, formatters }: UsageArgs) {
-    const metrics = this.getLastMetricValues(node, metricNames);
+  /**
+   * Usage and capacity from Prometheus, falling back to metrics-server for CPU and memory
+   */
+  getUsage(node: Node, metricNames: (keyof NodeMetricData)[]): [number, number] | undefined {
+    const [usage = 0, capacity = 0] = this.getLastMetricValues(node, metricNames);
 
-    if (!metrics || metrics.length < 2) {
+    if (capacity > 0) {
+      return [usage, capacity];
+    }
+
+    const current = this.nodeUsage.get(node.getName());
+
+    if (current && metricNames.includes("cpuUsage")) {
+      return [current.cpu, node.getCpuCapacity() ?? 0];
+    }
+
+    if (current && metricNames.includes("workloadMemoryUsage")) {
+      return [current.memory, node.getMemoryCapacity()];
+    }
+
+    return undefined;
+  }
+
+  private renderUsage({ node, title, metricNames, formatters }: UsageArgs) {
+    const metrics = this.getUsage(node, metricNames);
+
+    if (!metrics || !metrics[1]) {
       return <LineProgress value={0}/>;
     }
 
@@ -206,8 +245,8 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
           sortingCallbacks={{
             [columnId.name]: node => node.getName(),
             [columnId.nodePool]: node => getNodePool(node),
-            [columnId.cpu]: node => this.getLastMetricValues(node, ["cpuUsage"]),
-            [columnId.memory]: node => this.getLastMetricValues(node, ["memoryUsage"]),
+            [columnId.cpu]: node => this.getUsage(node, ["cpuUsage", "cpuCapacity"])?.[0] ?? 0,
+            [columnId.memory]: node => this.getUsage(node, ["workloadMemoryUsage", "memoryAllocatableCapacity"])?.[0] ?? 0,
             [columnId.disk]: node => this.getLastMetricValues(node, ["fsUsage"]),
             [columnId.conditions]: node => node.getNodeConditionText(),
             [columnId.taints]: node => node.getTaints().length,
@@ -218,6 +257,7 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
           searchFilters={[
             node => node.getSearchFields(),
             node => getNodePool(node),
+            node => getNodePoolDisplayName(getNodePool(node) ?? ""),
             node => node.getRoleLabels(),
             node => node.getKubeletVersion(),
             node => node.getNodeConditionText(),
@@ -248,7 +288,7 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
                 tooltip={node.getName()}
               />,
               <KubeObjectStatusIcon key="icon" object={node} />,
-              <span key="node-pool" title={getNodePool(node)}>{getNodePool(node)}</span>,
+              <span key="node-pool" title={getNodePool(node)}>{getNodePoolDisplayName(getNodePool(node) ?? "")}</span>,
               this.renderCpuUsage(node),
               this.renderMemoryUsage(node),
               this.renderDiskUsage(node),
@@ -280,5 +320,6 @@ export const NodesRoute = withInjectables<Dependencies>(NonInjectedNodesRoute, {
     nodeStore: di.inject(nodeStoreInjectable),
     eventStore: di.inject(eventStoreInjectable),
     requestAllNodeMetrics: di.inject(requestAllNodeMetricsInjectable),
+    requestNodeUsage: di.inject(requestNodeUsageInjectable),
   }),
 });

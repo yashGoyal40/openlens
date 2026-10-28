@@ -42,8 +42,8 @@ describe("<SidebarCluster/>", () => {
     expect(result.container).toMatchSnapshot();
   });
 
-  it("renders cluster avatar and name", () => {
-    expect(result.getByText("tc")).toBeInTheDocument();
+  it("renders cluster icon and name", () => {
+    expect(result.getByTestId("cluster-glyph")).toBeInTheDocument();
 
     const v = result.getAllByText("test-cluster");
 

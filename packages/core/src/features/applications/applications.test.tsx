@@ -154,11 +154,11 @@ describe("applications", () => {
       rendered = await builder.render();
     });
 
-    it("shows the applications sidebar item right after workloads", () => {
-      const sidebarItems = [...rendered.container.querySelectorAll(".sidebarNav > [data-testid^='sidebar-item-']")]
+    it("shows the applications sidebar item right after the cluster overview", () => {
+      const sidebarItems = [...rendered.container.querySelectorAll(".tree > [data-testid^='sidebar-item-']")]
         .map(element => element.getAttribute("data-testid"));
 
-      expect(sidebarItems.indexOf("sidebar-item-applications")).toBe(sidebarItems.indexOf("sidebar-item-workloads") + 1);
+      expect(sidebarItems.indexOf("sidebar-item-applications")).toBe(sidebarItems.indexOf("sidebar-item-cluster-overview") + 1);
     });
 
     describe("when clicking the applications sidebar item", () => {

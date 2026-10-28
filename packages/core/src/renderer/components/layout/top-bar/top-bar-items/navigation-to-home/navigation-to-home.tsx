@@ -8,8 +8,8 @@ import type { IComputedValue } from "mobx";
 import { Icon } from "@k8slens/icon";
 import routeIsActiveInjectable from "../../../../../routes/route-is-active.injectable";
 import { observer } from "mobx-react";
-import welcomeRouteInjectable from "../../../../../../common/front-end-routing/routes/welcome/welcome-route.injectable";
-import navigateToWelcomeInjectable from "../../../../../../common/front-end-routing/routes/welcome/navigate-to-welcome.injectable";
+import homeRouteInjectable from "../../../../../../common/front-end-routing/routes/home-route.injectable";
+import { navigateToRouteInjectionToken } from "../../../../../../common/front-end-routing/navigate-to-route-injection-token";
 
 interface Dependencies {
   disabled: IComputedValue<boolean>;
@@ -32,13 +32,14 @@ export const NavigationToHome = withInjectables<Dependencies>(
   NonInjectedNavigationToHome,
 
   {
-    getProps: (di) => ({
-      disabled: di.inject(
-        routeIsActiveInjectable,
-        di.inject(welcomeRouteInjectable),
-      ),
+    getProps: (di) => {
+      const homeRoute = di.inject(homeRouteInjectable);
+      const navigateToRoute = di.inject(navigateToRouteInjectionToken);
 
-      goHome: di.inject(navigateToWelcomeInjectable),
-    }),
+      return {
+        disabled: di.inject(routeIsActiveInjectable, homeRoute),
+        goHome: () => navigateToRoute(homeRoute),
+      };
+    },
   },
 );

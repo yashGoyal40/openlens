@@ -1,0 +1,20 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.ClusterGlyph {
+  flex-shrink: 0;
+  display: block;
+}
+
+.wheel {
+  stroke: rgba(0, 0, 0, 0.72);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.hub {
+  fill: rgba(0, 0, 0, 0.72);
+  stroke: none;
+}

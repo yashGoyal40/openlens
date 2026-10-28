@@ -18,10 +18,17 @@ import type { SpecificKubeListLayoutColumn } from "@k8slens/list-layout";
 import { podListLayoutColumnInjectionToken } from "@k8slens/list-layout";
 import type { Pod } from "@k8slens/kube-object";
 import { interval } from "@k8slens/utilities";
+import type { IComputedValue } from "mobx";
+import type { NodeStore } from "../nodes/store";
+import nodeStoreInjectable from "../nodes/store.injectable";
+import { shouldShowResourceInjectionToken } from "../../../features/cluster/showing-kube-resources/common/allowed-resources-injection-token";
+import { getPodNodePool } from "./columns/pods-node-pool-column.injectable";
 
 interface Dependencies {
   eventStore: EventStore;
   podStore: PodStore;
+  nodeStore: NodeStore;
+  canListNodes: IComputedValue<boolean>;
   columns: SpecificKubeListLayoutColumn<Pod>[];
 }
 
@@ -30,6 +37,8 @@ const NonInjectedPods = observer((props: Dependencies) => {
     columns,
     eventStore,
     podStore,
+    nodeStore,
+    canListNodes,
   } = props;
 
   // CPU and memory columns show metrics server usage, refreshed while the list is open
@@ -46,7 +55,8 @@ const NonInjectedPods = observer((props: Dependencies) => {
       <KubeObjectListLayout
         className="Pods"
         store={podStore}
-        dependentStores={[eventStore]} // status icon component uses event store
+        // status icon component uses event store, node pool column uses node store
+        dependentStores={canListNodes.get() ? [eventStore, nodeStore] : [eventStore]}
         tableId="workloads_pods"
         isConfigurable
         searchFilters={[
@@ -54,6 +64,7 @@ const NonInjectedPods = observer((props: Dependencies) => {
           pod => pod.getStatusMessage(),
           pod => pod.status?.podIP,
           pod => pod.getNodeName(),
+          pod => getPodNodePool(nodeStore, pod),
         ]}
         renderHeaderTitle="Pods"
         renderTableHeader={[]}
@@ -69,6 +80,8 @@ export const Pods = withInjectables<Dependencies>(NonInjectedPods, {
     ...props,
     eventStore: di.inject(eventStoreInjectable),
     podStore: di.inject(podStoreInjectable),
+    nodeStore: di.inject(nodeStoreInjectable),
+    canListNodes: di.inject(shouldShowResourceInjectionToken, { apiName: "nodes", group: "" }),
     columns: di.injectMany(podListLayoutColumnInjectionToken),
   }),
 });

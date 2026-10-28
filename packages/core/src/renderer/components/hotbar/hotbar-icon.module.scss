@@ -4,19 +4,10 @@
  */
 
 .HotbarIcon {
-  --corner: 0px 0px 0px 1px var(--clusterMenuBackground);
-  --iconActiveShadow: var(--corner), var(--corner), 0 0 0px 2px var(--clusterMenuBackground), 0 0 0px 4px var(--textColorAccent);
-  --iconHoverShadow: 0 0 0px 3px var(--clusterMenuBackground), 0 0 0px 6px var(--clusterMenuCellOutline);
-
   display: flex;
   cursor: pointer;
   position: relative;
   border-radius: 6px;
-  transition: box-shadow 0.1s ease-in-out;
-
-  &:not(.active):hover {
-    box-shadow: var(--iconHoverShadow);
-  }
 }
 
 .contextMenuAvailable {
@@ -25,12 +16,18 @@
 
 .avatar {
   border-radius: 6px;
+  box-shadow: inset 0 0 0 1px var(--borderColor);
+  transition: box-shadow 0.1s ease-in-out;
 
   &.hasImage {
     background-color: var(--clusterMenuCellBackground);
   }
+
+  &:not(.active):hover {
+    box-shadow: inset 0 0 0 1px var(--textColorTertiary);
+  }
 }
 
 .active {
-  box-shadow: var(--iconActiveShadow);
+  box-shadow: 0 0 0 2px var(--textColorAccent);
 }

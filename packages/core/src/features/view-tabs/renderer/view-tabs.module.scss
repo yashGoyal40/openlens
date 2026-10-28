@@ -1,0 +1,71 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.ViewTabs {
+  display: flex;
+  flex-shrink: 0;
+  height: 36px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: var(--viewTabsBackground);
+  border-bottom: 1px solid var(--borderFaintColor);
+
+  &::-webkit-scrollbar {
+    height: 0;
+  }
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 8px;
+  min-width: 120px;
+  max-width: 280px;
+  margin-bottom: -1px;
+  padding: 0 6px 0 12px;
+  color: var(--textColorSecondary);
+  border-top: 2px solid transparent;
+  border-right: 1px solid var(--borderFaintColor);
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    color: var(--textColorPrimary);
+  }
+
+  &.active {
+    color: var(--textColorAccent);
+    background: var(--viewTabActiveBackground);
+    border-top-color: var(--tab-accent, var(--blue));
+  }
+
+  // a preview tab is replaced by the next view that is opened
+  &.preview .title {
+    font-style: italic;
+  }
+}
+
+.title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.close {
+  --size: 16px;
+
+  flex-shrink: 0;
+  padding: 2px;
+  border-radius: 3px;
+  color: var(--textColorSecondary);
+
+  &:hover {
+    color: var(--textColorAccent);
+    background: var(--sidebarItemHoverBackground);
+  }
+}

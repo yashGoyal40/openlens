@@ -18,12 +18,13 @@ const costMonitoringSidebarItemInjectable = getInjectable({
 
     return {
       parentId: null,
-      title: "Cost",
+      title: "Cost Monitoring",
       getIcon: () => <Icon material="payments" />,
       onClick: di.inject(navigateToCostMonitoringInjectable),
       isActive: di.inject(routeIsActiveInjectable, route),
       isVisible: route.isEnabled,
-      orderNumber: 97,
+      orderNumber: 115,
+      isNew: true,
     };
   },
 

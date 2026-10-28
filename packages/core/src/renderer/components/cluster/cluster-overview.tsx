@@ -29,6 +29,7 @@ import { clusterOverviewUIBlockInjectionToken } from "@k8slens/metrics";
 import { computedInjectManyInjectable } from "@ogre-tools/injectable-extension-for-mobx";
 import type { ClusterMetricData } from "../../../common/k8s-api/endpoints/metrics.api/request-cluster-metrics-by-node-names.injectable";
 import clusterOverviewMetricsInjectable from "./cluster-metrics.injectable";
+import clusterResourceSummaryInjectable from "./cluster-resource-summary.injectable";
 
 interface Dependencies {
   subscribeStores: SubscribeStores;
@@ -38,6 +39,7 @@ interface Dependencies {
   clusterMetricsAreVisible: IComputedValue<boolean>;
   uiBlocks: IComputedValue<ClusterOverviewUIBlock[]>;
   clusterOverviewMetrics: IAsyncComputed<ClusterMetricData | undefined>;
+  watchResourceUsage: () => () => void;
 }
 
 @observer
@@ -49,6 +51,7 @@ class NonInjectedClusterOverview extends React.Component<Dependencies> {
         this.props.eventStore,
         this.props.nodeStore,
       ]),
+      this.props.watchResourceUsage(),
     ]);
   }
 
@@ -96,5 +99,6 @@ export const ClusterOverview = withInjectables<Dependencies>(NonInjectedClusterO
     nodeStore: di.inject(nodeStoreInjectable),
     uiBlocks: di.inject(computedInjectManyInjectable)(clusterOverviewUIBlockInjectionToken),
     clusterOverviewMetrics: di.inject(clusterOverviewMetricsInjectable),
+    watchResourceUsage: di.inject(clusterResourceSummaryInjectable).watchUsage,
   }),
 });

@@ -8,6 +8,7 @@ import styles from "./hotbar-icon.module.scss";
 import React, { useState } from "react";
 
 import type { CatalogEntityContextMenu } from "../../../common/catalog";
+import type { StrictReactNode } from "@k8slens/utilities";
 import { cssNames } from "@k8slens/utilities";
 import { Menu, MenuItem } from "../menu";
 import { observer } from "mobx-react";
@@ -28,6 +29,11 @@ export interface HotbarIconProps extends AvatarProps {
   menuItems?: CatalogEntityContextMenu[];
   disabled?: boolean;
   tooltip?: string;
+
+  /**
+   * Rendered inside the icon instead of the material icon or the short name
+   */
+  content?: StrictReactNode;
 }
 
 interface Dependencies {
@@ -41,7 +47,7 @@ const NonInjectedHotbarIcon = observer(({
   normalizeMenuItem,
   ...props
 }: HotbarIconProps & Dependencies) => {
-  const { uid, title, src, material, active, className, source, disabled, onMenuOpen, onClick, children, ...rest } = props;
+  const { uid, title, src, material, active, className, source, disabled, onMenuOpen, onClick, children, content, ...rest } = props;
   const id = `hotbarIcon-${uid}`;
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -67,7 +73,7 @@ const NonInjectedHotbarIcon = observer(({
         src={src}
         onClick={(event) => !disabled && onClick?.(event)}
       >
-        {material && <Icon material={material} />}
+        {content ?? (material && <Icon material={material} />)}
       </Avatar>
       {children}
       <Menu

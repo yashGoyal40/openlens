@@ -595,26 +595,6 @@ exports[`listing active helm repositories in preferences when navigating to pref
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -623,6 +603,10 @@ exports[`listing active helm repositories in preferences when navigating to pref
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -703,7 +687,7 @@ exports[`listing active helm repositories in preferences when navigating to pref
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -1343,26 +1327,6 @@ exports[`listing active helm repositories in preferences when navigating to pref
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -1371,6 +1335,10 @@ exports[`listing active helm repositories in preferences when navigating to pref
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -1451,7 +1419,7 @@ exports[`listing active helm repositories in preferences when navigating to pref
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -1983,26 +1951,6 @@ exports[`listing active helm repositories in preferences when navigating to pref
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -2011,6 +1959,10 @@ exports[`listing active helm repositories in preferences when navigating to pref
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -2091,7 +2043,7 @@ exports[`listing active helm repositories in preferences when navigating to pref
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -2731,26 +2683,6 @@ exports[`listing active helm repositories in preferences when navigating to pref
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -2759,6 +2691,10 @@ exports[`listing active helm repositories in preferences when navigating to pref
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -2839,7 +2775,7 @@ exports[`listing active helm repositories in preferences when navigating to pref
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -3371,26 +3307,6 @@ exports[`listing active helm repositories in preferences when navigating to pref
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -3399,6 +3315,10 @@ exports[`listing active helm repositories in preferences when navigating to pref
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -3479,7 +3399,7 @@ exports[`listing active helm repositories in preferences when navigating to pref
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -4119,26 +4039,6 @@ exports[`listing active helm repositories in preferences when navigating to pref
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -4147,6 +4047,10 @@ exports[`listing active helm repositories in preferences when navigating to pref
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -4227,7 +4131,7 @@ exports[`listing active helm repositories in preferences when navigating to pref
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -4912,26 +4816,6 @@ exports[`listing active helm repositories in preferences when navigating to pref
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -4940,6 +4824,10 @@ exports[`listing active helm repositories in preferences when navigating to pref
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -5020,7 +4908,7 @@ exports[`listing active helm repositories in preferences when navigating to pref
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -5552,26 +5440,6 @@ exports[`listing active helm repositories in preferences when navigating to pref
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -5580,6 +5448,10 @@ exports[`listing active helm repositories in preferences when navigating to pref
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -5660,7 +5532,7 @@ exports[`listing active helm repositories in preferences when navigating to pref
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -6192,26 +6064,6 @@ exports[`listing active helm repositories in preferences when navigating to pref
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -6220,6 +6072,10 @@ exports[`listing active helm repositories in preferences when navigating to pref
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -6300,7 +6156,7 @@ exports[`listing active helm repositories in preferences when navigating to pref
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -6832,26 +6688,6 @@ exports[`listing active helm repositories in preferences when navigating to pref
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -6860,6 +6696,10 @@ exports[`listing active helm repositories in preferences when navigating to pref
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -6940,7 +6780,7 @@ exports[`listing active helm repositories in preferences when navigating to pref
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div

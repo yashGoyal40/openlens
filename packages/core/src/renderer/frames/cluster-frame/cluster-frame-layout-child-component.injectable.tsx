@@ -17,6 +17,7 @@ import startUrlInjectable from "./start-url.injectable";
 import currentPathInjectable from "../../routes/current-path.injectable";
 import { observer } from "mobx-react";
 import { withInjectables } from "@ogre-tools/injectable-react";
+import { ViewTabs } from "../../../features/view-tabs/renderer/view-tabs";
 
 interface Dependencies {
   currentRouteComponent: IComputedValue<React.ElementType<any> | undefined>;
@@ -31,19 +32,24 @@ const NonInjectedClusterFrameLayout = observer((props: Dependencies) => {
 
   return (
     <MainLayout sidebar={<Sidebar />} footer={<Dock />}>
-      {Component ? (
-        <Component />
-      ) : // NOTE: this check is to prevent an infinite loop
-        starting !== current ? (
-          <Redirect to={starting} />
-        ) : (
-          <div className={styles.centering}>
-            <div className="error">
-              An error has occurred. No route can be found matching the
-              current route, which is also the starting route.
-            </div>
-          </div>
-        )}
+      <div className={styles.view}>
+        <ViewTabs />
+        <div className={styles.viewContents}>
+          {Component ? (
+            <Component />
+          ) : // NOTE: this check is to prevent an infinite loop
+            starting !== current ? (
+              <Redirect to={starting} />
+            ) : (
+              <div className={styles.centering}>
+                <div className="error">
+                  An error has occurred. No route can be found matching the
+                  current route, which is also the starting route.
+                </div>
+              </div>
+            )}
+        </div>
+      </div>
     </MainLayout>
   );
 });

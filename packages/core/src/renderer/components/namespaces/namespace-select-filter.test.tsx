@@ -124,6 +124,45 @@ describe("<NamespaceSelectFilter />", () => {
         expect(result.baseElement.querySelector("#react-select-namespace-select-filter-listbox")).not.toBeNull();
       });
 
+      it("shows every namespace checked while all are selected", () => {
+        expect(result.getByTestId("namespace-select-filter-checkbox-all-namespaces")).toHaveClass("checked");
+        expect(result.getByTestId("namespace-select-filter-checkbox-test-2")).toHaveClass("checked");
+      });
+
+      describe("when the checkbox of 'test-2' is pressed", () => {
+        const pressCheckbox = (namespace: string) => {
+          const checkbox = result.getByTestId(`namespace-select-filter-checkbox-${namespace}`);
+
+          fireEvent.mouseDown(checkbox);
+          checkbox.click();
+        };
+
+        beforeEach(() => {
+          pressCheckbox("test-2");
+        });
+
+        it("only deselects 'test-2'", () => {
+          expect(namespaceStore.contextNamespaces).not.toContain("test-2");
+          expect(namespaceStore.contextNamespaces).toContain("test-1");
+          expect(result.getByTestId("namespace-select-filter-checkbox-test-2")).not.toHaveClass("checked");
+        });
+
+        it("keeps the menu open", () => {
+          expect(result.baseElement.querySelector("#react-select-namespace-select-filter-listbox")).not.toBeNull();
+        });
+
+        describe("when it is pressed again", () => {
+          beforeEach(() => {
+            pressCheckbox("test-2");
+          });
+
+          it("selects 'test-2' again", () => {
+            expect(namespaceStore.contextNamespaces).toContain("test-2");
+            expect(namespaceStore.hasAllContexts).toBe(true);
+          });
+        });
+      });
+
       describe("when 'test-2' is clicked", () => {
         beforeEach(() => {
           result.getByText("test-2").click();

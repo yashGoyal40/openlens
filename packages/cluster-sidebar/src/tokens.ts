@@ -16,6 +16,10 @@ export interface SidebarItemRegistration {
   isActive?: IComputedValue<boolean>;
   isVisible?: IComputedValue<boolean>;
   orderNumber: number;
+  /**
+   * Show a "NEW" badge next to the title
+   */
+  isNew?: boolean;
 }
 
 export interface SidebarItemDeclaration {
@@ -26,6 +30,7 @@ export interface SidebarItemDeclaration {
   getIcon?: () => StrictReactNode;
   isActive: IComputedValue<boolean>;
   isVisible: IComputedValue<boolean>;
+  isNew?: boolean;
   children: SidebarItemDeclaration[];
 }
 

@@ -187,7 +187,30 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           id="react-select-namespace-select-filter-option-0"
           tabindex="-1"
         >
-          All Namespaces
+          <div
+            class="NamespaceSelectFilterOption"
+          >
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-all-namespaces"
+            >
+              <i
+                class="Icon material focusable smallest"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
+              All namespaces
+            </span>
+          </div>
         </div>
         <div
           aria-disabled="false"
@@ -196,32 +219,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-1"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-1-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-1
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-1-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -231,32 +251,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-10"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-10-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-10
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-10-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -266,32 +283,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-11"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-11-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-11
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-11-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -301,32 +315,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-12"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-12-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-12
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-12-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -336,32 +347,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-13"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-13-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-13
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-13-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -371,32 +379,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-2"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-2-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-2
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-2-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -406,32 +411,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-3"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-3-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-3
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-3-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -441,32 +443,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-4"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-4-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-4
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-4-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -476,32 +475,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-5"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-5-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-5
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-5-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -511,32 +507,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-6"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-6-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-6
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-6-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -546,32 +539,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-7"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-7-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-7
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-7-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -581,32 +571,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-8"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-8-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-8
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-8-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -616,32 +603,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked rend
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-9"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-9-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-9
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-9-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
       </div>
@@ -680,7 +664,7 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
               class="Select__placeholder css-1jqq78o-placeholder"
               id="react-select-namespace-select-filter-placeholder"
             >
-              Namespace: test-2
+              test-2
             </div>
             <div
               class="Select__input-container css-qbdosj-Input"
@@ -766,7 +750,7 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
               class="Select__placeholder css-1jqq78o-placeholder"
               id="react-select-namespace-select-filter-placeholder"
             >
-              Namespace: test-2
+              test-2
             </div>
             <div
               class="Select__input-container css-qbdosj-Input"
@@ -837,7 +821,19 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           id="react-select-namespace-select-filter-option-0"
           tabindex="-1"
         >
-          All Namespaces
+          <div
+            class="NamespaceSelectFilterOption"
+          >
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-all-namespaces"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
+              All namespaces
+            </span>
+          </div>
         </div>
         <div
           aria-disabled="false"
@@ -846,32 +842,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-2"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-2-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-2
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-2-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -881,19 +874,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-1"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-1
             </span>
           </div>
@@ -905,19 +894,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-10"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-10
             </span>
           </div>
@@ -929,19 +914,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-11"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-11
             </span>
           </div>
@@ -953,19 +934,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-12"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-12
             </span>
           </div>
@@ -977,19 +954,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-13"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-13
             </span>
           </div>
@@ -1001,19 +974,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-3"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-3
             </span>
           </div>
@@ -1025,19 +994,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-4"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-4
             </span>
           </div>
@@ -1049,19 +1014,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-5"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-5
             </span>
           </div>
@@ -1073,19 +1034,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-6"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-6
             </span>
           </div>
@@ -1097,19 +1054,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-7"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-7
             </span>
           </div>
@@ -1121,19 +1074,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-8"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-8
             </span>
           </div>
@@ -1145,19 +1094,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-9"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-9
             </span>
           </div>
@@ -1198,7 +1143,7 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
               class="Select__placeholder css-1jqq78o-placeholder"
               id="react-select-namespace-select-filter-placeholder"
             >
-              Namespace: test-1
+              test-1
             </div>
             <div
               class="Select__input-container css-qbdosj-Input"
@@ -1284,7 +1229,7 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
               class="Select__placeholder css-1jqq78o-placeholder"
               id="react-select-namespace-select-filter-placeholder"
             >
-              Namespaces: test-1, test-3
+              test-1, test-3
             </div>
             <div
               class="Select__input-container css-qbdosj-Input"
@@ -1355,7 +1300,19 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           id="react-select-namespace-select-filter-option-0"
           tabindex="-1"
         >
-          All Namespaces
+          <div
+            class="NamespaceSelectFilterOption"
+          >
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-all-namespaces"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
+              All namespaces
+            </span>
+          </div>
         </div>
         <div
           aria-disabled="false"
@@ -1364,32 +1321,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-1"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-1-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-1
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-1-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -1399,19 +1353,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-2"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-2
             </span>
           </div>
@@ -1423,19 +1373,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-10"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-10
             </span>
           </div>
@@ -1447,19 +1393,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-11"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-11
             </span>
           </div>
@@ -1471,19 +1413,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-12"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-12
             </span>
           </div>
@@ -1495,19 +1433,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-13"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-13
             </span>
           </div>
@@ -1519,32 +1453,29 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox checked"
+              data-testid="namespace-select-filter-checkbox-test-3"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
+              <i
+                class="Icon material focusable smallest"
+                data-testid="namespace-select-filter-option-test-3-selected"
               >
-                layers
-              </span>
-            </i>
-            <span>
+                <span
+                  class="icon"
+                  data-icon-name="check"
+                >
+                  check
+                </span>
+              </i>
+            </span>
+            <span
+              class="NamespaceSelectFilterLabel"
+            >
               test-3
             </span>
-            <i
-              class="Icon box right material focusable small"
-              data-testid="namespace-select-filter-option-test-3-selected"
-            >
-              <span
-                class="icon"
-                data-icon-name="check"
-              >
-                check
-              </span>
-            </i>
           </div>
         </div>
         <div
@@ -1554,19 +1485,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-4"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-4
             </span>
           </div>
@@ -1578,19 +1505,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-5"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-5
             </span>
           </div>
@@ -1602,19 +1525,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-6"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-6
             </span>
           </div>
@@ -1626,19 +1545,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-7"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-7
             </span>
           </div>
@@ -1650,19 +1565,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-8"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-8
             </span>
           </div>
@@ -1674,19 +1585,15 @@ exports[`<NamespaceSelectFilter /> once the subscribe resolves when clicked when
           tabindex="-1"
         >
           <div
-            class="flex gaps align-center"
+            class="NamespaceSelectFilterOption"
           >
-            <i
-              class="Icon material focusable small"
+            <span
+              class="NamespaceSelectFilterCheckbox"
+              data-testid="namespace-select-filter-checkbox-test-9"
+            />
+            <span
+              class="NamespaceSelectFilterLabel"
             >
-              <span
-                class="icon"
-                data-icon-name="layers"
-              >
-                layers
-              </span>
-            </i>
-            <span>
               test-9
             </span>
           </div>

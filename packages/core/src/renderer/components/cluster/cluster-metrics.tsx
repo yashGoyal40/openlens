@@ -12,7 +12,7 @@ import { BarChart } from "../chart";
 import { bytesToUnits, cssNames } from "@k8slens/utilities";
 import { Spinner } from "@k8slens/spinner";
 import { ZebraStripesPlugin } from "../chart/zebra-stripes.plugin";
-import { ClusterNoMetrics } from "./cluster-no-metrics";
+import { ClusterSummary } from "./cluster-summary";
 import { ClusterMetricSwitchers } from "./cluster-metric-switchers";
 import { getMetricLastPoints } from "../../../common/k8s-api/endpoints/metrics.api";
 import type { IAsyncComputed } from "@ogre-tools/injectable-react";
@@ -108,8 +108,9 @@ const NonInjectedClusterMetrics = observer((props: Dependencies) => {
       return <Spinner center/>;
     }
 
+    // without Prometheus there is no history, so totals and current usage are shown instead
     if (!memoryCapacity || !cpuCapacity) {
-      return <ClusterNoMetrics className={styles.empty}/>;
+      return <ClusterSummary />;
     }
 
     return (
@@ -125,9 +126,11 @@ const NonInjectedClusterMetrics = observer((props: Dependencies) => {
     );
   };
 
+  const hasPrometheusMetrics = Boolean(memoryCapacity && cpuCapacity) || (!metricValues.length && !metrics);
+
   return (
     <div className={cssNames(styles.ClusterMetrics, "flex column")}>
-      <ClusterMetricSwitchers/>
+      {hasPrometheusMetrics && <ClusterMetricSwitchers/>}
       {renderMetrics()}
     </div>
   );

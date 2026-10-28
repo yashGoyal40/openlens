@@ -1,0 +1,95 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.ClusterSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+
+  h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--textColorAccent);
+  }
+}
+
+.source {
+  font-size: var(--font-size-small);
+  color: var(--textColorTertiary);
+}
+
+.tiles {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 16px 18px;
+  border-radius: 6px;
+  background: var(--mainBackground);
+  border: 1px solid var(--borderFaintColor);
+}
+
+.tileTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--textColorSecondary);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.value {
+  color: var(--textColorAccent);
+  font-size: 24px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.total {
+  margin-left: 6px;
+  font-size: 13px;
+  color: var(--textColorSecondary);
+}
+
+.bar {
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--borderColor);
+
+  > div {
+    height: 100%;
+    border-radius: 2px;
+  }
+}
+
+.details {
+  color: var(--textColorSecondary);
+  font-size: var(--font-size-small);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

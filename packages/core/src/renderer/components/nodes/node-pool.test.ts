@@ -3,7 +3,7 @@
  * Licensed under MIT License. See LICENSE in root directory for more information.
  */
 import { Node } from "@k8slens/kube-object";
-import { getNodePool } from "./node-pool";
+import { getNodePool, getNodePoolDisplayName } from "./node-pool";
 
 const nodeWithLabels = (labels: Record<string, string>) => new Node({
   apiVersion: "v1",
@@ -41,3 +41,18 @@ describe("getNodePool", () => {
     expect(getNodePool(nodeWithLabels({ "kubernetes.io/os": "linux" }))).toBeUndefined();
   });
 });
+
+describe("getNodePoolDisplayName", () => {
+  it("drops the unique id that name prefixes add", () => {
+    expect(getNodePoolDisplayName("some-cluster-system-0f1e2d3c4b5a69788796a5b4c3")).toBe("some-cluster-system");
+    expect(getNodePoolDisplayName("system-20231115093045123400000001")).toBe("system");
+  });
+
+  it("keeps names without a generated id", () => {
+    expect(getNodePoolDisplayName("apps")).toBe("apps");
+    expect(getNodePoolDisplayName("pool-1")).toBe("pool-1");
+    expect(getNodePoolDisplayName("apps-2024")).toBe("apps-2024");
+    expect(getNodePoolDisplayName("system-abc123")).toBe("system-abc123");
+  });
+});
+

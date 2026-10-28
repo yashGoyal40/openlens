@@ -102,24 +102,21 @@ describe("dynamic resource allocation", () => {
       rendered = await builder.render();
     });
 
-    describe("when the config sidebar item is expanded", () => {
+    it("shows the device resources sidebar group at the top level", () => {
+      const group = rendered.getByTestId("sidebar-item-dynamic-resource-allocation");
+
+      expect(group).toHaveTextContent("Device Resources");
+      expect(group.dataset.parentIdTest).toBeUndefined();
+    });
+
+    describe("when the device resources sidebar group is expanded", () => {
       beforeEach(() => {
-        fireEvent.click(rendered.getByTestId("link-for-sidebar-item-config"));
+        fireEvent.click(rendered.getByTestId("link-for-sidebar-item-dynamic-resource-allocation"));
       });
 
-      it("shows the dynamic resources sidebar group", () => {
-        expect(rendered.getByTestId("sidebar-item-dynamic-resource-allocation")).toBeInTheDocument();
-      });
-
-      describe("when the dynamic resources sidebar group is expanded", () => {
-        beforeEach(() => {
-          fireEvent.click(rendered.getByTestId("link-for-sidebar-item-dynamic-resource-allocation"));
-        });
-
-        it("shows resource claims, but not kinds the cluster does not serve", () => {
-          expect(rendered.getByTestId("sidebar-item-dynamic-resource-allocation-resource-claims")).toBeInTheDocument();
-          expect(rendered.queryByTestId("sidebar-item-dynamic-resource-allocation-resource-slices")).toBeNull();
-        });
+      it("shows resource claims, but not kinds the cluster does not serve", () => {
+        expect(rendered.getByTestId("sidebar-item-dynamic-resource-allocation-resource-claims")).toBeInTheDocument();
+        expect(rendered.queryByTestId("sidebar-item-dynamic-resource-allocation-resource-slices")).toBeNull();
       });
     });
 

@@ -9,3 +9,15 @@
   justify-content: center;
   align-items: center;
 }
+
+.view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.viewContents {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}

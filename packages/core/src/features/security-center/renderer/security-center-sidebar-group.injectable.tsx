@@ -8,8 +8,9 @@ const securityCenterSidebarGroupInjectable = createSidebarGroupInjectable({
   id: "security-center",
   title: "Security",
   parentId: null,
-  orderNumber: 95,
+  orderNumber: 112,
   material: "security",
+  isNew: true,
 });
 
 export default securityCenterSidebarGroupInjectable;

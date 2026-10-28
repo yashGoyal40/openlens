@@ -25,7 +25,7 @@ const applicationsSidebarItemInjectable = getInjectable({
       isActive: di.inject(routeIsActiveInjectable, route),
       isVisible: route.isEnabled,
       // Between Workloads (20) and Config (40)
-      orderNumber: 25,
+      orderNumber: 12,
     };
   },
 

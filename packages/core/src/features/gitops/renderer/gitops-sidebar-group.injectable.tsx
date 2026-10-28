@@ -8,8 +8,9 @@ const gitOpsSidebarGroupInjectable = createSidebarGroupInjectable({
   id: "gitops",
   title: "GitOps",
   parentId: null,
-  orderNumber: 92,
+  orderNumber: 14,
   material: "sync",
+  isNew: true,
 });
 
 export default gitOpsSidebarGroupInjectable;

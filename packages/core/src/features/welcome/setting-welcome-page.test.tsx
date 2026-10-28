@@ -45,10 +45,9 @@ describe("setting-welcome-page", () => {
       expect(welcomeRoute.path).toEqual("/welcome");
     });
 
-    it("launches to the default welcome page", () => {
-      const welcomePage = rendered.getByTestId("welcome-page");  // from the Welcome component (welcome.tsx)
-
-      expect(welcomePage).toBeInTheDocument();
+    it("launches to the catalog instead of the default welcome page", () => {
+      expect(rendered.getByTestId("catalog-list-for-browse-all")).toBeInTheDocument();
+      expect(rendered.queryByTestId("welcome-page")).not.toBeInTheDocument();
     });
   });
 

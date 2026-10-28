@@ -5,7 +5,7 @@
 
 import styles from  "./sidebar-items.module.scss";
 
-import React from "react";
+import React, { useContext } from "react";
 import { observer } from "mobx-react";
 import { NavLink } from "react-router-dom";
 import { Icon } from "@k8slens/icon";
@@ -14,6 +14,7 @@ import type { SidebarStorageState } from "./sidebar-storage/sidebar-storage.inje
 import sidebarStorageInjectable from "./sidebar-storage/sidebar-storage.injectable";
 import type { SidebarItemDeclaration } from "@k8slens/cluster-sidebar";
 import type { StorageLayer } from "../../utils/storage-helper";
+import { SidebarFilterContext, itemMatches, titleMatches } from "./sidebar-filter";
 
 interface Dependencies {
   sidebarStorage: StorageLayer<SidebarStorageState>;
@@ -25,8 +26,10 @@ export interface SidebarItemProps {
 
 const NonInjectedSidebarItem = observer((props: SidebarItemProps & Dependencies) => {
   const { item, sidebarStorage } = props;
+  const query = useContext(SidebarFilterContext);
   const id = item.id;
-  const expanded = sidebarStorage.get().expanded[id] ?? false;
+  // while filtering every matching branch is shown expanded
+  const expanded = query ? true : (sidebarStorage.get().expanded[id] ?? false);
   const isExpandable = item.children.length > 0 && item.children.some(item => item.isVisible.get());
   const isActive = item.isActive.get();
 
@@ -40,16 +43,21 @@ const NonInjectedSidebarItem = observer((props: SidebarItemProps & Dependencies)
       return null;
     }
 
+    const children = item.children.map((child) => (
+      <SidebarItem key={child.id} item={child} />
+    ));
+
     return (
       <div className={styles.subMenu}>
-        {item.children.map((child) => (
-          <SidebarItem key={child.id} item={child} />
-        ))}
+        {query && titleMatches(item, query)
+          // all children of a matching group are shown
+          ? <SidebarFilterContext.Provider value="">{children}</SidebarFilterContext.Provider>
+          : children}
       </div>
     );
   };
 
-  if (!item.isVisible.get()) {
+  if (!item.isVisible.get() || (query && !itemMatches(item, query))) {
     return null;
   }
 
@@ -87,6 +95,9 @@ const NonInjectedSidebarItem = observer((props: SidebarItemProps & Dependencies)
           : <span className={styles.expandIconPlaceholder} />}
         {item.getIcon?.()}
         <span className={styles.title}>{item.title}</span>
+        {item.isNew && (
+          <span className={styles.newBadge} data-testid={`new-badge-for-${id}`}>NEW</span>
+        )}
       </NavLink>
       {renderSubMenu()}
     </div>

@@ -73,11 +73,7 @@ const NonInjectedPlaceholder = observer(({ namespaceStore, ...props }: CustomPla
       return "All namespaces";
     }
 
-    const prefix = namespaces.length === 1
-      ? "Namespace"
-      : "Namespaces";
-
-    return `${prefix}: ${namespaces.join(", ")}`;
+    return namespaces.join(", ");
   };
 
   return (

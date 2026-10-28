@@ -281,7 +281,7 @@ describe("cluster - sidebar and tab navigation for core", () => {
               "/some-directory-for-app-data/some-product-name/lens-local-storage/some-cluster-id.json",
             );
 
-            expect(actual).toEqual({
+            expect(actual).toMatchObject({
               sidebar: {
                 expanded: { "sidebar-item-some-parent": true },
                 width: 240,

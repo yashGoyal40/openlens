@@ -21,10 +21,9 @@ describe("welcome - navigation using application menu", () => {
     expect(rendered.container).toMatchSnapshot();
   });
 
-  it("shows welcome page being front page", () => {
-    const actual = rendered.getByTestId("welcome-page");
-
-    expect(actual).not.toBeNull();
+  it("shows the catalog as the front page instead of the welcome page", () => {
+    expect(rendered.getByTestId("catalog-list-for-browse-all")).not.toBeNull();
+    expect(rendered.queryByTestId("welcome-page")).toBeNull();
   });
 
   describe("when navigated somewhere else", () => {

@@ -27,3 +27,9 @@ export const getNodePool = (node: Node): string | undefined => {
     .map(label => labels[label])
     .find(Boolean);
 };
+
+/**
+ * Infrastructure tools often create node groups from a name prefix, which appends a long
+ * unique id (eg. "system-0f1e2d3c4b5a69788796a5b4c3"). Tables show the name without it.
+ */
+export const getNodePoolDisplayName = (pool: string) => pool.replace(/-(?:[0-9a-f]{20,}|[0-9]{14,})$/i, "");

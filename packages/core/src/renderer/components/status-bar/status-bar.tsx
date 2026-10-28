@@ -31,9 +31,11 @@ const NonInjectedStatusBar = observer(({
   const barStyle = barStatus === "default"
     ? undefined
     : styles[`status-${barStatus}`];
+  // an empty bar is just a coloured line, so it is only shown with something in it
+  const isEmpty = barStatus === "default" && left.length === 0 && right.length === 0;
 
   return (
-    <div className={cssNames(styles.StatusBar, barStyle)} data-testid="status-bar">
+    <div className={cssNames(styles.StatusBar, barStyle, { [styles.empty]: isEmpty })} data-testid="status-bar">
       <div className={styles.leftSide} data-testid="status-bar-left">
         {left.map((Item, index) => (
           <div

@@ -18,12 +18,17 @@ export interface SidebarGroupOptions {
    * Material icon name, only shown for top-level groups
    */
   material?: string;
+
+  /**
+   * Show a "NEW" badge next to the title
+   */
+  isNew?: boolean;
 }
 
 /**
  * A sidebar item that only groups other items. It is visible while any of its children is visible.
  */
-export const createSidebarGroupInjectable = ({ id, title, parentId, orderNumber, material }: SidebarGroupOptions) => getInjectable({
+export const createSidebarGroupInjectable = ({ id, title, parentId, orderNumber, material, isNew }: SidebarGroupOptions) => getInjectable({
   id: `sidebar-item-${id}`,
 
   instantiate: () => ({
@@ -32,6 +37,7 @@ export const createSidebarGroupInjectable = ({ id, title, parentId, orderNumber,
     getIcon: material ? () => <Icon material={material} /> : undefined,
     onClick: noop,
     orderNumber,
+    isNew,
   }),
 
   injectionToken: sidebarItemInjectionToken,

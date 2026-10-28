@@ -13,6 +13,11 @@
     background: var(--layoutTabsBackground);
     flex-shrink: 0;
     height: 34px;
+
+    // views of a group are picked in the navigator and opened in the view tabs
+    &.siblingTabs {
+      display: none;
+    }
   }
 
   main {

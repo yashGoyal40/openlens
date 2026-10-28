@@ -34,7 +34,7 @@ export const TabLayout = observer(
       >
 
         {hasTabs && (
-          <Tabs center>
+          <Tabs center className="siblingTabs">
             {tabs.map(({ onClick, id, title, isActive }) => (
               <Tab
                 onClick={onClick}

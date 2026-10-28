@@ -19,9 +19,8 @@ exports[`entity running technical tests when navigated to catalog renders 1`] = 
             class="preventedDragging"
           >
             <i
-              class="Icon material interactive focusable"
+              class="Icon material interactive disabled focusable"
               data-testid="home-button"
-              tabindex="0"
             >
               <span
                 class="icon"
@@ -643,26 +642,6 @@ exports[`entity running technical tests when navigated to catalog renders 1`] = 
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -671,6 +650,10 @@ exports[`entity running technical tests when navigated to catalog renders 1`] = 
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -751,7 +734,7 @@ exports[`entity running technical tests when navigated to catalog renders 1`] = 
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -787,9 +770,8 @@ exports[`entity running technical tests when navigated to catalog when details p
             class="preventedDragging"
           >
             <i
-              class="Icon material interactive focusable"
+              class="Icon material interactive disabled focusable"
               data-testid="home-button"
-              tabindex="0"
             >
               <span
                 class="icon"
@@ -1411,26 +1393,6 @@ exports[`entity running technical tests when navigated to catalog when details p
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -1439,6 +1401,10 @@ exports[`entity running technical tests when navigated to catalog when details p
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -1519,7 +1485,7 @@ exports[`entity running technical tests when navigated to catalog when details p
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div

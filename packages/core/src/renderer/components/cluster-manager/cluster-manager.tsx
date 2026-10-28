@@ -15,7 +15,7 @@ import { withInjectables } from "@ogre-tools/injectable-react";
 import { TopBar } from "../layout/top-bar/top-bar";
 import type { IComputedValue } from "mobx";
 import currentRouteComponentInjectable from "../../routes/current-route-component.injectable";
-import welcomeRouteInjectable from "../../../common/front-end-routing/routes/welcome/welcome-route.injectable";
+import homeRouteInjectable from "../../../common/front-end-routing/routes/home-route.injectable";
 import { buildURL } from "@k8slens/utilities";
 import type { WatchForGeneralEntityNavigation } from "../../api/helpers/watch-for-general-entity-navigation.injectable";
 import watchForGeneralEntityNavigationInjectable from "../../api/helpers/watch-for-general-entity-navigation.injectable";
@@ -23,7 +23,7 @@ import currentPathInjectable from "../../routes/current-path.injectable";
 
 interface Dependencies {
   currentRouteComponent: IComputedValue<React.ElementType | undefined>;
-  welcomeUrl: string;
+  defaultUrl: string;
   watchForGeneralEntityNavigation: WatchForGeneralEntityNavigation;
   currentPath: IComputedValue<string>;
 }
@@ -45,8 +45,8 @@ class NonInjectedClusterManager extends React.Component<Dependencies> {
 
     const currentPath = this.props.currentPath.get();
 
-    if (currentPath !== this.props.welcomeUrl) {
-      return <Redirect exact to={this.props.welcomeUrl} />;
+    if (currentPath !== this.props.defaultUrl) {
+      return <Redirect exact to={this.props.defaultUrl} />;
     }
 
     return (
@@ -57,7 +57,7 @@ class NonInjectedClusterManager extends React.Component<Dependencies> {
           {" "}
           <code>{currentPath}</code>
           {" "}
-          which is the welcomeUrl. This is a bug.
+          which is the default page. This is a bug.
         </p>
       </div>
     );
@@ -82,7 +82,7 @@ class NonInjectedClusterManager extends React.Component<Dependencies> {
 export const ClusterManager = withInjectables<Dependencies>(NonInjectedClusterManager, {
   getProps: (di) => ({
     currentRouteComponent: di.inject(currentRouteComponentInjectable),
-    welcomeUrl: buildURL(di.inject(welcomeRouteInjectable).path),
+    defaultUrl: buildURL(di.inject(homeRouteInjectable).path),
     watchForGeneralEntityNavigation: di.inject(watchForGeneralEntityNavigationInjectable),
     currentPath: di.inject(currentPathInjectable),
   }),

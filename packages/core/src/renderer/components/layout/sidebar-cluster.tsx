@@ -9,7 +9,8 @@ import React, { useState } from "react";
 import { broadcastMessage } from "../../../common/ipc";
 import type { CatalogEntity, CatalogEntityContextMenu } from "../../api/catalog-entity";
 import { IpcRendererNavigationEvents } from "../../../common/ipc/navigation-events";
-import { Avatar } from "../avatar";
+import { ClusterGlyph, getEntityColor } from "../cluster-glyph";
+import { LensKubernetesClusterStatus } from "../../../common/catalog-entities/kubernetes-cluster";
 import { Icon } from "@k8slens/icon";
 import { Menu, MenuItem } from "../menu";
 import { Tooltip } from "@k8slens/tooltip";
@@ -49,12 +50,7 @@ const NonInjectedSidebarCluster = observer(({
     // render a Loading version of the SidebarCluster
     return (
       <div className={styles.SidebarCluster}>
-        <Avatar
-          title="??"
-          background="var(--halfGray)"
-          size={40}
-          className={styles.loadingAvatar}
-        />
+        <ClusterGlyph color="var(--halfGray)" className={styles.loadingAvatar} />
         <div className={styles.loadingClusterName} />
       </div>
     );
@@ -103,21 +99,28 @@ const NonInjectedSidebarCluster = observer(({
       role="menubar"
       data-testid="sidebar-cluster-dropdown"
     >
-      <Avatar
-        title={clusterEntity.getName()}
-        colorHash={`${clusterEntity.getName()}-${clusterEntity.metadata.source}`}
-        size={40}
-        src={clusterEntity.spec.icon?.src}
-        background={clusterEntity.spec.icon?.background}
-        className={styles.avatar}
-      />
+      <Icon material="expand_more" className={styles.expand} />
+      {clusterEntity.spec.icon?.src
+        ? (
+          <img
+            src={clusterEntity.spec.icon.src}
+            alt=""
+            className={styles.avatar} />
+        )
+        : <ClusterGlyph color={getEntityColor(clusterEntity)} className={styles.avatar} />}
       <div className={styles.clusterName} id={tooltipId}>
         {clusterEntity.getName()}
       </div>
       <Tooltip targetId={tooltipId}>
         {clusterEntity.getName()}
       </Tooltip>
-      <Icon material="arrow_drop_down" className={styles.dropdown} />
+      {clusterEntity.status.phase === LensKubernetesClusterStatus.CONNECTED && (
+        <span
+          className={styles.connected}
+          title="Connected"
+          data-testid="sidebar-cluster-connected" />
+      )}
+      <Icon material="more_vert" className={styles.dropdown} />
       <Menu
         usePortal
         htmlFor={id}

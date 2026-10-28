@@ -10,7 +10,7 @@ import type { IComputedValue } from "mobx";
 import { observable } from "mobx";
 import { observer } from "mobx-react";
 
-import type { CatalogCategoryRegistry, CatalogEntity, CatalogEntityContextMenu } from "../../../common/catalog";
+import type { CatalogEntity, CatalogEntityContextMenu } from "../../../common/catalog";
 import type { IClassName } from "@k8slens/utilities";
 import { cssNames } from "@k8slens/utilities";
 import { Icon } from "@k8slens/icon";
@@ -18,7 +18,8 @@ import { HotbarIcon } from "./hotbar-icon";
 import { LensKubernetesClusterStatus } from "../../../common/catalog-entities/kubernetes-cluster";
 import type { VisitEntityContextMenu } from "../../../common/catalog/visit-entity-context-menu.injectable";
 import { withInjectables } from "@ogre-tools/injectable-react";
-import catalogCategoryRegistryInjectable from "../../../common/catalog/category-registry.injectable";
+import { getIconMaterial, getShortName } from "../../../common/catalog/helpers";
+import { ClusterGlyph, getEntityColor } from "../cluster-glyph";
 import visitEntityContextMenuInjectable from "../../../common/catalog/visit-entity-context-menu.injectable";
 import activeEntityInjectable from "../../api/catalog/entity/active.injectable";
 import type { Navigate } from "../../navigation/navigate.injectable";
@@ -37,7 +38,6 @@ export interface HotbarEntityIconProps {
 
 interface Dependencies {
   visitEntityContextMenu: VisitEntityContextMenu;
-  catalogCategoryRegistry: CatalogCategoryRegistry;
   activeEntity: IComputedValue<CatalogEntity | undefined>;
   navigate: Navigate;
 }
@@ -46,33 +46,45 @@ interface Dependencies {
 class NonInjectedHotbarEntityIcon extends React.Component<HotbarEntityIconProps & Dependencies> {
   private readonly menuItems = observable.array<CatalogEntityContextMenu>();
 
-  private renderKindIcon() {
-    const className = styles.badge;
-    const category = this.props.catalogCategoryRegistry.getCategoryForEntity(this.props.entity);
-
-    if (!category) {
-      return <Icon material="bug_report" className={className} />;
-    }
-
-    if (Icon.isSvg(category.metadata.icon)) {
-      return <Icon svg={category.metadata.icon} className={className} />;
-    }
-
-    return <Icon material={category.metadata.icon} className={className} />;
-  }
-
   private renderLedIcon() {
-    if (this.props.entity.kind !== "KubernetesCluster") {
+    const { entity } = this.props;
+
+    // TODO: make it more generic
+    if (entity.kind !== "KubernetesCluster" || entity.status.phase !== LensKubernetesClusterStatus.CONNECTED) {
       return null;
     }
 
+    return <div className={cssNames(styles.led, styles.online)} data-testid={`hotbar-connected-${entity.getId()}`} />;
+  }
+
+  /**
+   * Lens style tile: the cluster heptagon in the cluster colour with the short name below it,
+   * or the material icon of other entities drawn in their colour
+   */
+  private renderTile() {
+    const { entity } = this.props;
+    const color = getEntityColor(entity);
+    const material = getIconMaterial(entity);
+
+    if (entity.kind === "KubernetesCluster" || !material) {
+      return (
+        <span className={styles.tile}>
+          <ClusterGlyph
+            color={color}
+            size={28}
+            className={styles.glyph} />
+          <span className={styles.label}>{getShortName(entity)}</span>
+        </span>
+      );
+    }
+
     return (
-      <div
-        className={cssNames(styles.led, {
-          // TODO: make it more generic
-          [styles.online]: this.props.entity.status.phase === LensKubernetesClusterStatus.CONNECTED,
-        })}
-      />
+      <span className={styles.tile}>
+        <Icon
+          material={material}
+          className={styles.material}
+          style={{ color }} />
+      </span>
     );
   }
 
@@ -94,15 +106,16 @@ class NonInjectedHotbarEntityIcon extends React.Component<HotbarEntityIconProps 
 
   render() {
     const { entity, className, onClick } = this.props;
+    const src = entity.spec.icon?.src;
 
     return (
       <HotbarIcon
         uid={entity.getId()}
         title={entity.getName()}
         source={entity.metadata.source}
-        src={entity.spec.icon?.src}
-        material={entity.spec.icon?.material}
-        background={entity.spec.icon?.background}
+        src={src}
+        background={src ? undefined : "var(--clusterMenuCellBackground)"}
+        content={src ? undefined : this.renderTile()}
         className={className}
         active={this.isActive(entity)}
         onMenuOpen={() => this.onMenuOpen()}
@@ -116,7 +129,6 @@ class NonInjectedHotbarEntityIcon extends React.Component<HotbarEntityIconProps 
         onClick={onClick}
       >
         {this.renderLedIcon()}
-        {this.renderKindIcon()}
       </HotbarIcon>
     );
   }
@@ -125,7 +137,6 @@ class NonInjectedHotbarEntityIcon extends React.Component<HotbarEntityIconProps 
 export const HotbarEntityIcon = withInjectables<Dependencies, HotbarEntityIconProps>(NonInjectedHotbarEntityIcon, {
   getProps: (di, props) => ({
     ...props,
-    catalogCategoryRegistry: di.inject(catalogCategoryRegistryInjectable),
     visitEntityContextMenu: di.inject(visitEntityContextMenuInjectable),
     activeEntity: di.inject(activeEntityInjectable),
     navigate: di.inject(navigateInjectable),

@@ -9,7 +9,7 @@ import type { NamespaceStore } from "../store";
 import type { ActionMeta, MultiValue } from "react-select";
 import { Icon } from "@k8slens/icon";
 import type { SelectOption } from "../../select";
-import { observableCrate } from "@k8slens/utilities";
+import { cssNames, observableCrate } from "@k8slens/utilities";
 import type { IsMultiSelectionKey } from "./is-selection-key.injectable";
 import type { ClusterContext } from "../../../cluster-frame-context/cluster-frame-context";
 
@@ -33,6 +33,11 @@ export interface NamespaceSelectFilterModel {
   };
   onChange: (newValue: MultiValue<NamespaceSelectFilterOption>, actionMeta: ActionMeta<NamespaceSelectFilterOption>) => void;
   onClick: () => void;
+
+  /**
+   * Pressing an option's checkbox toggles that namespace and keeps the menu open
+   */
+  onCheckboxMouseDown: () => void;
   onKeyDown: React.KeyboardEventHandler;
   onKeyUp: React.KeyboardEventHandler;
   reset: () => void;
@@ -50,6 +55,7 @@ export function namespaceSelectFilterModelFor(dependencies: Dependencies): Names
 
   let didToggle = false;
   let isMultiSelection = false;
+  let isCheckboxToggle = false;
   const menuState = observableCrate(SelectMenuState.Close, [{
     from: SelectMenuState.Close,
     to: SelectMenuState.Open,
@@ -77,7 +83,7 @@ export function namespaceSelectFilterModelFor(dependencies: Dependencies): Names
   const options = computed((): readonly NamespaceSelectFilterOption[] => [
     {
       value: selectAllNamespaces,
-      label: "All Namespaces",
+      label: "All namespaces",
       id: "all-namespaces",
     },
     ...context
@@ -121,7 +127,7 @@ export function namespaceSelectFilterModelFor(dependencies: Dependencies): Names
 
             if (action.option.value === selectAllNamespaces) {
               namespaceStore.selectAll();
-            } else if (isMultiSelection) {
+            } else if (isMultiSelection || isCheckboxToggle) {
               namespaceStore.toggleSingle(action.option.value);
             } else {
               namespaceStore.selectSingle(action.option.value);
@@ -133,9 +139,14 @@ export function namespaceSelectFilterModelFor(dependencies: Dependencies): Names
     onClick: () => {
       if (!menuIsOpen.get()) {
         model.menu.open();
-      } else if (!isMultiSelection) {
+      } else if (!isMultiSelection && !isCheckboxToggle) {
         model.menu.close();
       }
+
+      isCheckboxToggle = false;
+    },
+    onCheckboxMouseDown: () => {
+      isCheckboxToggle = true;
     },
     onKeyDown: (event) => {
       if (isMultiSelectionKey(event)) {
@@ -157,22 +168,27 @@ export function namespaceSelectFilterModelFor(dependencies: Dependencies): Names
     }),
     isOptionSelected,
     formatOptionLabel: (option) => {
-      if (option.value === selectAllNamespaces) {
-        return <>All Namespaces</>;
-      }
+      const namespace = option.value === selectAllNamespaces ? undefined : option.value;
+      const checked = namespace === undefined
+        ? namespaceStore.areAllSelectedImplicitly
+        : isOptionSelected(option);
 
       return (
-        <div className="flex gaps align-center">
-          <Icon small material="layers" />
-          <span>{option.value}</span>
-          {isOptionSelected(option) && (
-            <Icon
-              small
-              material="check"
-              className="box right"
-              data-testid={`namespace-select-filter-option-${option.value}-selected`}
-            />
-          )}
+        <div className="NamespaceSelectFilterOption">
+          <span
+            className={cssNames("NamespaceSelectFilterCheckbox", { checked })}
+            onMouseDown={model.onCheckboxMouseDown}
+            data-testid={`namespace-select-filter-checkbox-${namespace ?? "all-namespaces"}`}
+          >
+            {checked && (
+              <Icon
+                smallest
+                material="check"
+                data-testid={namespace && `namespace-select-filter-option-${namespace}-selected`}
+              />
+            )}
+          </span>
+          <span className="NamespaceSelectFilterLabel">{namespace ?? "All namespaces"}</span>
         </div>
       );
     },

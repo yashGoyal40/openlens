@@ -76,132 +76,682 @@ exports[`Showing correct entity settings renders 1`] = `
           id="lens-views"
         />
         <div
-          class="flex justify-center Welcome align-center"
-          data-testid="welcome-page"
+          class="mainLayout"
+          style="--sidebar-width: 240px;"
         >
           <div
-            data-testid="welcome-banner-container"
-            style="width: 320px;"
+            class="sidebar"
           >
-            <i
-              class="Icon logo svg focusable"
-              data-testid="no-welcome-banners-icon"
-            >
-              <span
-                class="icon"
-              >
-                <svg
-                  data-name="Layer 1"
-                  id="Layer_1"
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  
-  
-                  <defs>
-                    <style>
-                      .cls-1{fill:none!important;}
-                    </style>
-                  </defs>
-                  
-  
-                  <rect
-                    class="cls-1"
-                    height="512"
-                    width="512"
-                  />
-                  <path
-                    d="M193.6,220,308.08,21.76A247.33,247.33,0,0,0,256,16,239.62,239.62,0,0,0,104.32,70l87.84,152.4Z"
-                  />
-                  <path
-                    d="M485,184A240.6,240.6,0,0,0,341,31.84L253.12,184Z"
-                  />
-                  <path
-                    d="M491.2,208H311.44l7,12L432.64,418A237.85,237.85,0,0,0,496,256,243,243,0,0,0,491.2,208Z"
-                  />
-                  <path
-                    d="M173,256,79.36,94C40.24,136.72,16,193.36,16,256a243,243,0,0,0,4.8,48H200.56Z"
-                  />
-                  <path
-                    d="M27,328A240.6,240.6,0,0,0,171,480.16L258.88,328Z"
-                  />
-                  <path
-                    d="M297.52,328l-93.6,162.24A247.33,247.33,0,0,0,256,496a239.62,239.62,0,0,0,151.68-54L319.84,289.6Z"
-                  />
-                  
-
-                </svg>
-                
-
-              </span>
-            </i>
             <div
-              class="flex justify-center"
+              class="flex flex-col w-full"
             >
               <div
-                data-testid="welcome-text-container"
-                style="width: 320px;"
+                class="catalog"
               >
-                <h2>
-                  Welcome to some-product-name!
-                </h2>
-                <p>
-                  To get you started we have auto-detected your clusters in your
-                   
-                  kubeconfig file and added them to the catalog, your centralized
-                   
-                  view for managing all your cloud-native resources.
-                  <br />
-                  <br />
-                  If you have any questions or feedback, please join our 
-                  <a
-                    class="link"
-                    href="https://forums.k8slens.dev"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Lens Forums
-                  </a>
-                  .
-                </p>
-                <ul
-                  class="block"
-                  data-testid="welcome-menu-container"
-                  style="width: 320px;"
+                Catalog
+              </div>
+              <ul
+                class="treeView"
+                role="tree"
+              >
+                <li
+                  class="root selected treeItem"
+                  data-testid="*-tab"
+                  role="treeitem"
                 >
-                  <li
-                    class="flex grid-12"
+                  <div
+                    class="iconContainer"
+                  />
+                  <div
+                    class="label"
                   >
-                    <i
-                      class="Icon box col-1 material focusable"
+                    Browse
+                  </div>
+                </li>
+                <div
+                  class="HorizontalLine size-xxs"
+                />
+                <li
+                  class="root treeGroup"
+                  role="group"
+                >
+                  <div
+                    class="group"
+                  >
+                    <div
+                      class="iconContainer"
                     >
-                      <span
-                        class="icon"
-                        data-icon-name="view_list"
+                      <i
+                        class="Icon material focusable"
                       >
-                        view_list
-                      </span>
-                    </i>
-                    <a
-                      class="box col-10"
+                        <span
+                          class="icon"
+                          data-icon-name="expand_more"
+                        >
+                          expand_more
+                        </span>
+                      </i>
+                    </div>
+                    <div
+                      class="label"
                     >
-                      Browse Clusters in Catalog
-                    </a>
-                    <i
-                      class="Icon box col-1 material focusable"
-                    >
-                      <span
-                        class="icon"
-                        data-icon-name="navigate_next"
+                      <div
+                        class="parent"
                       >
-                        navigate_next
-                      </span>
-                    </i>
-                  </li>
-                </ul>
+                        Categories
+                      </div>
+                    </div>
+                  </div>
+                  <ul
+                    class="contents expanded"
+                  >
+                    <li
+                      class="root treeItem"
+                      data-testid="entity.k8slens.dev/General-tab"
+                      role="treeitem"
+                    >
+                      <div
+                        class="iconContainer"
+                      >
+                        <i
+                          class="Icon material focusable small"
+                        >
+                          <span
+                            class="icon"
+                            data-icon-name="settings"
+                          >
+                            settings
+                          </span>
+                        </i>
+                      </div>
+                      <div
+                        class="label"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <div>
+                            General
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li
+                      class="root treeItem"
+                      data-testid="entity.k8slens.dev/KubernetesCluster-tab"
+                      role="treeitem"
+                    >
+                      <div
+                        class="iconContainer"
+                      >
+                        <i
+                          class="Icon focusable small"
+                        >
+                          <span
+                            class="icon"
+                            data-icon-name=""
+                          />
+                        </i>
+                      </div>
+                      <div
+                        class="label"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <div>
+                            Clusters
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li
+                      class="root treeItem"
+                      data-testid="entity.k8slens.dev/WebLink-tab"
+                      role="treeitem"
+                    >
+                      <div
+                        class="iconContainer"
+                      >
+                        <i
+                          class="Icon material focusable small"
+                        >
+                          <span
+                            class="icon"
+                            data-icon-name="public"
+                          >
+                            public
+                          </span>
+                        </i>
+                      </div>
+                      <div
+                        class="label"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <div>
+                            Web Links
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="ResizingAnchor horizontal trailing"
+            />
+          </div>
+          <div
+            class="contents"
+          >
+            <div
+              class="views"
+            >
+              <div
+                class="ItemListLayout flex column Catalog"
+                data-testid="catalog-list-for-browse-all"
+              >
+                <div
+                  class="header flex gaps align-center"
+                >
+                  <h5
+                    class="title"
+                  >
+                    Browse All
+                  </h5>
+                  <div
+                    class="info-panel box grow"
+                  >
+                    3 items
+                  </div>
+                  <div
+                    class="Input SearchInput focused"
+                  >
+                    <label
+                      class="input-area flex gaps align-center"
+                      id=""
+                    >
+                      <input
+                        class="input box grow"
+                        placeholder="Search..."
+                        spellcheck="false"
+                        value=""
+                      />
+                      <i
+                        class="Icon material focusable small"
+                      >
+                        <span
+                          class="icon"
+                          data-icon-name="search"
+                        >
+                          search
+                        </span>
+                      </i>
+                    </label>
+                    <div
+                      class="input-info flex gaps"
+                    />
+                  </div>
+                  <i
+                    class="Icon export-to-csv material interactive focusable"
+                    data-testid="item-list-layout-export-to-csv"
+                    tabindex="0"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="file_download"
+                    >
+                      file_download
+                    </span>
+                  </i>
+                  <div
+                    data-testid="tooltip-content-for-item-list-layout-export-to-csv"
+                  >
+                    Export to CSV
+                  </div>
+                </div>
+                <div
+                  class="items box grow flex column"
+                >
+                  <div
+                    class="Table flex column Catalog box grow dark selectable scrollable sortable autoSize virtual"
+                  >
+                    <div
+                      class="TableHead sticky nowrap topLine"
+                    >
+                      <div
+                        class="TableCell entityName nowrap sorting"
+                        id="name"
+                      >
+                        <div
+                          class="content"
+                        >
+                          Name
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-name"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
+                        </div>
+                        <i
+                          class="Icon sortIcon material focusable"
+                        >
+                          <span
+                            class="icon"
+                            data-icon-name="arrow_drop_down"
+                          >
+                            arrow_drop_down
+                          </span>
+                        </i>
+                      </div>
+                      <div
+                        class="TableCell nowrap sorting"
+                        data-testid="catalog-kind-column"
+                        id="kind"
+                      >
+                        <div
+                          class="content"
+                        >
+                          Kind
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-kind"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
+                        </div>
+                        <i
+                          class="Icon sortIcon material focusable"
+                        >
+                          <span
+                            class="icon"
+                            data-icon-name="arrow_drop_down"
+                          >
+                            arrow_drop_down
+                          </span>
+                        </i>
+                      </div>
+                      <div
+                        class="TableCell sourceCell nowrap sorting"
+                        data-testid="catalog-source-column"
+                        id="source"
+                      >
+                        <div
+                          class="content"
+                        >
+                          Source
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-source"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
+                        </div>
+                        <i
+                          class="Icon sortIcon material focusable"
+                        >
+                          <span
+                            class="icon"
+                            data-icon-name="arrow_drop_down"
+                          >
+                            arrow_drop_down
+                          </span>
+                        </i>
+                      </div>
+                      <div
+                        class="TableCell labelsCell scrollable nowrap"
+                        data-testid="catalog-labels-column"
+                        id="labels"
+                      >
+                        <div
+                          class="content"
+                        >
+                          Labels
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-labels"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="TableCell statusCell nowrap sorting"
+                        data-testid="catalog-status-column"
+                        id="status"
+                      >
+                        <div
+                          class="content"
+                        >
+                          Status
+                          <span
+                            class="column-resize-anchor"
+                            data-testid="column-resize-anchor-status"
+                          >
+                            <div
+                              class="ResizingAnchor horizontal trailing"
+                            />
+                          </span>
+                        </div>
+                        <i
+                          class="Icon sortIcon material focusable"
+                        >
+                          <span
+                            class="icon"
+                            data-icon-name="arrow_drop_down"
+                          >
+                            arrow_drop_down
+                          </span>
+                        </i>
+                      </div>
+                      <div
+                        class="TableCell menu nowrap"
+                      >
+                        <div
+                          class="content"
+                        >
+                          <i
+                            class="Icon material interactive focusable"
+                            id="menu-actions-for-item-object-list-content"
+                            tabindex="0"
+                          >
+                            <span
+                              class="icon"
+                              data-icon-name="more_vert"
+                            >
+                              more_vert
+                            </span>
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="VirtualList Catalog box grow dark"
+                    >
+                      <div>
+                        <div
+                          class="list"
+                          style="position: relative; height: 420000px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
+                        >
+                          <div
+                            style="height: 108px; width: 100%;"
+                          >
+                            <div
+                              style="position: absolute; left: 0px; top: 0px; height: 36px; width: 100%;"
+                            >
+                              <div
+                                class="TableRow nowrap"
+                              >
+                                <div
+                                  class="TableCell entityName"
+                                >
+                                  <div
+                                    class="Avatar rounded catalogAvatar"
+                                    style="width: 24px; height: 24px; background: rgb(140, 4, 8);"
+                                  >
+                                    skc
+                                  </div>
+                                  <span>
+                                    some-kubernetes-cluster
+                                  </span>
+                                  <i
+                                    class="Icon pinIcon svg interactive focusable small"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      class="icon"
+                                    >
+                                      <svg
+                                        enable-background="new 0 0 193.826 193.826"
+                                        viewBox="0 0 193.826 193.826"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </i>
+                                  <div>
+                                    Add to Hotbar
+                                  </div>
+                                </div>
+                                <div
+                                  class="TableCell"
+                                >
+                                  KubernetesCluster
+                                </div>
+                                <div
+                                  class="TableCell sourceCell"
+                                >
+                                  unknown
+                                </div>
+                                <div
+                                  class="TableCell labelsCell scrollable"
+                                />
+                                <div
+                                  class="TableCell statusCell"
+                                >
+                                  <span
+                                    class="connecting"
+                                  >
+                                    connecting
+                                  </span>
+                                </div>
+                                <div
+                                  class="TableCell menu"
+                                >
+                                  <div>
+                                    <i
+                                      class="Icon material interactive focusable"
+                                      data-testid="icon-for-menu-actions-for-catalog-for-some-entity-id"
+                                      id="menu-actions-for-catalog-for-some-entity-id"
+                                      tabindex="0"
+                                    >
+                                      <span
+                                        class="icon"
+                                        data-icon-name="more_vert"
+                                      >
+                                        more_vert
+                                      </span>
+                                    </i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              style="position: absolute; left: 0px; top: 36px; height: 36px; width: 100%;"
+                            >
+                              <div
+                                class="TableRow nowrap"
+                              >
+                                <div
+                                  class="TableCell entityName"
+                                >
+                                  <div
+                                    class="Avatar rounded catalogAvatar"
+                                    style="width: 24px; height: 24px; background: rgb(77, 163, 16);"
+                                  >
+                                    sw
+                                  </div>
+                                  <span>
+                                    some-weblink
+                                  </span>
+                                  <i
+                                    class="Icon pinIcon svg interactive focusable small"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      class="icon"
+                                    >
+                                      <svg
+                                        enable-background="new 0 0 193.826 193.826"
+                                        viewBox="0 0 193.826 193.826"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </i>
+                                  <div>
+                                    Add to Hotbar
+                                  </div>
+                                </div>
+                                <div
+                                  class="TableCell"
+                                >
+                                  WebLink
+                                </div>
+                                <div
+                                  class="TableCell sourceCell"
+                                >
+                                  unknown
+                                </div>
+                                <div
+                                  class="TableCell labelsCell scrollable"
+                                />
+                                <div
+                                  class="TableCell statusCell"
+                                >
+                                  <span
+                                    class="available"
+                                  >
+                                    available
+                                  </span>
+                                </div>
+                                <div
+                                  class="TableCell menu"
+                                >
+                                  <div>
+                                    <i
+                                      class="Icon material interactive focusable"
+                                      data-testid="icon-for-menu-actions-for-catalog-for-some-weblink-id"
+                                      id="menu-actions-for-catalog-for-some-weblink-id"
+                                      tabindex="0"
+                                    >
+                                      <span
+                                        class="icon"
+                                        data-icon-name="more_vert"
+                                      >
+                                        more_vert
+                                      </span>
+                                    </i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              style="position: absolute; left: 0px; top: 72px; height: 36px; width: 100%;"
+                            >
+                              <div
+                                class="TableRow nowrap"
+                              >
+                                <div
+                                  class="TableCell entityName"
+                                >
+                                  <div
+                                    class="Avatar rounded catalogAvatar"
+                                    style="width: 24px; height: 24px; background: rgb(83, 137, 8);"
+                                  >
+                                    slk
+                                  </div>
+                                  <span>
+                                    some-local-kubernetes-cluster
+                                  </span>
+                                  <i
+                                    class="Icon pinIcon svg interactive focusable small"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      class="icon"
+                                    >
+                                      <svg
+                                        enable-background="new 0 0 193.826 193.826"
+                                        viewBox="0 0 193.826 193.826"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </i>
+                                  <div>
+                                    Add to Hotbar
+                                  </div>
+                                </div>
+                                <div
+                                  class="TableCell"
+                                >
+                                  KubernetesCluster
+                                </div>
+                                <div
+                                  class="TableCell sourceCell"
+                                >
+                                  local
+                                </div>
+                                <div
+                                  class="TableCell labelsCell scrollable"
+                                />
+                                <div
+                                  class="TableCell statusCell"
+                                >
+                                  <span
+                                    class="connecting"
+                                  >
+                                    connecting
+                                  </span>
+                                </div>
+                                <div
+                                  class="TableCell menu"
+                                >
+                                  <div>
+                                    <i
+                                      class="Icon material interactive focusable"
+                                      data-testid="icon-for-menu-actions-for-catalog-for-some-entity-id-2"
+                                      id="menu-actions-for-catalog-for-some-entity-id-2"
+                                      tabindex="0"
+                                    >
+                                      <span
+                                        class="icon"
+                                        data-icon-name="more_vert"
+                                      >
+                                        more_vert
+                                      </span>
+                                    </i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="AddRemoveButtons flex gaps"
+                  />
+                </div>
               </div>
             </div>
           </div>
+          <div
+            class="footer"
+          />
         </div>
       </main>
       <div
@@ -222,26 +772,6 @@ exports[`Showing correct entity settings renders 1`] = `
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -250,6 +780,10 @@ exports[`Showing correct entity settings renders 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -330,7 +864,7 @@ exports[`Showing correct entity settings renders 1`] = `
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -601,26 +1135,6 @@ exports[`Showing correct entity settings when navigating to local cluster entity
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -629,6 +1143,10 @@ exports[`Showing correct entity settings when navigating to local cluster entity
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -709,7 +1227,7 @@ exports[`Showing correct entity settings when navigating to local cluster entity
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -1001,26 +1519,6 @@ exports[`Showing correct entity settings when navigating to non-local cluster en
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -1029,6 +1527,10 @@ exports[`Showing correct entity settings when navigating to non-local cluster en
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -1109,7 +1611,7 @@ exports[`Showing correct entity settings when navigating to non-local cluster en
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
@@ -1303,26 +1805,6 @@ exports[`Showing correct entity settings when navigating to weblink entity setti
               >
                 <div
                   class="Avatar rounded disabled avatar"
-                  id="hotbarIcon-hotbar-icon-welcome-page-entity"
-                  style="width: 40px; height: 40px; background: rgb(210, 16, 232);"
-                >
-                  WP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="HotbarCell isDraggingOwner animateDown"
-            index="1"
-          >
-            <div
-              style="z-index: 11; position: absolute;"
-            >
-              <div
-                class="HotbarIcon contextMenuAvailable"
-              >
-                <div
-                  class="Avatar rounded disabled avatar"
                   id="hotbarIcon-hotbar-icon-catalog-entity"
                   style="width: 40px; height: 40px; background: rgb(5, 1, 130);"
                 >
@@ -1331,6 +1813,10 @@ exports[`Showing correct entity settings when navigating to weblink entity setti
               </div>
             </div>
           </div>
+          <div
+            class="HotbarCell isDraggingOwner animateDown"
+            index="1"
+          />
           <div
             class="HotbarCell isDraggingOwner animateDown"
             index="2"
@@ -1411,7 +1897,7 @@ exports[`Showing correct entity settings when navigating to weblink entity setti
         </div>
       </div>
       <div
-        class="StatusBar"
+        class="StatusBar empty"
         data-testid="status-bar"
       >
         <div
