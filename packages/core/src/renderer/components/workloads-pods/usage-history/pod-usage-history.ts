@@ -48,6 +48,15 @@ export interface NamespaceUsageSnapshot {
   pods: Partial<Record<string, ContainerUsage>>;
 }
 
+/**
+ * How full a persistent volume claim was, in bytes
+ */
+export interface VolumeUsageSample {
+  time: number;
+  used: number;
+  capacity: number;
+}
+
 export type UsageResource = keyof ContainerUsage;
 
 export interface UsagePoint {
@@ -166,4 +175,10 @@ export function getCombinedUsagePoints(snapshots: NamespaceUsageSnapshot[], reso
       x: time,
       y: (pods ?? Object.keys(usages)).reduce((total, pod) => total + (usages[pod]?.[resource] ?? 0), 0),
     }));
+}
+
+export function appendVolumeSample(samples: VolumeUsageSample[], sample: VolumeUsageSample): VolumeUsageSample[] {
+  const oldest = sample.time - maxUsageHistoryAge;
+
+  return [...samples.filter(({ time }) => time >= oldest && time < sample.time), sample];
 }

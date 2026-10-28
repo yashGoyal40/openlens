@@ -3,19 +3,7 @@
  * Licensed under MIT License. See LICENSE in root directory for more information.
  */
 
-
 .CronJobDetails {
-  .job {
-    .title {
-      margin-top: $margin * 2;
-      margin-bottom: $margin;
-
-      a {
-        color: var(--colorInfo);
-      }
-    }
-  }
-
   .conditions {
     @include job-condition-bgs;
   }

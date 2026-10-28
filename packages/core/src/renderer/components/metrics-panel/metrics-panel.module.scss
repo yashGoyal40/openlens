@@ -20,9 +20,38 @@
 .toolbar :global(.Select).range {
   width: 150px;
   min-width: 0;
+  user-select: none;
 
   :global(.Select__control) {
     min-height: 30px;
+  }
+}
+
+// compact like the namespace picker
+.rangeMenu {
+  margin-top: 2px !important;
+  border: 1px solid var(--borderColor);
+  border-radius: 4px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  user-select: none;
+
+  :global(.Select__menu-list) {
+    padding: 4px;
+  }
+
+  :global(.Select__option) {
+    padding: 4px 8px;
+    border-radius: 3px;
+  }
+
+  :global(.Select__option--is-focused) {
+    background: var(--sidebarItemHoverBackground);
+    color: var(--textColorAccent);
+  }
+
+  :global(.Select__option--is-selected) {
+    background: var(--sidebarActiveBackground);
+    color: var(--textColorAccent);
   }
 }
 

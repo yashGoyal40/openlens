@@ -4,7 +4,7 @@
  */
 import type { Container } from "@k8slens/kube-object";
 import { formatResources } from "../pod-details-container";
-import { containerPrometheusSeriesDefinitions, getCombinedMetricsServerSeries, getMetricsServerSeries, getPrometheusSeries, podPrometheusSeriesDefinitions } from "./usage-series";
+import { containerPrometheusSeriesDefinitions, getCombinedMetricsServerSeries, getMetricsServerSeries, getPrometheusSeries, getVolumeSeries, podPrometheusSeriesDefinitions } from "./usage-series";
 
 const samples = [
   { time: 1000, containers: { app: { cpu: 0.1, memory: 10 }}},
@@ -75,6 +75,21 @@ describe("usage series", () => {
       expect(series.map(({ label, points }) => ({ label, points }))).toEqual([
         { label: "CPU Usage", points: [{ x: 1000, y: 0.1 }, { x: 2000, y: 0.3 }] },
         { label: "Capacity", points: [{ x: 500, y: 4 }, { x: 3000, y: 4 }] },
+      ]);
+    });
+  });
+
+  describe("for a persistent volume claim", () => {
+    it("shows the usage and the latest capacity", () => {
+      const series = getVolumeSeries([
+        { time: 500, used: 1, capacity: 10 },
+        { time: 1000, used: 2, capacity: 10 },
+        { time: 2000, used: 3, capacity: 20 },
+      ], { since: 900, end: 3000 });
+
+      expect(series.map(({ label, points }) => ({ label, points }))).toEqual([
+        { label: "Disk Usage", points: [{ x: 1000, y: 2 }, { x: 2000, y: 3 }] },
+        { label: "Capacity", points: [{ x: 900, y: 20 }, { x: 3000, y: 20 }] },
       ]);
     });
   });

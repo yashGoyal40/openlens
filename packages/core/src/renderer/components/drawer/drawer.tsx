@@ -151,6 +151,14 @@ class NonInjectedDrawer extends React.Component<DrawerProps & Dependencies & typ
       return;
     }
     const clickedElem = evt.target as HTMLElement;
+
+    // a click that changed what the drawer shows, such as opening a related object, removed its own target
+    if (!clickedElem.isConnected) {
+      this.mouseDownTarget = null;
+
+      return;
+    }
+
     const isOutsideAnyDrawer = !clickedElem.closest(".Drawer");
 
     if (isOutsideAnyDrawer) {

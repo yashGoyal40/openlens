@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
 import type { KubeObjectDetailsProps } from "../kube-object-details";
 import { KubeEvent } from "@k8slens/kube-object";
-import { Table, TableCell, TableHead, TableRow } from "../table";
 import type { ApiManager } from "../../../common/k8s-api/api-manager";
 import type { Logger } from "@k8slens/logger";
 import { DurationAbsoluteTimestamp } from "./duration-absolute";
@@ -77,24 +76,20 @@ const NonInjectedEventDetails = observer(({
       </DrawerItem>
 
       <DrawerTitle>Involved object</DrawerTitle>
-      <Table>
-        <TableHead flat>
-          <TableCell>Name</TableCell>
-          <TableCell>Namespace</TableCell>
-          <TableCell>Kind</TableCell>
-          <TableCell>Field Path</TableCell>
-        </TableHead>
-        <TableRow>
-          <TableCell>
-            <Link to={getDetailsUrl(apiManager.lookupApiLink(involvedObject, event))}>
-              {name}
-            </Link>
-          </TableCell>
-          <TableCell>{namespace}</TableCell>
-          <TableCell>{kind}</TableCell>
-          <TableCell>{fieldPath}</TableCell>
-        </TableRow>
-      </Table>
+      <DrawerItem name="Name">
+        <Link to={getDetailsUrl(apiManager.lookupApiLink(involvedObject, event))}>
+          {name}
+        </Link>
+      </DrawerItem>
+      <DrawerItem name="Namespace" hidden={!namespace}>
+        {namespace}
+      </DrawerItem>
+      <DrawerItem name="Kind">
+        {kind}
+      </DrawerItem>
+      <DrawerItem name="Field Path" hidden={!fieldPath}>
+        {fieldPath}
+      </DrawerItem>
     </div>
   );
 });

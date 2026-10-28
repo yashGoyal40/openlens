@@ -6,15 +6,13 @@
 import "./cronjob-details.scss";
 
 import React from "react";
-import kebabCase from "lodash/kebabCase";
 import { disposeOnUnmount, observer } from "mobx-react";
-import { DrawerItem, DrawerTitle } from "../drawer";
-import { Badge } from "../badge/badge";
+import { DrawerItem } from "../drawer";
+import { CronJobNextExecutionDetails, getCronJobTimeZone } from "./next-execution";
+import { JobHistory } from "./job-history";
 import type { JobStore } from "../workloads-jobs/store";
-import { Link } from "react-router-dom";
 import type { CronJobStore } from "./store";
 import type { KubeObjectDetailsProps } from "../kube-object-details";
-import type { Job } from "@k8slens/kube-object";
 import { CronJob } from "@k8slens/kube-object";
 import type { Logger } from "@k8slens/logger";
 import { withInjectables } from "@ogre-tools/injectable-react";
@@ -23,8 +21,6 @@ import subscribeStoresInjectable from "../../kube-watch-api/subscribe-stores.inj
 import cronJobStoreInjectable from "./store.injectable";
 import jobStoreInjectable from "../workloads-jobs/store.injectable";
 import { loggerInjectionToken } from "@k8slens/logger";
-import type { GetDetailsUrl } from "../kube-detail-params/get-details-url.injectable";
-import getDetailsUrlInjectable from "../kube-detail-params/get-details-url.injectable";
 
 export interface CronJobDetailsProps extends KubeObjectDetailsProps<CronJob> {
 }
@@ -34,7 +30,6 @@ interface Dependencies {
   jobStore: JobStore;
   cronJobStore: CronJobStore;
   logger: Logger;
-  getDetailsUrl: GetDetailsUrl;
 }
 
 @observer
@@ -48,7 +43,7 @@ class NonInjectedCronJobDetails extends React.Component<CronJobDetailsProps & De
   }
 
   render() {
-    const { object: cronJob, jobStore, cronJobStore, getDetailsUrl } = this.props;
+    const { object: cronJob, jobStore, cronJobStore } = this.props;
 
     if (!cronJob) {
       return null;
@@ -59,8 +54,6 @@ class NonInjectedCronJobDetails extends React.Component<CronJobDetailsProps & De
 
       return null;
     }
-
-    const childJobs = jobStore.getJobsByOwner(cronJob);
 
     return (
       <div className="CronJobDetails">
@@ -80,42 +73,13 @@ class NonInjectedCronJobDetails extends React.Component<CronJobDetailsProps & De
         <DrawerItem name="Last schedule">
           {cronJob.getLastScheduleTime()}
         </DrawerItem>
-        {childJobs.length > 0 && (
-          <>
-            <DrawerTitle>Jobs</DrawerTitle>
-            {childJobs.map((job: Job) => {
-              const selectors = job.getSelectors();
-              const condition = job.getCondition();
-
-              return (
-                <div className="job" key={job.getId()}>
-                  <div className="title">
-                    <Link to={() => job.selfLink ? getDetailsUrl(job.selfLink) : ""}>
-                      {job.getName()}
-                    </Link>
-                  </div>
-                  <DrawerItem
-                    name="Condition"
-                    className="conditions"
-                    labelsOnly
-                  >
-                    {condition && (
-                      <Badge
-                        label={condition.type}
-                        className={kebabCase(condition.type)}
-                      />
-                    )}
-                  </DrawerItem>
-                  <DrawerItem name="Selector" labelsOnly>
-                    {
-                      selectors.map(label => <Badge key={label} label={label}/>)
-                    }
-                  </DrawerItem>
-                </div>
-              );})
-            }
-          </>
-        )}
+        <DrawerItem name="Next execution">
+          <CronJobNextExecutionDetails cronJob={cronJob} />
+        </DrawerItem>
+        <DrawerItem name="Time zone">
+          {getCronJobTimeZone(cronJob)}
+        </DrawerItem>
+        <JobHistory jobs={jobStore.getJobsByOwner(cronJob)} />
       </div>
     );
   }
@@ -128,6 +92,5 @@ export const CronJobDetails = withInjectables<Dependencies, CronJobDetailsProps>
     cronJobStore: di.inject(cronJobStoreInjectable),
     jobStore: di.inject(jobStoreInjectable),
     logger: di.inject(loggerInjectionToken),
-    getDetailsUrl: di.inject(getDetailsUrlInjectable),
   }),
 });

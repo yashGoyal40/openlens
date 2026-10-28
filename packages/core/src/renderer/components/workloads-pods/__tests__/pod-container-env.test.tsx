@@ -4,6 +4,7 @@
  */
 
 import React from "react";
+import { fireEvent } from "@testing-library/react";
 import type { ConfigMapStore } from "../../config-maps/store";
 import configMapStoreInjectable from "../../config-maps/store.injectable";
 import type { SecretStore } from "../../config-secrets/store";
@@ -246,6 +247,11 @@ describe("<ContainerEnv />", () => {
       },
     });
     const result = render(<ContainerEnvironment container={container} namespace={pod.getNs()} />);
+
+    // more than one variable starts out as a count
+    expect(result.getByText("2 Environment Variables")).toBeInTheDocument();
+
+    fireEvent.click(result.getByTestId("container-environment-toggle"));
 
     expect(result.baseElement).toMatchSnapshot();
   });

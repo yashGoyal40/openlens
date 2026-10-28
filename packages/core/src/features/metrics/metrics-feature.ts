@@ -7,7 +7,7 @@ import { clusterOverviewUIBlockInjectionToken, daemonSetDetailsMetricsInjectionT
 import { getInjectable } from "@ogre-tools/injectable";
 import { ClusterMetrics } from "../../renderer/components/cluster/cluster-metrics";
 import { ClusterPieCharts } from "../../renderer/components/cluster/cluster-pie-charts";
-import { PersistentVolumeClaimMetricsDetailsComponent } from "../../renderer/components/storage-volume-claims/metrics-details-component";
+import { PersistentVolumeClaimUsageMetrics } from "../../renderer/components/storage-volume-claims/volume-claim-usage-metrics";
 import { PodMetricsSection, PodContainerUsageMetrics } from "../../renderer/components/workloads-pods/pod-usage-metrics";
 import { DaemonSetUsageMetrics, DeploymentUsageMetrics, JobUsageMetrics, NamespaceUsageMetrics, ReplicaSetUsageMetrics, StatefulSetUsageMetrics } from "../../renderer/components/metrics-panel/workload-usage-metrics";
 import { NodeUsageMetrics } from "../../renderer/components/nodes/node-usage-metrics";
@@ -86,7 +86,7 @@ const persistentVolumeClaimDetailsMetricsInjectable = getInjectable({
   id: "persistent-volume-claim-details-metrics-injectable",
   instantiate: () => ({
     id: "persistent-volume-claim-details-metrics",
-    Component: PersistentVolumeClaimMetricsDetailsComponent,
+    Component: PersistentVolumeClaimUsageMetrics,
   }),
   injectionToken: persistentVolumeClaimDetailsMetricsInjectionToken,
 });

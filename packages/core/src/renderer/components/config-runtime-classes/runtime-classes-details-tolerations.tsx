@@ -5,7 +5,7 @@
 
 import "./runtime-classes-details-tolerations.scss";
 import React from "react";
-import { DrawerParamToggler, DrawerItem } from "../drawer";
+import { DrawerItemExpandable } from "../drawer";
 import type { Toleration, KubeObject } from "@k8slens/kube-object";
 import { RuntimeClassTolerations } from "./runtime-classes-tolerations";
 
@@ -23,10 +23,13 @@ export function RuntimeClassDetailsTolerations({ runtimeClass: runtimeClass }: R
   if (!tolerations.length) return null;
 
   return (
-    <DrawerItem name="Tolerations" className="RuntimeClassDetailsTolerations">
-      <DrawerParamToggler label={tolerations.length}>
-        <RuntimeClassTolerations tolerations={tolerations} />
-      </DrawerParamToggler>
-    </DrawerItem>
+    <DrawerItemExpandable
+      name="Tolerations"
+      summary={tolerations.length}
+      className="RuntimeClassDetailsTolerations"
+      fullWidth
+    >
+      <RuntimeClassTolerations tolerations={tolerations} />
+    </DrawerItemExpandable>
   );
 }

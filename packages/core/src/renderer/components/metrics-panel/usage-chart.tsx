@@ -14,7 +14,7 @@ import { Chart, ChartKind } from "../chart";
 import type { LensTheme } from "../../themes/lens-theme";
 import activeThemeInjectable from "../../themes/active.injectable";
 
-export type UsageUnit = "cores" | "bytes" | "count";
+export type UsageUnit = "cores" | "bytes" | "count" | "seconds";
 
 export interface UsageSeries {
   id: string;
@@ -49,12 +49,16 @@ export const formatUsage = (value: number, unit: UsageUnit) => {
     return String(Math.round(value));
   }
 
+  if (unit === "seconds") {
+    return `${Number(value.toPrecision(3))}s`;
+  }
+
   if (unit === "bytes") {
     return bytesToUnits(value, { precision: 1 });
   }
 
-  if (value < 10) return value.toFixed(3);
-  if (value < 100) return value.toFixed(2);
+  // three significant digits, so that small CPU steps such as 0.0015 stay apart
+  if (value < 100) return String(Number(value.toPrecision(3)));
 
   return value.toFixed(1);
 };

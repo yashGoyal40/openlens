@@ -7,7 +7,7 @@ import "./drawer-item-expandable.scss";
 import React, { useState } from "react";
 import { Icon } from "@k8slens/icon";
 import type { StrictReactNode } from "@k8slens/utilities";
-import { cssNames } from "@k8slens/utilities";
+import { cssNames, prevDefault } from "@k8slens/utilities";
 import { DrawerItem } from "./drawer-item";
 
 export interface DrawerItemExpandableProps {
@@ -33,7 +33,8 @@ export interface DrawerItemExpandableProps {
  */
 export function DrawerItemExpandable({ name, summary, children, className, labelsOnly, fullWidth, "data-testid": testId }: DrawerItemExpandableProps) {
   const [expanded, setExpanded] = useState(false);
-  const toggle = () => setExpanded(!expanded);
+  // the summary is replaced when clicked, which must not count as a click outside the drawer
+  const toggle = prevDefault(() => setExpanded(!expanded));
 
   return (
     <DrawerItem

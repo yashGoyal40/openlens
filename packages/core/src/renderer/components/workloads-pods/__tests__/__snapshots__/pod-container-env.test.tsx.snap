@@ -4,12 +4,30 @@ exports[`<ContainerEnv /> renders both env and configMapRef envFrom 1`] = `
 <body>
   <div>
     <div
-      class="DrawerItem ContainerEnvironment"
+      class="DrawerItem DrawerItemExpandable ContainerEnvironment expanded"
+      data-testid="container-environment"
     >
       <span
         class="name"
       >
-        Environment
+        <span
+          aria-expanded="true"
+          class="toggle"
+          data-testid="container-environment-toggle"
+          role="button"
+        >
+          Environment
+          <i
+            class="Icon material focusable small"
+          >
+            <span
+              class="icon"
+              data-icon-name="unfold_less"
+            >
+              unfold_less
+            </span>
+          </i>
+        </span>
       </span>
       <span
         class="value"

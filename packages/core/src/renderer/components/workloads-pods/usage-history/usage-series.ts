@@ -8,7 +8,7 @@ import type { MetricData } from "../../../../common/k8s-api/endpoints/metrics.ap
 import { normalizeMetrics } from "../../../../common/k8s-api/endpoints/metrics.api";
 import type { MetricsTab } from "../../chart/options";
 import type { UsageSeries, UsageUnit } from "../../metrics-panel/usage-chart";
-import type { NamespaceUsageSnapshot, PodUsageSample, UsageResource } from "./pod-usage-history";
+import type { NamespaceUsageSnapshot, PodUsageSample, UsageResource, VolumeUsageSample } from "./pod-usage-history";
 import { getCombinedUsagePoints, getUsagePoints } from "./pod-usage-history";
 
 export const usageColors = {
@@ -31,6 +31,8 @@ export const getUsageUnit = (tab: MetricsTab): UsageUnit => {
       return "cores";
     case "Pods":
       return "count";
+    case "Duration":
+      return "seconds";
     default:
       return "bytes";
   }
@@ -240,5 +242,40 @@ export const nodePrometheusSeriesDefinitions: Partial<Record<MetricsTab, Prometh
   Pods: [
     { key: "podUsage", label: "Pods", color: usageColors.cpu },
     { key: "podCapacity", label: "Capacity", color: usageColors.capacity, dashed: true },
+  ],
+};
+
+/**
+ * How full a persistent volume claim is, from the kubelet
+ */
+export function getVolumeSeries(samples: VolumeUsageSample[], window: UsageWindow): UsageSeries[] {
+  const shown = samples.filter(({ time }) => time >= window.since);
+
+  return [
+    {
+      id: "disk-usage",
+      label: "Disk Usage",
+      color: usageColors.fsUsage,
+      points: shown.map(({ time, used }) => ({ x: time, y: used })),
+    },
+    toLevelSeries({ label: "Capacity", value: shown[shown.length - 1]?.capacity, color: usageColors.capacity }, window),
+  ];
+}
+
+export const persistentVolumeClaimPrometheusSeriesDefinitions: Partial<Record<MetricsTab, PrometheusSeriesDefinition<"diskUsage" | "diskCapacity">[]>> = {
+  Disk: [
+    { key: "diskUsage", label: "Disk Usage", color: usageColors.fsUsage },
+    { key: "diskCapacity", label: "Capacity", color: usageColors.capacity, dashed: true },
+  ],
+};
+
+export const ingressPrometheusSeriesDefinitions: Partial<Record<MetricsTab, PrometheusSeriesDefinition<"bytesSentSuccess" | "bytesSentFailure" | "requestDurationSeconds" | "responseDurationSeconds">[]>> = {
+  Network: [
+    { key: "bytesSentSuccess", label: "Bytes sent, status 2xx", color: usageColors.networkTransmit },
+    { key: "bytesSentFailure", label: "Bytes sent, status 5xx", color: "#cd465a" },
+  ],
+  Duration: [
+    { key: "requestDurationSeconds", label: "Request", color: usageColors.cpu },
+    { key: "responseDurationSeconds", label: "Response", color: usageColors.requests },
   ],
 };

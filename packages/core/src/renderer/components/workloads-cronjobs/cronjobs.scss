@@ -9,6 +9,20 @@
       @include table-cell-warning;
     }
 
+    // the name gets the room, the short columns stay narrow
+    &.name {
+      flex: 2.5;
+    }
 
+    &.namespace,
+    &.next-execution {
+      flex: 1.6;
+    }
+
+    &.suspend,
+    &.active,
+    &.age {
+      flex: 0.6;
+    }
   }
 }

@@ -27,6 +27,8 @@ const cronJobDetailItemInjectable = getInjectable({
 
 export default cronJobDetailItemInjectable;
 
+// batch/v1beta1 was removed in Kubernetes 1.25
 export const isCronJob = kubeObjectMatchesToKindAndApiVersion("CronJob", [
+  "batch/v1",
   "batch/v1beta1",
 ]);

@@ -22,6 +22,14 @@ export interface UsageMetricsProps {
    */
   fromPrometheus?: (tab: MetricsTab) => UsageSeries[];
   fromMetricsServer: (tab: MetricsTab, window: UsageWindow) => UsageSeries[];
+
+  /**
+   * What fills in without Prometheus, metrics-server unless given
+   */
+  fallback?: {
+    source: string;
+    tabs: MetricsTab[];
+  };
 }
 
 /**
@@ -29,14 +37,15 @@ export interface UsageMetricsProps {
  */
 const prometheusRange = 60 * 60 * 1000;
 
-const metricsServerTabs: MetricsTab[] = ["CPU", "Memory"];
-
-const needsPrometheus = "needs Prometheus, metrics-server only reports CPU and memory";
+const metricsServer = {
+  source: "Kubernetes Metrics Server",
+  tabs: ["CPU", "Memory"] as MetricsTab[],
+};
 
 /**
  * Usage charts from Prometheus when it is installed, or else from what metrics-server reported while the app was open
  */
-export const UsageMetrics = observer(({ id, tabs, fromPrometheus, fromMetricsServer }: UsageMetricsProps) => {
+export const UsageMetrics = observer(({ id, tabs, fromPrometheus, fromMetricsServer, fallback = metricsServer }: UsageMetricsProps) => {
   const [tab, setTab] = useState<MetricsTab>(tabs[0]);
   const [range, setRange] = useState(defaultMetricsRange);
   const end = now(15 * 1000);
@@ -62,10 +71,10 @@ export const UsageMetrics = observer(({ id, tabs, fromPrometheus, fromMetricsSer
 
   const unavailableTabs = Object.fromEntries(
     tabs
-      .filter(each => !metricsServerTabs.includes(each))
-      .map(each => [each, needsPrometheus]),
+      .filter(each => !fallback.tabs.includes(each))
+      .map(each => [each, `needs Prometheus, ${fallback.source} does not report it`]),
   );
-  const shownTab = metricsServerTabs.includes(tab) ? tab : "CPU";
+  const shownTab = fallback.tabs.includes(tab) ? tab : fallback.tabs[0];
 
   return (
     <MetricsPanel
@@ -76,7 +85,7 @@ export const UsageMetrics = observer(({ id, tabs, fromPrometheus, fromMetricsSer
       unavailableTabs={unavailableTabs}
       range={range}
       onRangeChange={setRange}
-      source="Kubernetes Metrics Server"
+      source={fallback.source}
     >
       <UsageChart
         series={fromMetricsServer(shownTab, { since: end - range, end })}

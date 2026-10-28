@@ -8,7 +8,7 @@ import "./pod-container-env.scss";
 import React, { useEffect } from "react";
 import { observer } from "mobx-react";
 import type { Container } from "@k8slens/kube-object";
-import { DrawerItem } from "../drawer";
+import { DrawerItem, DrawerItemExpandable } from "../drawer";
 import { autorun } from "mobx";
 import { object } from "@k8slens/utilities";
 import _ from "lodash";
@@ -158,10 +158,27 @@ const NonInjectedContainerEnvironment = observer((props: Dependencies & Containe
       ));
   };
 
+  const variables = [
+    ...(env ? renderEnv() : []),
+    ...(envFrom ? renderEnvFrom() : []),
+  ].flat().filter(Boolean);
+
+  if (variables.length > 1) {
+    return (
+      <DrawerItemExpandable
+        name="Environment"
+        summary={`${variables.length} Environment Variables`}
+        className="ContainerEnvironment"
+        data-testid="container-environment"
+      >
+        {variables}
+      </DrawerItemExpandable>
+    );
+  }
+
   return (
     <DrawerItem name="Environment" className="ContainerEnvironment">
-      {env && renderEnv()}
-      {envFrom && renderEnvFrom()}
+      {variables}
     </DrawerItem>
   );
 });

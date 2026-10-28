@@ -106,6 +106,7 @@ const NonInjectedKubeObjectMeta = observer((props : Dependencies & KubeObjectMet
         name="Finalizers"
         labels={object.getFinalizers()}
         hidden={isHidden("finalizers")}
+        collapsible
       />
       {ownerRefs?.length > 0 && (
         <DrawerItem name="Controlled By" hidden={isHidden("ownerReferences")}>

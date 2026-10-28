@@ -6,7 +6,7 @@
 import "./pod-details-container.scss";
 
 import React from "react";
-import type { Container, PodContainerStatus, Pod } from "@k8slens/kube-object";
+import type { Container, PodContainerStatus, Pod, VolumeMount } from "@k8slens/kube-object";
 import { DrawerItem, DrawerItemExpandable } from "../drawer";
 import { cssNames, isDefined } from "@k8slens/utilities";
 import { StatusBrick } from "../status-brick";
@@ -95,11 +95,22 @@ class NonInjectedPodDetailsContainer extends React.Component<PodDetailsContainer
     return null;
   }
 
+  renderMounts(volumeMounts: VolumeMount[]) {
+    return volumeMounts.map(({ name, mountPath, readOnly }) => (
+      <React.Fragment key={name + mountPath}>
+        <span className="mount-path">{mountPath}</span>
+        <span className="mount-from">
+          {`from ${name} (${readOnly ? "ro" : "rw"})`}
+        </span>
+      </React.Fragment>
+    ));
+  }
+
   render() {
     const { pod, container, containerMetricsVisible, containerMetrics } = this.props;
 
     if (!pod || !container) return null;
-    const { name, image, ports, volumeMounts, command, args, resources } = container;
+    const { name, image, imagePullPolicy, ports, volumeMounts, command, args, resources } = container;
     const status = pod.getContainerStatuses().find(status => status.name === container.name);
     const state = status ? Object.keys(status?.state ?? {})[0] : "";
     const lastState = status ? Object.keys(status?.lastState ?? {})[0] : "";
@@ -140,6 +151,11 @@ class NonInjectedPodDetailsContainer extends React.Component<PodDetailsContainer
         <DrawerItem name="Image">
           <Badge label={image} tooltip={imageId}/>
         </DrawerItem>
+        {imagePullPolicy && imagePullPolicy !== "IfNotPresent" && (
+          <DrawerItem name="ImagePullPolicy">
+            {imagePullPolicy}
+          </DrawerItem>
+        )}
         {ports && ports.length > 0 && (
           <DrawerItem name="Ports">
             {
@@ -156,26 +172,18 @@ class NonInjectedPodDetailsContainer extends React.Component<PodDetailsContainer
           </DrawerItem>
         )}
         {<ContainerEnvironment container={container} namespace={pod.getNs()}/>}
-        {volumeMounts && volumeMounts.length > 0 && (
+        {volumeMounts && volumeMounts.length === 1 && (
+          <DrawerItem name="Mounts">
+            {this.renderMounts(volumeMounts)}
+          </DrawerItem>
+        )}
+        {volumeMounts && volumeMounts.length > 1 && (
           <DrawerItemExpandable
             name="Mounts"
-            summary={`${volumeMounts.length} ${volumeMounts.length === 1 ? "Mount" : "Mounts"}`}
+            summary={`${volumeMounts.length} Mounts`}
             data-testid={`container-mounts-${name}`}
           >
-            {
-              volumeMounts.map(mount => {
-                const { name, mountPath, readOnly } = mount;
-
-                return (
-                  <React.Fragment key={name + mountPath}>
-                    <span className="mount-path">{mountPath}</span>
-                    <span className="mount-from">
-                      {`from ${name} (${readOnly ? "ro" : "rw"})`}
-                    </span>
-                  </React.Fragment>
-                );
-              })
-            }
+            {this.renderMounts(volumeMounts)}
           </DrawerItemExpandable>
         )}
         {liveness.length > 0 && (

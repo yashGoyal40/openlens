@@ -11,6 +11,7 @@ import { KubeObjectListLayout } from "../kube-object-list-layout";
 import { KubeObjectStatusIcon } from "../kube-object-status-icon";
 import moment from "moment";
 import { SiblingsInTabLayout } from "../layout/siblings-in-tab-layout";
+import { CronJobNextExecution, getCronJobNextExecution, getCronJobTimeZone } from "./next-execution";
 import { KubeObjectAge } from "../kube-object/age";
 import type { CronJobStore } from "./store";
 import type { EventStore } from "../events/store";
@@ -26,6 +27,8 @@ enum columnId {
   suspend = "suspend",
   active = "active",
   lastSchedule = "last-schedule",
+  nextExecution = "next-execution",
+  timeZone = "time-zone",
   age = "age",
 }
 
@@ -58,6 +61,8 @@ const NonInjectedCronJobs = observer((props: Dependencies) => {
               ? moment().diff(cronJob.status.lastScheduleTime)
               : 0
           ),
+          [columnId.nextExecution]: cronJob => getCronJobNextExecution(cronJob, Date.now()) ?? Number.MAX_SAFE_INTEGER,
+          [columnId.timeZone]: cronJob => getCronJobTimeZone(cronJob) ?? "",
           [columnId.age]: cronJob => -cronJob.getCreationTimestamp(),
         }}
         searchFilters={[
@@ -73,6 +78,8 @@ const NonInjectedCronJobs = observer((props: Dependencies) => {
           { title: "Suspend", className: "suspend", sortBy: columnId.suspend, id: columnId.suspend },
           { title: "Active", className: "active", sortBy: columnId.active, id: columnId.active },
           { title: "Last schedule", className: "last-schedule", sortBy: columnId.lastSchedule, id: columnId.lastSchedule },
+          { title: "Next execution", className: "next-execution", sortBy: columnId.nextExecution, id: columnId.nextExecution },
+          { title: "Time zone", className: "time-zone", sortBy: columnId.timeZone, id: columnId.timeZone },
           { title: "Age", className: "age", sortBy: columnId.age, id: columnId.age },
         ]}
         renderTableContents={cronJob => [
@@ -86,6 +93,8 @@ const NonInjectedCronJobs = observer((props: Dependencies) => {
           cronJob.getSuspendFlag(),
           cronJobStore.getActiveJobsNum(cronJob),
           cronJob.getLastScheduleTime(),
+          <CronJobNextExecution key="next-execution" cronJob={cronJob} />,
+          getCronJobTimeZone(cronJob) ?? "-",
           <KubeObjectAge key="age" object={cronJob} />,
         ]}
       />

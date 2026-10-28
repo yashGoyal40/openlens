@@ -27,6 +27,8 @@ const tabIcons: Partial<Record<MetricsTab, string>> = {
   Memory: "sd_card",
   Network: "swap_vert",
   Filesystem: "storage",
+  Disk: "storage",
+  Pods: "apps",
 };
 
 export interface MetricsPanelProps {
@@ -57,6 +59,7 @@ export function MetricsPanel({ id, tabs, tab, onTabChange, unavailableTabs = {},
           <Select
             id={`metrics-range-${id}`}
             className={styles.range}
+            menuClass={styles.rangeMenu}
             options={metricsRanges}
             value={range}
             onChange={option => option && onRangeChange(option.value)}

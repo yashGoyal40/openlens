@@ -1,0 +1,63 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.JobHistory {
+  display: flex;
+  flex-direction: column;
+}
+
+.header,
+.job {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 80px 64px 24px;
+  gap: $margin * 2;
+  align-items: center;
+  padding: $padding $padding $padding $padding * 2;
+  border-bottom: 1px solid var(--borderFaintColor);
+}
+
+.header {
+  color: var(--textColorAccent);
+  font-weight: 500;
+}
+
+.job {
+  position: relative;
+  cursor: pointer;
+
+  // the state of the job, like the job conditions
+  &::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 7px;
+    bottom: 7px;
+    width: 3px;
+    border-radius: 2px;
+    background: var(--colorInfo);
+  }
+
+  &.complete::before {
+    background: var(--colorSuccess);
+  }
+
+  &.failed::before {
+    background: var(--colorError);
+  }
+
+  &:hover {
+    background: var(--sidebarItemHoverBackground);
+  }
+}
+
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.empty {
+  opacity: 0.6;
+}

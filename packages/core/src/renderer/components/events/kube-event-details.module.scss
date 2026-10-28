@@ -3,25 +3,56 @@
  * Licensed under MIT License. See LICENSE in root directory for more information.
  */
 
+// a table of summary, count and age, each row opens the whole event
 .KubeEventDetails {
-  .event {
-    margin-bottom: $margin * 4;
+  display: flex;
+  flex-direction: column;
+}
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+.header,
+.event {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 56px 56px;
+  gap: $margin * 2;
+  align-items: center;
+  padding: $padding $padding $padding $padding * 2;
+  border-bottom: 1px solid var(--borderFaintColor);
+}
 
-    .title {
-      margin-top: $margin * 2;
-      margin-bottom: $margin;
-      font-weight: bold;
-      word-break: break-word;
+.header {
+  color: var(--textColorAccent);
+  font-weight: 500;
+}
 
-      &.warning {
-        color: var(--colorError);
-      }
-    }
+.event {
+  position: relative;
+  cursor: pointer;
+
+  // grey for normal events, red for warnings, like the list of events
+  &::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 7px;
+    bottom: 7px;
+    width: 3px;
+    border-radius: 2px;
+    background: var(--textColorTertiary);
   }
+
+  &.warning::before {
+    background: var(--colorError);
+  }
+
+  &:hover {
+    background: var(--sidebarItemHoverBackground);
+  }
+}
+
+.summary {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .empty {

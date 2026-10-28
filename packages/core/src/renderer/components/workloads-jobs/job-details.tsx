@@ -69,7 +69,7 @@ class NonInjectedJobDetails extends React.Component<JobDetailsProps & Dependenci
       <div className="JobDetails">
         <DrawerItem name="Selector" labelsOnly>
           {
-            Object.keys(selectors).map(label => <Badge key={label} label={label}/>)
+            selectors.map(label => <Badge key={label} label={label}/>)
           }
         </DrawerItem>
         {nodeSelector.length > 0 && (
