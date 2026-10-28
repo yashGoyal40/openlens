@@ -4,25 +4,32 @@
   padding: calc(var(--padding) * 2) calc(var(--padding) * 3);
   border-radius: 4px;
   align-items: center;
-  background: #fad8d7;
-  color: #797979;
+  background: rgba(206, 57, 51, 0.12);
+  border-left: 3px solid var(--colorError);
+  color: var(--textColorAccent);
 }
 
 .warningIcon {
   margin-right: calc(var(--margin) * 2.4);
   font-size: 26px;
+  color: var(--colorError);
 }
 
 .dialog {
   > div {
-    border-radius: 4px;
-    background-color: white;
+    border-radius: 6px;
+    color: var(--dialogTextColor);
+    background-color: var(--dialogBackground);
+    border: 1px solid var(--borderColor);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
     max-width: 600px;
     min-width: calc(45 * var(--unit));
   }
 
   b {
     word-break: break-all;
+    color: var(--textColorAccent);
   }
 }
 
@@ -35,7 +42,8 @@
   border-radius: 4px;
   justify-content: flex-end;
   padding: calc(var(--padding) * 2);
-  background: #f4f4f4;
+  background: var(--dialogFooterBackground);
+  border-top: 1px solid var(--borderFaintColor);
 
   > * {
     margin-left: var(--margin)
@@ -45,5 +53,5 @@
 .hr {
   margin-top: calc(var(--margin) * 3);
   height: 1px;
-  background: #dfdfdf80;
+  background: var(--borderFaintColor);
 }

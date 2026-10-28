@@ -89,7 +89,6 @@ class NonInjectedCreateServiceAccountDialog extends React.Component<CreateServic
             <SubTitle title="Namespace" />
             <NamespaceSelect
               id="create-dialog-namespace-select-input"
-              themeName="light"
               value={state.namespace.get()}
               onChange={option => state.namespace.set(option?.value ?? "default")}
             />

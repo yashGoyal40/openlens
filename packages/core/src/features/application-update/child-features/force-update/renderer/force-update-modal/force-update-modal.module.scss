@@ -5,7 +5,8 @@
 $baseline: 8px;
 
 .ForceUpdateModal {
-  background-color: white;
+  color: var(--dialogTextColor);
+  background-color: var(--dialogBackground);
   border-radius: 1 * $baseline;
   padding: 3 * $baseline;
   width: 50 * $baseline;

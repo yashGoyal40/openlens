@@ -206,7 +206,6 @@ class NonInjectedRoleBindingDialog extends React.Component<RoleBindingDialogProp
         <SubTitle title="Namespace" />
         <NamespaceSelect
           id="dialog-namespace-input"
-          themeName="light"
           isDisabled={this.isEditing}
           value={this.bindingNamespace}
           autoFocus={!this.isEditing}
@@ -216,7 +215,6 @@ class NonInjectedRoleBindingDialog extends React.Component<RoleBindingDialogProp
         <SubTitle title="Role Reference" />
         <Select
           id="role-reference-input"
-          themeName="light"
           placeholder="Select role or cluster role ..."
           isDisabled={this.isEditing}
           options={this.roleRefOptions}
@@ -259,7 +257,6 @@ class NonInjectedRoleBindingDialog extends React.Component<RoleBindingDialogProp
         <Select
           id="service-account-input"
           isMulti
-          themeName="light"
           placeholder="Select service accounts ..."
           options={this.serviceAccountOptions}
           formatOptionLabel={option => (

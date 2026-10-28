@@ -178,7 +178,6 @@ class NonInjectedClusterRoleBindingDialog extends React.Component<ClusterRoleBin
         <SubTitle title="Cluster Role Reference" />
         <Select
           id="cluster-role-input"
-          themeName="light"
           placeholder="Select cluster role ..."
           isDisabled={this.isEditing}
           options={this.clusterRoleOptions}
@@ -238,7 +237,6 @@ class NonInjectedClusterRoleBindingDialog extends React.Component<ClusterRoleBin
         <Select
           id="service-account-input"
           isMulti
-          themeName="light"
           placeholder="Select service accounts ..."
           options={this.serviceAccountOptions}
           formatOptionLabel={option => (
