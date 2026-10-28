@@ -1581,67 +1581,95 @@ exports[`cluster/namespaces - edit namespaces from previously opened tab given t
             style="flex-basis: 300px;"
           >
             <div
-              class="EditResource flex column"
+              class="EditResource flex column EditResource"
             >
               <div
-                class="InfoPanel flex gaps align-center"
+                class="toolbar"
               >
-                <div
-                  class="controls"
-                >
-                  <div
-                    class="resource-info flex gaps align-center"
-                  >
-                    <span>
-                      Kind:
-                    </span>
-                    <div
-                      class="badge"
-                    >
-                      Namespace
-                    </div>
-                    <span>
-                      Name:
-                    </span>
-                    <div
-                      class="badge"
-                    >
-                      some-name
-                    </div>
-                    <span>
-                      Namespace:
-                    </span>
-                    <div
-                      class="badge"
-                    >
-                      default
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex gaps align-center"
-                />
                 <button
-                  class="Button plain"
-                  data-testid="cancel-edit-resource-from-tab-for-some-first-tab-id"
-                  type="button"
-                >
-                  Cancel
-                </button>
-                <button
-                  class="Button active outlined"
+                  aria-label="Save (⌘S)"
+                  class="button"
                   data-testid="save-edit-resource-from-tab-for-some-first-tab-id"
+                  title="Save (⌘S)"
                   type="button"
                 >
-                  Save
+                  <i
+                    class="Icon material focusable"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="save"
+                    >
+                      save
+                    </span>
+                  </i>
                 </button>
                 <button
-                  class="Button primary active"
-                  data-testid="save-and-close-edit-resource-from-tab-for-some-first-tab-id"
+                  aria-label="Reload from the cluster, discarding changes"
+                  class="button"
+                  data-testid="reload-edit-resource-from-tab-for-some-first-tab-id"
+                  title="Reload from the cluster, discarding changes"
                   type="button"
                 >
-                  Save & Close
+                  <i
+                    class="Icon material focusable"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="refresh"
+                    >
+                      refresh
+                    </span>
+                  </i>
                 </button>
+                <button
+                  aria-label="Show changes"
+                  aria-pressed="false"
+                  class="button"
+                  data-testid="changes-edit-resource-from-tab-for-some-first-tab-id"
+                  title="Show changes"
+                  type="button"
+                >
+                  <i
+                    class="Icon material focusable"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="compare_arrows"
+                    >
+                      compare_arrows
+                    </span>
+                  </i>
+                </button>
+                <button
+                  aria-label="Find"
+                  class="button"
+                  data-testid="find-edit-resource-from-tab-for-some-first-tab-id"
+                  title="Find"
+                  type="button"
+                >
+                  <i
+                    class="Icon material focusable"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="search"
+                    >
+                      search
+                    </span>
+                  </i>
+                </button>
+                
+              </div>
+              <div
+                class="title"
+              >
+                Editing kubernetes Namespace 
+                <a
+                  data-testid="edit-resource-details-link-for-some-first-tab-id"
+                >
+                  some-name
+                </a>
               </div>
               <textarea
                 data-testid="monaco-editor-for-some-first-tab-id"

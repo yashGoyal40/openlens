@@ -21,6 +21,7 @@ import openConfirmDialogInjectable from "../../../renderer/components/confirm-di
 import type { HideDetails } from "../../../renderer/components/kube-detail-params/hide-details.injectable";
 import hideDetailsInjectable from "../../../renderer/components/kube-detail-params/hide-details.injectable";
 import { getNodeDrainCommand } from "./kubectl-commands";
+import { isErrorAlreadyShown } from "./is-error-already-shown";
 
 export interface NodeActionsProps extends KubeObjectMenuProps<Node> {}
 
@@ -58,7 +59,9 @@ const NonInjectedNodeActions = ({
     try {
       await nodeApi.patch({ name: nodeName }, { spec: { unschedulable }}, "strategic");
     } catch (error) {
-      showCheckedErrorNotification(error, `Unknown error occurred while ${unschedulable ? "cordoning" : "uncordoning"} node ${nodeName}`);
+      if (!isErrorAlreadyShown(error)) {
+        showCheckedErrorNotification(error, `Unknown error occurred while ${unschedulable ? "cordoning" : "uncordoning"} node ${nodeName}`);
+      }
     }
   };
   const drain = () => openConfirmDialog({

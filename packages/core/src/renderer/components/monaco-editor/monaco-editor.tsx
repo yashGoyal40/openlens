@@ -59,6 +59,16 @@ const monacoViewStates = new WeakMap<Uri, editor.ICodeEditorViewState>();
 
 export interface MonacoEditorRef {
   focus(): void;
+
+  /**
+   * Opens the find widget
+   */
+  find?(): void;
+
+  /**
+   * Moves the cursor, both counted from 1
+   */
+  goTo?(line: number, column: number): void;
 }
 
 @observer
@@ -278,6 +288,17 @@ class NonInjectedMonacoEditor extends React.Component<MonacoEditorProps & Depend
   }
 
   focus() {
+    this.editor?.focus();
+  }
+
+  find() {
+    this.editor?.focus();
+    void this.editor?.getAction("actions.find")?.run();
+  }
+
+  goTo(line: number, column: number) {
+    this.editor?.setPosition({ lineNumber: line, column });
+    this.editor?.revealLineInCenter(line);
     this.editor?.focus();
   }
 

@@ -258,13 +258,6 @@ metadata:
                 expect(saveButton).toHaveAttribute("disabled");
               });
 
-              it("save and close button is disabled", () => {
-                const saveButton = rendered.getByTestId(
-                  "save-and-close-edit-resource-from-tab-for-some-first-tab-id",
-                );
-
-                expect(saveButton).toHaveAttribute("disabled");
-              });
 
               describe("when saving resolves with success", () => {
                 beforeEach(async () => {
@@ -294,13 +287,6 @@ metadata:
                   expect(saveButton).not.toHaveAttribute("disabled");
                 });
 
-                it("save and close button is enabled", () => {
-                  const saveButton = rendered.getByTestId(
-                    "save-and-close-edit-resource-from-tab-for-some-first-tab-id",
-                  );
-
-                  expect(saveButton).not.toHaveAttribute("disabled");
-                });
 
                 it("shows success notification", () => {
                   expect(showSuccessNotificationMock).toHaveBeenCalled();
@@ -340,13 +326,6 @@ metadata:
                   expect(saveButton).not.toHaveAttribute("disabled");
                 });
 
-                it("save and close button is enabled", () => {
-                  const saveButton = rendered.getByTestId(
-                    "save-and-close-edit-resource-from-tab-for-some-first-tab-id",
-                  );
-
-                  expect(saveButton).not.toHaveAttribute("disabled");
-                });
 
                 it("does not show success notification", () => {
                   expect(showSuccessNotificationMock).not.toHaveBeenCalled();
@@ -364,60 +343,13 @@ metadata:
               });
             });
 
-            describe("when selecting to save and close", () => {
+            describe("when selecting to save, and saving fails with a JsonApiError", () => {
               beforeEach(() => {
                 const saveButton = rendered.getByTestId(
-                  "save-and-close-edit-resource-from-tab-for-some-first-tab-id",
+                  "save-edit-resource-from-tab-for-some-first-tab-id",
                 );
 
                 fireEvent.click(saveButton);
-              });
-
-              it("renders", () => {
-                expect(rendered.baseElement).toMatchSnapshot();
-              });
-
-              it("does not close the tab yet", () => {
-                expect(
-                  rendered.getByTestId("dock-tab-for-some-first-tab-id"),
-                ).toBeInTheDocument();
-              });
-
-              describe("when saving resolves with success", () => {
-                beforeEach(async () => {
-                  await apiKubePatchMock.resolve({
-                    kind: "Namespace",
-                    metadata: {
-                      name: "some-name",
-                    },
-                  });
-                });
-
-                it("renders", () => {
-                  expect(rendered.baseElement).toMatchSnapshot();
-                });
-
-                it("closes the dock tab", () => {
-                  expect(
-                    rendered.queryByTestId("dock-tab-for-some-first-tab-id"),
-                  ).not.toBeInTheDocument();
-                });
-              });
-
-              describe("when saving failings", () => {
-                beforeEach(async () => {
-                  await apiKubePatchMock.reject(new Error("some-error"));
-                });
-
-                it("renders", () => {
-                  expect(rendered.baseElement).toMatchSnapshot();
-                });
-
-                it("does not close the dock tab", () => {
-                  expect(
-                    rendered.getByTestId("dock-tab-for-some-first-tab-id"),
-                  ).toBeInTheDocument();
-                });
               });
 
               describe("when saving failings with a JsonApiError", () => {
@@ -472,23 +404,26 @@ metadata:
               });
             });
 
-            describe("when selecting to cancel", () => {
+            describe("when selecting to show changes", () => {
               beforeEach(() => {
-                const cancelButton = rendered.getByTestId(
-                  "cancel-edit-resource-from-tab-for-some-first-tab-id",
+                fireEvent.click(rendered.getByTestId("changes-edit-resource-from-tab-for-some-first-tab-id"));
+              });
+
+              it("shows the changes instead of the editor", () => {
+                expect(rendered.getByTestId("monaco-diff-editor")).toBeInTheDocument();
+              });
+            });
+
+            describe("when selecting to reload", () => {
+              beforeEach(() => {
+                apiKubeGetMock.mockClear();
+                fireEvent.click(rendered.getByTestId("reload-edit-resource-from-tab-for-some-first-tab-id"));
+              });
+
+              it("calls for namespace again", () => {
+                expect(apiKubeGetMock).toHaveBeenCalledWith(
+                  "/api/some-api-version/namespaces/some-uid",
                 );
-
-                fireEvent.click(cancelButton);
-              });
-
-              it("renders", () => {
-                expect(rendered.baseElement).toMatchSnapshot();
-              });
-
-              it("does not have dock tab anymore", () => {
-                expect(
-                  rendered.queryByTestId("dock-tab-for-some-first-tab-id"),
-                ).not.toBeInTheDocument();
               });
             });
 
@@ -707,13 +642,6 @@ metadata:
                 expect(saveButton).toHaveAttribute("disabled");
               });
 
-              it("save and close button is disabled", () => {
-                const saveButton = rendered.getByTestId(
-                  "save-and-close-edit-resource-from-tab-for-some-first-tab-id",
-                );
-
-                expect(saveButton).toHaveAttribute("disabled");
-              });
 
               describe("when valid change in configuration", () => {
 
@@ -746,13 +674,6 @@ metadata:
                   expect(saveButton).not.toHaveAttribute("disabled");
                 });
 
-                it("save and close button is enabled", () => {
-                  const saveButton = rendered.getByTestId(
-                    "save-and-close-edit-resource-from-tab-for-some-first-tab-id",
-                  );
-
-                  expect(saveButton).not.toHaveAttribute("disabled");
-                });
               });
 
             });

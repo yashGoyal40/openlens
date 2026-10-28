@@ -8812,10 +8812,7 @@ exports[`installing helm chart from new tab given tab for installing chart was n
                       </span>
                     </i>
                     <div>
-                      YAMLException: end of the stream or a document separator is expected (1:1)
-
- 1 | @some-invalid-configuration@
------^
+                      Line 1, column 1: end of the stream or a document separator is expected
                     </div>
                   </div>
                 </div>

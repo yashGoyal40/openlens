@@ -55,6 +55,7 @@ global.ResizeObserver = class {
 };
 
 jest.mock("./renderer/components/monaco-editor/monaco-editor");
+jest.mock("./renderer/components/monaco-editor/monaco-diff-editor");
 jest.mock("@k8slens/tooltip", () => ({
   ...jest.requireActual("@k8slens/tooltip"),
   withTooltip: (Target => ({ tooltip, tooltipOverrideDisabled, ...props }: any) => {

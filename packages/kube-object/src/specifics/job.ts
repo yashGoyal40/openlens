@@ -80,9 +80,10 @@ export class Job extends KubeObject<NamespaceScopedMetadata, JobStatus, JobSpec>
   }
 
   getCondition() {
-    // Type of Job condition could be only Complete or Failed
-    // https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#jobcondition-v1-batch
-    return this.status?.conditions?.find(({ status }) => status === "True");
+    const conditions = this.status?.conditions?.filter(({ status }) => status === "True") ?? [];
+
+    // newer clusters also set conditions such as SuccessCriteriaMet or FailureTarget ahead of the final one
+    return conditions.find(({ type }) => type === "Failed" || type === "Complete") ?? conditions[0];
   }
 
   getImages() {

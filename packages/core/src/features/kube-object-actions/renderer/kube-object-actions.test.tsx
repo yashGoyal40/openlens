@@ -24,6 +24,7 @@ import hideDetailsInjectable from "../../../renderer/components/kube-detail-para
 import { PodActions } from "./pod-actions";
 import { NodeActions } from "./node-actions";
 import { WorkloadLogsAction } from "./workload-logs-action";
+import { JsonApiErrorParsed } from "@k8slens/json-api";
 
 const createPod = (containerNames: string[], runningContainerNames = containerNames) => new Pod({
   apiVersion: "v1",
@@ -81,6 +82,8 @@ describe("kube object actions", () => {
   let showInfoNotification: jest.Mock;
   let hideDetails: jest.Mock;
   let podApi: { evict: jest.Mock; list: jest.Mock };
+  let showSuccessNotification: jest.Mock;
+  let showCheckedErrorNotification: jest.Mock;
   let nodeApi: { patch: jest.Mock };
 
   const renderInMenu = (ui: React.ReactElement): RenderResult => render(
@@ -112,8 +115,10 @@ describe("kube object actions", () => {
     di.override(isWindowsInjectable, () => false);
     di.override(hideDetailsInjectable, () => hideDetails);
     di.override(showInfoNotificationInjectable, () => showInfoNotification);
-    di.override(showSuccessNotificationInjectable, () => jest.fn());
-    di.override(showCheckedErrorNotificationInjectable, () => jest.fn());
+    showSuccessNotification = jest.fn();
+    showCheckedErrorNotification = jest.fn();
+    di.override(showSuccessNotificationInjectable, () => showSuccessNotification);
+    di.override(showCheckedErrorNotificationInjectable, () => showCheckedErrorNotification);
 
     render = renderFor(di);
   });
@@ -172,6 +177,41 @@ describe("kube object actions", () => {
       await params.ok?.();
 
       expect(podApi.evict).toHaveBeenCalledWith({ name: "web-7d9f", namespace: "shop" });
+      expect(showSuccessNotification).toHaveBeenCalledWith("Pod web-7d9f was evicted");
+    });
+
+    it("does not claim success when the eviction is refused", async () => {
+      // like a 403, which the request layer already shows as a notification
+      const refused = new JsonApiErrorParsed({ message: "forbidden" }, ["forbidden"]);
+
+      refused.isUsedForNotification = true;
+      podApi.evict.mockRejectedValue(refused);
+
+      fireEvent.click(result.getByTestId("pod-action-evict"));
+
+      const [[params]] = openConfirmDialog.mock.calls as [[ConfirmDialogParams]];
+
+      await params.ok?.();
+
+      expect(showSuccessNotification).not.toHaveBeenCalled();
+      expect(showCheckedErrorNotification).not.toHaveBeenCalled();
+      expect(hideDetails).not.toHaveBeenCalled();
+    });
+
+    it("shows other eviction failures", async () => {
+      podApi.evict.mockRejectedValue("Cannot evict pod as it would violate the pod's disruption budget.");
+
+      fireEvent.click(result.getByTestId("pod-action-evict"));
+
+      const [[params]] = openConfirmDialog.mock.calls as [[ConfirmDialogParams]];
+
+      await params.ok?.();
+
+      expect(showSuccessNotification).not.toHaveBeenCalled();
+      expect(showCheckedErrorNotification).toHaveBeenCalledWith(
+        "Cannot evict pod as it would violate the pod's disruption budget.",
+        expect.any(String),
+      );
     });
   });
 

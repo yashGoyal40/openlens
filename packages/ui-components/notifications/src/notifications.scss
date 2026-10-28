@@ -3,8 +3,6 @@
  * Licensed under MIT License. See LICENSE in root directory for more information.
  */
 
-$color-white: rgb(255,255,255);
-
 @mixin hidden-scrollbar {
   overflow: auto;
   // Chrome, Safari
@@ -53,11 +51,26 @@ $color-white: rgb(255,255,255);
       }
     }
 
+    // a dark card like the dialogs, the status only colours its edge and icon
     @each $status, $color in (ok: var(--colorOk), error: var(--colorError), info: var(--colorInfo)) {
       &.#{$status} {
-        background: $color;
-        color: $color-white;
-        box-shadow: 0 0 20px var(--boxShadow);
+        background: var(--dialogBackground);
+        color: var(--dialogTextColor);
+        border: 1px solid var(--borderColor);
+        border-left: 4px solid $color;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+
+        > .box:first-child .Icon {
+          color: $color;
+        }
+
+        .close {
+          color: var(--textColorSecondary);
+
+          &:hover {
+            color: var(--textColorAccent);
+          }
+        }
       }
     }
   }

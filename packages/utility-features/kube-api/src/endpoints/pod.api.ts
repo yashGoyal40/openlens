@@ -37,7 +37,12 @@ export class PodApi extends KubeApi<Pod> {
         },
       });
     } catch (err) {
-      response = err as KubeStatusData;
+      // a refused eviction, such as one without permission, is not a status to explain
+      if (!isKubeStatusData(err)) {
+        throw err;
+      }
+
+      response = err;
     }
 
     if (isKubeStatusData(response)) {

@@ -170,6 +170,29 @@ export class EditResourceModel {
     });
   };
 
+  /**
+   * Throws away the changes and loads the resource again
+   */
+  reload = async () => {
+    runInAction(() => {
+      this.editingResource.draft = undefined;
+      this.configuration.error.value.set("");
+    });
+
+    await this.load();
+  };
+
+  /**
+   * What the resource looked like when it was loaded or last saved
+   */
+  @computed get original() {
+    return this.editingResource.firstDraft ?? "";
+  }
+
+  get selfLinkForDetails() {
+    return this.resource.selfLink;
+  }
+
   get namespace() {
     return this.resource.metadata.namespace || "default";
   }

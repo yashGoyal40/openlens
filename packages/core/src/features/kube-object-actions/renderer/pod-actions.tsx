@@ -25,6 +25,7 @@ import type { HideDetails } from "../../../renderer/components/kube-detail-param
 import hideDetailsInjectable from "../../../renderer/components/kube-detail-params/hide-details.injectable";
 import { ContainerMenuItem } from "./container-menu-item";
 import { getPodAttachCommand, getPodShellCommand } from "./kubectl-commands";
+import { isErrorAlreadyShown } from "./is-error-already-shown";
 
 export interface PodActionsProps extends KubeObjectMenuProps<Pod> {}
 
@@ -91,7 +92,9 @@ const NonInjectedPodActions = ({
         showSuccessNotification(`Pod ${pod.getName()} was evicted`);
         hideDetails();
       } catch (error) {
-        showCheckedErrorNotification(error, `Unknown error occurred while evicting pod ${pod.getName()}`);
+        if (!isErrorAlreadyShown(error)) {
+          showCheckedErrorNotification(error, `Unknown error occurred while evicting pod ${pod.getName()}`);
+        }
       }
     },
     labelOk: "Evict",

@@ -1,0 +1,99 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.EditResource {
+  height: 100%;
+}
+
+// icons only, like the editor of Lens
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--borderFaintColor);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: none;
+  color: var(--textColorSecondary);
+  cursor: pointer;
+
+  :global(.Icon) {
+    --size: 18px;
+  }
+
+  &:hover:not(:disabled) {
+    color: var(--textColorAccent);
+    background: var(--sidebarItemHoverBackground);
+  }
+
+  &.active {
+    color: var(--textColorAccent);
+    border-color: var(--textColorTertiary);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
+.spinner {
+  --spinner-size: 16px;
+  margin-left: 6px;
+}
+
+// the YAML error, which moves the cursor to it when clicked
+.error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: var(--colorError);
+  font: inherit;
+  cursor: pointer;
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    background: var(--sidebarItemHoverBackground);
+  }
+}
+
+.title {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  color: var(--textColorSecondary);
+
+  a {
+    color: var(--primary);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.diff {
+  flex: 1;
+  min-height: 0;
+}

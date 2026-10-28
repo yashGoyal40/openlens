@@ -16,6 +16,7 @@ import type { CreateLogsTabData } from "../../../renderer/components/dock/logs/c
 import createLogsTabInjectable from "../../../renderer/components/dock/logs/create-logs-tab.injectable";
 import type { HideDetails } from "../../../renderer/components/kube-detail-params/hide-details.injectable";
 import hideDetailsInjectable from "../../../renderer/components/kube-detail-params/hide-details.injectable";
+import { isErrorAlreadyShown } from "./is-error-already-shown";
 
 export type LoggableWorkload = Deployment | StatefulSet | DaemonSet | ReplicaSet | Job;
 
@@ -70,7 +71,9 @@ const NonInjectedWorkloadLogsAction = ({
       });
       hideDetails();
     } catch (error) {
-      showCheckedErrorNotification(error, `Unknown error occurred while opening logs for ${workload.getName()}`);
+      if (!isErrorAlreadyShown(error)) {
+        showCheckedErrorNotification(error, `Unknown error occurred while opening logs for ${workload.getName()}`);
+      }
     }
   };
 

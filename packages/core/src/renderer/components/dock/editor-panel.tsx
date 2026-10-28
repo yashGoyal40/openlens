@@ -23,6 +23,11 @@ export interface EditorPanelProps {
   onChange: MonacoEditorProps["onChange"];
   onError?: MonacoEditorProps["onError"];
   hidden?: boolean;
+
+  /**
+   * To reach the editor from outside, such as to open its find widget
+   */
+  editorRef?: React.RefObject<MonacoEditorRef>;
 }
 
 interface Dependencies {
@@ -38,8 +43,9 @@ const NonInjectedEditorPanel = observer(({
   className,
   onError,
   hidden,
+  editorRef,
 }: Dependencies & EditorPanelProps) => {
-  const editor = createRef<MonacoEditorRef>();
+  const editor = editorRef ?? createRef<MonacoEditorRef>();
 
   useEffect(() => disposer(
     reaction(
