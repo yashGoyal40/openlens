@@ -3,7 +3,13 @@
  * Licensed under MIT License. See LICENSE in root directory for more information.
  */
 
+// the port on the left, the forward button on the right
 .PodContainerPort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $margin;
+
   &.waiting {
     opacity: 0.5;
     pointer-events: none;

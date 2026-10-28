@@ -59,6 +59,11 @@ exports[`reactively hide kube object detail item renders 1`] = `
           class="drawer-content flex column box grow"
         >
           <div
+            class="DrawerTitle title"
+          >
+            Properties
+          </div>
+          <div
             class="DrawerItem"
           >
             <span
@@ -880,6 +885,11 @@ exports[`reactively hide kube object detail item when the item is shown renders 
         <div
           class="drawer-content flex column box grow"
         >
+          <div
+            class="DrawerTitle title"
+          >
+            Properties
+          </div>
           <div
             class="DrawerItem"
           >

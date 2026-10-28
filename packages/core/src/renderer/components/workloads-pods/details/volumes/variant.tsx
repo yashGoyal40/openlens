@@ -45,7 +45,7 @@ const deprecatedVolumeTypes = new Set<PodVolumeKind>([
   "storageos",
 ]);
 
-interface VolumeVariantProps {
+export interface VolumeVariantProps {
   pod: Pod;
   volume: PodSpecVolume;
 }
@@ -389,7 +389,16 @@ function renderVolumeVariant({ pod, volume }: VolumeVariantProps): VolumeVariant
   return null;
 }
 
-export function VolumeVariant(props: VolumeVariantProps) {
+export const getVolumeVariantKind = (pod: Pod, volume: PodSpecVolume) => renderVolumeVariant({ pod, volume })?.kind;
+
+export interface VolumeVariantViewProps extends VolumeVariantProps {
+  /**
+   * When the volumes are already grouped by kind
+   */
+  hideKind?: boolean;
+}
+
+export function VolumeVariant({ hideKind, ...props }: VolumeVariantViewProps) {
   const result = renderVolumeVariant(props);
 
   if (!result) {
@@ -401,10 +410,12 @@ export function VolumeVariant(props: VolumeVariantProps) {
 
   return (
     <>
-      <DrawerItem name="Kind">
-        {kind}
-        {isDeprecated && <Icon title="Deprecated" material="warning_amber" />}
-      </DrawerItem>
+      {(!hideKind || isDeprecated) && (
+        <DrawerItem name="Kind">
+          {kind}
+          {isDeprecated && <Icon title="Deprecated" material="warning_amber" />}
+        </DrawerItem>
+      )}
       {element}
     </>
   );

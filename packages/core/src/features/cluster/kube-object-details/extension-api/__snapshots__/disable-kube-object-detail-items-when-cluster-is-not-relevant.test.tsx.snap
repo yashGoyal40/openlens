@@ -59,6 +59,11 @@ exports[`disable kube object detail items when cluster is not relevant given ext
           class="drawer-content flex column box grow"
         >
           <div
+            class="DrawerTitle title"
+          >
+            Properties
+          </div>
+          <div
             class="DrawerItem"
           >
             <span
@@ -886,6 +891,11 @@ exports[`disable kube object detail items when cluster is not relevant given ext
           class="drawer-content flex column box grow"
         >
           <div
+            class="DrawerTitle title"
+          >
+            Properties
+          </div>
+          <div
             class="DrawerItem"
           >
             <span
@@ -1707,6 +1717,11 @@ exports[`disable kube object detail items when cluster is not relevant given not
         <div
           class="drawer-content flex column box grow"
         >
+          <div
+            class="DrawerTitle title"
+          >
+            Properties
+          </div>
           <div
             class="DrawerItem"
           >

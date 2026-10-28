@@ -5,7 +5,7 @@
 
 import "./pod-details-tolerations.scss";
 import React from "react";
-import { DrawerParamToggler, DrawerItem } from "../drawer";
+import { DrawerItemExpandable } from "../drawer";
 import type  { Toleration, KubeObject } from "@k8slens/kube-object";
 import { PodTolerations } from "./pod-tolerations";
 
@@ -23,10 +23,13 @@ export function PodDetailsTolerations({ workload }: PodDetailsTolerationsProps) 
   if (!tolerations.length) return null;
 
   return (
-    <DrawerItem name="Tolerations" className="PodDetailsTolerations">
-      <DrawerParamToggler label={tolerations.length}>
-        <PodTolerations tolerations={tolerations} />
-      </DrawerParamToggler>
-    </DrawerItem>
+    <DrawerItemExpandable
+      name="Tolerations"
+      summary={tolerations.length}
+      className="PodDetailsTolerations"
+      fullWidth
+    >
+      <PodTolerations tolerations={tolerations} />
+    </DrawerItemExpandable>
   );
 }

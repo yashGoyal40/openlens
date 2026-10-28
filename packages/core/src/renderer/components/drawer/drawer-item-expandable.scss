@@ -1,0 +1,36 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.DrawerItemExpandable {
+  > .name .toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    user-select: none;
+
+    .Icon {
+      color: var(--textColorTertiary);
+    }
+
+    &:hover,
+    &:hover .Icon {
+      color: var(--textColorAccent);
+    }
+  }
+
+  .summary {
+    cursor: pointer;
+  }
+
+  // the contents go below the name, across the drawer
+  &.fullWidth.expanded {
+    grid-template-columns: 100%;
+
+    > .value {
+      padding-top: $padding;
+    }
+  }
+}

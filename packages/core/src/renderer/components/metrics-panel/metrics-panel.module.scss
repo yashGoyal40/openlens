@@ -1,0 +1,90 @@
+/**
+ * Copyright (c) OpenLens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.MetricsPanel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+// beats the default minimum width of selects
+.toolbar :global(.Select).range {
+  width: 150px;
+  min-width: 0;
+
+  :global(.Select__control) {
+    min-height: 30px;
+  }
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: none;
+  color: var(--textColorSecondary);
+  cursor: pointer;
+
+  :global(.Icon) {
+    --size: 20px;
+  }
+
+  &:hover:not(:disabled) {
+    color: var(--textColorAccent);
+    background: var(--sidebarItemHoverBackground);
+  }
+
+  &.active {
+    color: var(--textColorAccent);
+    border-color: var(--textColorTertiary);
+    background: var(--sidebarItemHoverBackground);
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+}
+
+.source {
+  padding: 6px 10px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  background: var(--drawerSubtitleBackground);
+  color: var(--textColorSecondary);
+  font-size: 13px;
+}
+
+.graph {
+  :global(.UsageChart) {
+    :global(.chart-container) {
+      position: relative;
+      height: 190px;
+    }
+
+    :global(.legend) {
+      justify-content: center;
+      margin-top: 6px;
+    }
+  }
+}

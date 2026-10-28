@@ -5,7 +5,7 @@
 
 import React from "react";
 import yaml from "js-yaml";
-import { DrawerItem, DrawerParamToggler } from "../drawer";
+import { DrawerItemExpandable } from "../drawer";
 import type { DaemonSet, Deployment, Job, Pod, ReplicaSet, StatefulSet } from "@k8slens/kube-object";
 import { MonacoEditor } from "../monaco-editor";
 
@@ -22,15 +22,18 @@ export class PodDetailsAffinities extends React.Component<PodDetailsAffinitiesPr
     if (!affinitiesNum) return null;
 
     return (
-      <DrawerItem name="Affinities" className="PodDetailsAffinities">
-        <DrawerParamToggler label={affinitiesNum}>
-          <MonacoEditor
-            readOnly
-            style={{ height: 200 }}
-            value={yaml.dump(affinities)}
-          />
-        </DrawerParamToggler>
-      </DrawerItem>
+      <DrawerItemExpandable
+        name="Affinities"
+        summary={affinitiesNum}
+        className="PodDetailsAffinities"
+        fullWidth
+      >
+        <MonacoEditor
+          readOnly
+          style={{ height: 200 }}
+          value={yaml.dump(affinities)}
+        />
+      </DrawerItemExpandable>
     );
   }
 }

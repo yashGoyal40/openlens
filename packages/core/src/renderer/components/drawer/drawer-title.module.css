@@ -3,15 +3,21 @@
  * Licensed under MIT License. See LICENSE in root directory for more information.
  */
 
+/* section headings, like "Metrics" and "Properties" */
 .DrawerTitle {
-  margin: $margin * 3 (-$margin * 3);
-  background: var(--drawerSubtitleBackground);
+  margin: $margin * 3 0 $margin;
+  color: var(--textColorAccent);
+  font-weight: 400;
+}
+
+.DrawerTitle:first-child {
+  margin-top: 0;
 }
 
 .DrawerTitle.title {
-  padding: $padding * 1.5 $padding * 3;
+  font-size: 20px;
 }
 
 .DrawerTitle.sub-title {
-  padding: $padding $padding * 2;
+  font-size: 16px;
 }

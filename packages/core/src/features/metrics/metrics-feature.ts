@@ -7,16 +7,10 @@ import { clusterOverviewUIBlockInjectionToken, daemonSetDetailsMetricsInjectionT
 import { getInjectable } from "@ogre-tools/injectable";
 import { ClusterMetrics } from "../../renderer/components/cluster/cluster-metrics";
 import { ClusterPieCharts } from "../../renderer/components/cluster/cluster-pie-charts";
-import { NamespaceMetricsDetailsComponent } from "../../renderer/components/namespaces/metrics-details-component";
-import { NodeMetricsDetailsComponent } from "../../renderer/components/nodes/metrics-details-component";
 import { PersistentVolumeClaimMetricsDetailsComponent } from "../../renderer/components/storage-volume-claims/metrics-details-component";
-import { DaemonSetMetricsDetailsComponent } from "../../renderer/components/workloads-daemonsets/metrics-details-component";
-import { DeploymentMetricsDetailsComponent } from "../../renderer/components/workloads-deployments/metrics-details-component";
-import { JobMetricsDetailsComponent } from "../../renderer/components/workloads-jobs/metrics-details-component";
-import { PodDetailsContainerMetrics } from "../../renderer/components/workloads-pods/pod-details-container-metrics";
-import PodMetricsDetailsComponent from "../../renderer/components/workloads-pods/pod-metrics-details-component";
-import { ReplicaSetMetricsDetailsComponent } from "../../renderer/components/workloads-replicasets/metrics-details-component";
-import { StatefulSetMetricsDetailsComponent } from "../../renderer/components/workloads-statefulsets/metrics-details-component";
+import { PodMetricsSection, PodContainerUsageMetrics } from "../../renderer/components/workloads-pods/pod-usage-metrics";
+import { DaemonSetUsageMetrics, DeploymentUsageMetrics, JobUsageMetrics, NamespaceUsageMetrics, ReplicaSetUsageMetrics, StatefulSetUsageMetrics } from "../../renderer/components/metrics-panel/workload-usage-metrics";
+import { NodeUsageMetrics } from "../../renderer/components/nodes/node-usage-metrics";
 import { IngressMetricsDetailsComponent } from "../../renderer/components/network-ingresses/metrics-details-component";
 
 const clusterPieChartsClusterOverviewInjectable = getInjectable({
@@ -47,7 +41,7 @@ const podDetailsMetricsInjectable = getInjectable({
   id: "pod-details-metrics-injectable",
   instantiate: () => ({
     id: "pod-details-metrics",
-    Component: PodMetricsDetailsComponent,
+    Component: PodMetricsSection,
   }),
   injectionToken: podDetailsMetricsInjectionToken,
 });
@@ -56,7 +50,7 @@ const deploymentDetailsMetricsInjectable = getInjectable({
   id: "deployment-details-metrics-injectable",
   instantiate: () => ({
     id: "deployment-details-metrics",
-    Component: DeploymentMetricsDetailsComponent,
+    Component: DeploymentUsageMetrics,
   }),
   injectionToken: deploymentDetailsMetricsInjectionToken,
 });
@@ -65,7 +59,7 @@ const podDetailsContainerMetricsInjectable = getInjectable({
   id: "pod-details-container-metrics-injectable",
   instantiate: () => ({
     id: "pod-details-container-metrics",
-    Component: PodDetailsContainerMetrics,
+    Component: PodContainerUsageMetrics,
   }),
   injectionToken: podDetailsContainerMetricsInjectionToken,
 });
@@ -74,7 +68,7 @@ const nodeDetailsMetricsInjectable = getInjectable({
   id: "node-details-metrics-injectable",
   instantiate: () => ({
     id: "node-details-metrics",
-    Component: NodeMetricsDetailsComponent,
+    Component: NodeUsageMetrics,
   }),
   injectionToken: nodeDetailsMetricsInjectionToken,
 });
@@ -83,7 +77,7 @@ const replicaSetDetailsMetricsInjectable = getInjectable({
   id: "replica-set-details-metrics-injectable",
   instantiate: () => ({
     id: "replica-set-details-metrics",
-    Component: ReplicaSetMetricsDetailsComponent,
+    Component: ReplicaSetUsageMetrics,
   }),
   injectionToken: replicaSetDetailsMetricsInjectionToken,
 });
@@ -101,7 +95,7 @@ const statefulSetDetailsMetricsInjectable = getInjectable({
   id: "stateful-set-details-metrics-injectable",
   instantiate: () => ({
     id: "stateful-set-details-metrics",
-    Component: StatefulSetMetricsDetailsComponent,
+    Component: StatefulSetUsageMetrics,
   }),
   injectionToken: statefulSetDetailsMetricsInjectionToken,
 });
@@ -110,7 +104,7 @@ const namespaceDetailsMetricsInjectable = getInjectable({
   id: "namespace-details-metrics-injectable",
   instantiate: () => ({
     id: "namespace-details-metrics",
-    Component: NamespaceMetricsDetailsComponent,
+    Component: NamespaceUsageMetrics,
   }),
   injectionToken: namespaceDetailsMetricsInjectionToken,
 });
@@ -119,7 +113,7 @@ const jobDetailsMetricsInjectable = getInjectable({
   id: "job-details-metrics-injectable",
   instantiate: () => ({
     id: "job-details-metrics",
-    Component: JobMetricsDetailsComponent,
+    Component: JobUsageMetrics,
   }),
   injectionToken: jobDetailsMetricsInjectionToken,
 });
@@ -128,7 +122,7 @@ const daemonSetDetailsMetricsInjectable = getInjectable({
   id: "daemon-set-details-metrics-injectable",
   instantiate: () => ({
     id: "daemon-set-details-metrics",
-    Component: DaemonSetMetricsDetailsComponent,
+    Component: DaemonSetUsageMetrics,
   }),
   injectionToken: daemonSetDetailsMetricsInjectionToken,
 });

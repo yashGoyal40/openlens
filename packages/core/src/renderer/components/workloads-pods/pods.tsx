@@ -23,6 +23,9 @@ import type { NodeStore } from "../nodes/store";
 import nodeStoreInjectable from "../nodes/store.injectable";
 import { shouldShowResourceInjectionToken } from "../../../features/cluster/showing-kube-resources/common/allowed-resources-injection-token";
 import { getPodNodePool } from "./columns/pods-node-pool-column.injectable";
+import type { PodUsageHistory } from "./usage-history/pod-usage-history.injectable";
+import podUsageHistoryInjectable from "./usage-history/pod-usage-history.injectable";
+import { toPodUsageReport } from "./usage-history/pod-usage-history";
 
 interface Dependencies {
   eventStore: EventStore;
@@ -30,6 +33,7 @@ interface Dependencies {
   nodeStore: NodeStore;
   canListNodes: IComputedValue<boolean>;
   columns: SpecificKubeListLayoutColumn<Pod>[];
+  podUsageHistory: PodUsageHistory;
 }
 
 const NonInjectedPods = observer((props: Dependencies) => {
@@ -39,16 +43,20 @@ const NonInjectedPods = observer((props: Dependencies) => {
     podStore,
     nodeStore,
     canListNodes,
+    podUsageHistory,
   } = props;
 
-  // CPU and memory columns show metrics server usage, refreshed while the list is open
+  // CPU and memory columns show metrics server usage, refreshed while the list is open, and kept for the usage charts
   useEffect(() => {
-    const metricsWatcher = interval(60, () => void podStore.loadKubeMetrics());
+    const metricsWatcher = interval(60, () => {
+      void podStore.loadKubeMetrics()
+        .then(() => podUsageHistory.record(podStore.kubeMetrics.map(toPodUsageReport), true));
+    });
 
     metricsWatcher.start(true);
 
     return () => metricsWatcher.stop();
-  }, [podStore]);
+  }, [podStore, podUsageHistory]);
 
   return (
     <SiblingsInTabLayout>
@@ -83,5 +91,6 @@ export const Pods = withInjectables<Dependencies>(NonInjectedPods, {
     nodeStore: di.inject(nodeStoreInjectable),
     canListNodes: di.inject(shouldShowResourceInjectionToken, { apiName: "nodes", group: "" }),
     columns: di.injectMany(podListLayoutColumnInjectionToken),
+    podUsageHistory: di.inject(podUsageHistoryInjectable),
   }),
 });

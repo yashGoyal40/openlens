@@ -84,8 +84,8 @@ export function normalizeMetrics(metrics: MetricData | undefined | null, frames 
   return metrics;
 }
 
-export function isMetricsEmpty(metrics: Partial<Record<string, MetricData>>) {
-  return Object.values(metrics).every(metric => !metric?.data?.result?.length);
+export function isMetricsEmpty<Keys extends string>(metrics: Partial<Record<Keys, MetricData>>) {
+  return Object.values<MetricData | undefined>(metrics).every(metric => !metric?.data?.result?.length);
 }
 
 export function getItemMetrics<Keys extends string>(metrics: Partial<Record<Keys, MetricData>> | null | undefined, itemName: string): Partial<Record<Keys, MetricData>> | undefined {

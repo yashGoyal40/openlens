@@ -7,7 +7,7 @@ import "./pod-details-container.scss";
 
 import React from "react";
 import type { Container, PodContainerStatus, Pod } from "@k8slens/kube-object";
-import { DrawerItem } from "../drawer";
+import { DrawerItem, DrawerItemExpandable } from "../drawer";
 import { cssNames, isDefined } from "@k8slens/utilities";
 import { StatusBrick } from "../status-brick";
 import { Badge } from "../badge";
@@ -23,6 +23,19 @@ import type { IComputedValue } from "mobx";
 import enabledMetricsInjectable from "../../api/catalog/entity/metrics-enabled.injectable";
 import type { PodDetailsContainerMetricsComponent } from "@k8slens/metrics";
 import { podDetailsContainerMetricsInjectionToken } from "@k8slens/metrics";
+
+/**
+ * Such as "CPU: 100m, Memory: —", followed by any other resources like GPUs
+ */
+export const formatResources = (values: Partial<Record<string, string>> = {}) => {
+  const { cpu = "—", memory = "—", ...others } = values;
+
+  return [
+    `CPU: ${cpu}`,
+    `Memory: ${memory}`,
+    ...Object.entries(others).map(([resource, value]) => `${resource}: ${value}`),
+  ].join(", ");
+};
 
 export interface PodDetailsContainerProps {
   pod: Pod;
@@ -86,7 +99,7 @@ class NonInjectedPodDetailsContainer extends React.Component<PodDetailsContainer
     const { pod, container, containerMetricsVisible, containerMetrics } = this.props;
 
     if (!pod || !container) return null;
-    const { name, image, imagePullPolicy, ports, volumeMounts, command, args } = container;
+    const { name, image, ports, volumeMounts, command, args, resources } = container;
     const status = pod.getContainerStatuses().find(status => status.name === container.name);
     const state = status ? Object.keys(status?.state ?? {})[0] : "";
     const lastState = status ? Object.keys(status?.lastState ?? {})[0] : "";
@@ -127,11 +140,6 @@ class NonInjectedPodDetailsContainer extends React.Component<PodDetailsContainer
         <DrawerItem name="Image">
           <Badge label={image} tooltip={imageId}/>
         </DrawerItem>
-        {imagePullPolicy && imagePullPolicy !== "IfNotPresent" && (
-          <DrawerItem name="ImagePullPolicy">
-            {imagePullPolicy}
-          </DrawerItem>
-        )}
         {ports && ports.length > 0 && (
           <DrawerItem name="Ports">
             {
@@ -149,7 +157,11 @@ class NonInjectedPodDetailsContainer extends React.Component<PodDetailsContainer
         )}
         {<ContainerEnvironment container={container} namespace={pod.getNs()}/>}
         {volumeMounts && volumeMounts.length > 0 && (
-          <DrawerItem name="Mounts">
+          <DrawerItemExpandable
+            name="Mounts"
+            summary={`${volumeMounts.length} ${volumeMounts.length === 1 ? "Mount" : "Mounts"}`}
+            data-testid={`container-mounts-${name}`}
+          >
             {
               volumeMounts.map(mount => {
                 const { name, mountPath, readOnly } = mount;
@@ -164,7 +176,7 @@ class NonInjectedPodDetailsContainer extends React.Component<PodDetailsContainer
                 );
               })
             }
-          </DrawerItem>
+          </DrawerItemExpandable>
         )}
         {liveness.length > 0 && (
           <DrawerItem name="Liveness" labelsOnly>
@@ -204,6 +216,12 @@ class NonInjectedPodDetailsContainer extends React.Component<PodDetailsContainer
             {args.join(" ")}
           </DrawerItem>
         )}
+        <DrawerItem name="Requests">
+          {formatResources(resources?.requests)}
+        </DrawerItem>
+        <DrawerItem name="Limits">
+          {formatResources(resources?.limits)}
+        </DrawerItem>
       </div>
     );
   }
