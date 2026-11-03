@@ -3,7 +3,7 @@
  * Licensed under MIT License. See LICENSE in root directory for more information.
  */
 import { Node } from "@k8slens/kube-object";
-import { getNodePool, getNodePoolDisplayName } from "./node-pool";
+import { getInstanceType, getNodePool, getNodePoolDisplayName } from "./node-pool";
 
 const nodeWithLabels = (labels: Record<string, string>) => new Node({
   apiVersion: "v1",
@@ -56,3 +56,23 @@ describe("getNodePoolDisplayName", () => {
   });
 });
 
+describe("getInstanceType", () => {
+  it("reads the well-known label", () => {
+    expect(getInstanceType(nodeWithLabels({ "node.kubernetes.io/instance-type": "m6i.xlarge" }))).toBe("m6i.xlarge");
+  });
+
+  it("falls back to the label used before Kubernetes 1.17", () => {
+    expect(getInstanceType(nodeWithLabels({ "beta.kubernetes.io/instance-type": "e2-standard-4" }))).toBe("e2-standard-4");
+  });
+
+  it("prefers the well-known label", () => {
+    expect(getInstanceType(nodeWithLabels({
+      "beta.kubernetes.io/instance-type": "old",
+      "node.kubernetes.io/instance-type": "new",
+    }))).toBe("new");
+  });
+
+  it("has none when the cloud provider does not set it", () => {
+    expect(getInstanceType(nodeWithLabels({ "kubernetes.io/hostname": "some-node" }))).toBeUndefined();
+  });
+});

@@ -28,11 +28,12 @@ import type { NodeUsage, RequestNodeUsage } from "./request-node-usage.injectabl
 import requestNodeUsageInjectable from "./request-node-usage.injectable";
 import eventStoreInjectable from "../events/store.injectable";
 import type { EventStore } from "../events/store";
-import { getNodePool, getNodePoolDisplayName } from "./node-pool";
+import { getInstanceType, getNodePool, getNodePoolDisplayName } from "./node-pool";
 
 enum columnId {
   name = "name",
   nodePool = "node-pool",
+  instanceType = "instance-type",
   cpu = "cpu",
   memory = "memory",
   disk = "disk",
@@ -245,6 +246,7 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
           sortingCallbacks={{
             [columnId.name]: node => node.getName(),
             [columnId.nodePool]: node => getNodePool(node),
+            [columnId.instanceType]: node => getInstanceType(node),
             [columnId.cpu]: node => this.getUsage(node, ["cpuUsage", "cpuCapacity"])?.[0] ?? 0,
             [columnId.memory]: node => this.getUsage(node, ["workloadMemoryUsage", "memoryAllocatableCapacity"])?.[0] ?? 0,
             [columnId.disk]: node => this.getLastMetricValues(node, ["fsUsage"]),
@@ -258,6 +260,7 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
             node => node.getSearchFields(),
             node => getNodePool(node),
             node => getNodePoolDisplayName(getNodePool(node) ?? ""),
+            node => getInstanceType(node),
             node => node.getRoleLabels(),
             node => node.getKubeletVersion(),
             node => node.getNodeConditionText(),
@@ -267,6 +270,7 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
             { title: "Name", className: "name", sortBy: columnId.name, id: columnId.name },
             { className: "warning", showWithColumn: columnId.name },
             { title: "Node Pool", className: "node-pool", sortBy: columnId.nodePool, id: columnId.nodePool },
+            { title: "Instance Type", className: "instance-type", sortBy: columnId.instanceType, id: columnId.instanceType },
             { title: "CPU", className: "cpu", sortBy: columnId.cpu, id: columnId.cpu },
             { title: "Memory", className: "memory", sortBy: columnId.memory, id: columnId.memory },
             { title: "Disk", className: "disk", sortBy: columnId.disk, id: columnId.disk },
@@ -289,6 +293,7 @@ class NonInjectedNodesRoute extends React.Component<Dependencies> {
               />,
               <KubeObjectStatusIcon key="icon" object={node} />,
               <span key="node-pool" title={getNodePool(node)}>{getNodePoolDisplayName(getNodePool(node) ?? "")}</span>,
+              <span key="instance-type" title={getInstanceType(node)}>{getInstanceType(node)}</span>,
               this.renderCpuUsage(node),
               this.renderMemoryUsage(node),
               this.renderDiskUsage(node),

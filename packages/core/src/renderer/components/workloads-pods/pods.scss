@@ -23,6 +23,12 @@
       flex-grow: 0.8;
     }
 
+    // wide enough for types such as m6a.xlarge
+    &.instance-type {
+      flex-grow: 0.8;
+      min-width: 92px;
+    }
+
     &.cpu {
       flex-grow: 0.6;
     }

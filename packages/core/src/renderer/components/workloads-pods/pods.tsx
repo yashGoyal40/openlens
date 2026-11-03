@@ -23,6 +23,7 @@ import type { NodeStore } from "../nodes/store";
 import nodeStoreInjectable from "../nodes/store.injectable";
 import { shouldShowResourceInjectionToken } from "../../../features/cluster/showing-kube-resources/common/allowed-resources-injection-token";
 import { getPodNodePool } from "./columns/pods-node-pool-column.injectable";
+import { getPodInstanceType } from "./columns/pods-instance-type-column.injectable";
 import type { PodUsageHistory } from "./usage-history/pod-usage-history.injectable";
 import podUsageHistoryInjectable from "./usage-history/pod-usage-history.injectable";
 import { toPodUsageReport } from "./usage-history/pod-usage-history";
@@ -73,6 +74,7 @@ const NonInjectedPods = observer((props: Dependencies) => {
           pod => pod.status?.podIP,
           pod => pod.getNodeName(),
           pod => getPodNodePool(nodeStore, pod),
+          pod => getPodInstanceType(nodeStore, pod),
         ]}
         renderHeaderTitle="Pods"
         renderTableHeader={[]}

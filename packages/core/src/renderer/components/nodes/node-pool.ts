@@ -33,3 +33,22 @@ export const getNodePool = (node: Node): string | undefined => {
  * unique id (eg. "system-0f1e2d3c4b5a69788796a5b4c3"). Tables show the name without it.
  */
 export const getNodePoolDisplayName = (pool: string) => pool.replace(/-(?:[0-9a-f]{20,}|[0-9]{14,})$/i, "");
+
+/**
+ * The well-known label, and the one it replaced in Kubernetes 1.17
+ */
+export const instanceTypeLabels = [
+  "node.kubernetes.io/instance-type",
+  "beta.kubernetes.io/instance-type",
+];
+
+/**
+ * Such as "m6i.xlarge" or "e2-standard-4", when the cloud provider sets it
+ */
+export const getInstanceType = (node: Node): string | undefined => {
+  const labels = node.metadata.labels ?? {};
+
+  return instanceTypeLabels
+    .map(label => labels[label])
+    .find(Boolean);
+};

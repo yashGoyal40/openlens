@@ -112,9 +112,9 @@ describe("exporting resource lists to CSV", () => {
         const [, csv] = openSaveFileDialogMock.mock.calls[0];
 
         expect(csv).toBe([
-          "Name,Namespace,CPU,Memory,Containers,Restarts,Controlled By,Node,Node Pool,QoS,Status,Age",
-          "pod-b,default,,,,0,,some-node,,BestEffort,Running,<unknown>",
-          "'=pod-a,kube-system,,,,0,,some-node,,BestEffort,Running,<unknown>",
+          "Name,Namespace,CPU,Memory,Containers,Restarts,Controlled By,Node,Node Pool,Instance Type,QoS,Status,Age",
+          "pod-b,default,,,,0,,some-node,,,BestEffort,Running,<unknown>",
+          "'=pod-a,kube-system,,,,0,,some-node,,,BestEffort,Running,<unknown>",
         ].join("\r\n"));
       });
     });

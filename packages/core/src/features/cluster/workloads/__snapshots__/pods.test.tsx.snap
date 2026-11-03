@@ -938,6 +938,34 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                           </i>
                         </div>
                         <div
+                          class="TableCell instance-type nowrap sorting"
+                          id="instance-type"
+                        >
+                          <div
+                            class="content"
+                          >
+                            Instance Type
+                            <span
+                              class="column-resize-anchor"
+                              data-testid="column-resize-anchor-instance-type"
+                            >
+                              <div
+                                class="ResizingAnchor horizontal trailing"
+                              />
+                            </span>
+                          </div>
+                          <i
+                            class="Icon sortIcon material focusable"
+                          >
+                            <span
+                              class="icon"
+                              data-icon-name="arrow_drop_down"
+                            >
+                              arrow_drop_down
+                            </span>
+                          </i>
+                        </div>
+                        <div
                           class="TableCell qos nowrap sorting"
                           id="qos"
                         >
@@ -1125,6 +1153,9 @@ exports[`workloads / pods when navigating to workloads / pods view given a names
                                   </div>
                                   <div
                                     class="TableCell node-pool"
+                                  />
+                                  <div
+                                    class="TableCell instance-type"
                                   />
                                   <div
                                     class="TableCell qos"
@@ -2246,6 +2277,34 @@ exports[`workloads / pods when navigating to workloads / pods view given no pods
                             <span
                               class="column-resize-anchor"
                               data-testid="column-resize-anchor-node-pool"
+                            >
+                              <div
+                                class="ResizingAnchor horizontal trailing"
+                              />
+                            </span>
+                          </div>
+                          <i
+                            class="Icon sortIcon material focusable"
+                          >
+                            <span
+                              class="icon"
+                              data-icon-name="arrow_drop_down"
+                            >
+                              arrow_drop_down
+                            </span>
+                          </i>
+                        </div>
+                        <div
+                          class="TableCell instance-type nowrap sorting"
+                          id="instance-type"
+                        >
+                          <div
+                            class="content"
+                          >
+                            Instance Type
+                            <span
+                              class="column-resize-anchor"
+                              data-testid="column-resize-anchor-instance-type"
                             >
                               <div
                                 class="ResizingAnchor horizontal trailing"
@@ -3457,6 +3516,34 @@ exports[`workloads / pods when navigating to workloads / pods view given pods ar
                             <span
                               class="column-resize-anchor"
                               data-testid="column-resize-anchor-node-pool"
+                            >
+                              <div
+                                class="ResizingAnchor horizontal trailing"
+                              />
+                            </span>
+                          </div>
+                          <i
+                            class="Icon sortIcon material focusable"
+                          >
+                            <span
+                              class="icon"
+                              data-icon-name="arrow_drop_down"
+                            >
+                              arrow_drop_down
+                            </span>
+                          </i>
+                        </div>
+                        <div
+                          class="TableCell instance-type nowrap sorting"
+                          id="instance-type"
+                        >
+                          <div
+                            class="content"
+                          >
+                            Instance Type
+                            <span
+                              class="column-resize-anchor"
+                              data-testid="column-resize-anchor-instance-type"
                             >
                               <div
                                 class="ResizingAnchor horizontal trailing"

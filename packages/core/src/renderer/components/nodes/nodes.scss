@@ -21,6 +21,13 @@
       text-overflow: ellipsis;
     }
 
+    // wide enough for types such as m6a.xlarge
+    &.instance-type {
+      flex: 1.2;
+      min-width: 110px;
+      text-overflow: ellipsis;
+    }
+
     .LineProgress {
       width: 100%;
     }
