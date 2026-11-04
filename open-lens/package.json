@@ -3,15 +3,15 @@
   "private": true,
   "productName": "OpenLens",
   "description": "OpenLens - Open Source IDE for Kubernetes",
-  "homepage": "https://github.com/lensapp/lens",
+  "homepage": "https://github.com/yashGoyal40/openlens",
   "version": "6.5.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lensapp/lens.git"
+    "url": "git+https://github.com/yashGoyal40/openlens.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/lensapp/lens/issues"
+    "url": "https://github.com/yashGoyal40/openlens/issues"
   },
   "main": "static/build/main.js",
   "copyright": "© 2023 OpenLens Authors",
